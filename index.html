@@ -1608,28 +1608,75 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
     e.target.closest('.q')&&e.target.closest('.q').classList.remove('bad');
   });
 
+  /* ===== Web3Forms 設定 ===== */
+  const WEB3FORMS_KEY='47e88bb1-37e5-4e2a-877f-1cfdd23dc496';
+
+  // 欄位名稱 → 信件中顯示的中文標籤（讓收到的信更好讀）
+  const LABELS={
+    name:'名字',contact:'偏好聯絡方式',contact_email:'Email',
+    contact_line:'LINE ID',contact_ig:'IG／Threads',
+    location:'所在地',location_other:'所在地（其他）',
+    need:'需求',market:'目標市場',lang:'需要語言',
+    goal:'目標',goal_other:'目標（其他）',
+    pain:'痛點',pain_other:'痛點（其他）',
+    assets:'現有素材',links:'現有網站／連結',refs:'參考風格',
+    budget:'預算',timeline:'時程',decider:'決策方式',
+    source:'從何得知',source_other:'從何得知（其他）',notes:'補充'
+  };
+
+  // 錯誤提示元素
+  const errBox=document.createElement('p');
+  errBox.className='inq-error';errBox.setAttribute('role','alert');errBox.hidden=true;
+  errBox.style.cssText='color:#c0392b;margin:12px 0 0;font-size:.92rem;';
+  form.querySelector('.inq-nav').insertAdjacentElement('beforebegin',errBox);
+
   form.addEventListener('submit',e=>{
     e.preventDefault();
     if(!validate(cur))return;
+
+    // 收集欄位（多選合併成陣列）
     const data={};
     new FormData(form).forEach((v,k)=>{
       if(data[k]!==undefined)data[k]=[].concat(data[k],v);else data[k]=v;
     });
-    console.log('小港 諮詢資料 →',data);
-    /* ===== 這裡串接你的後端 / 表單服務 =====
-       例（Formspree）:
-       fetch('https://formspree.io/f/你的表單ID',{
-         method:'POST',
-         headers:{'Content-Type':'application/json','Accept':'application/json'},
-         body:JSON.stringify(data)
-       });
-       Google Apps Script Web App、Notion API、或自架後端也都可以接在這裡。 */
-    if(window.gtag)gtag('event','generate_lead',{form_name:'inquiry',budget:data.budget||'',timeline:data.timeline||''});
-    pages.forEach(p=>p.hidden=true);
-    done.hidden=false;
-    backBtn.hidden=nextBtn.hidden=submitBtn.hidden=true;
-    if(progress)progress.style.display='none';
-    card.scrollIntoView({behavior:'smooth',block:'start'});
+
+    // 組成給 Web3Forms 的送出內容，key 換成中文標籤、陣列合併成文字
+    const payload={
+      access_key:WEB3FORMS_KEY,
+      subject:'小港製作所｜新的諮詢來訊'+(data.name?'（'+data.name+'）':''),
+      from_name:data.name||'網站訪客'
+    };
+    Object.keys(data).forEach(k=>{
+      const val=Array.isArray(data[k])?data[k].join('、'):data[k];
+      payload[LABELS[k]||k]=val;
+    });
+
+    errBox.hidden=true;
+    const oldTxt=submitBtn.textContent;
+    submitBtn.disabled=true;submitBtn.textContent='送出中…';
+
+    fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify(payload)
+    })
+    .then(r=>r.json())
+    .then(res=>{
+      if(!res.success)throw new Error(res.message||'送出失敗');
+      if(window.gtag)gtag('event','generate_lead',{form_name:'inquiry',budget:data.budget||'',timeline:data.timeline||''});
+      pages.forEach(p=>p.hidden=true);
+      done.hidden=false;
+      backBtn.hidden=nextBtn.hidden=submitBtn.hidden=true;
+      if(progress)progress.style.display='none';
+      card.scrollIntoView({behavior:'smooth',block:'start'});
+    })
+    .catch(err=>{
+      console.error('Web3Forms 送出錯誤 →',err);
+      errBox.textContent='送出時發生了一點問題，請稍後再試一次，或直接用下方的 LINE 與我聯絡。';
+      errBox.hidden=false;
+      submitBtn.disabled=false;submitBtn.textContent=oldTxt;
+      errBox.scrollIntoView({behavior:'smooth',block:'center'});
+    });
   });
 
   /* ===== Calendly 預約彈窗 =====
