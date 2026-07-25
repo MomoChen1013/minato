@@ -442,23 +442,26 @@ section{position:relative;}
 }
 .svc-card h3{font-weight:900;font-size:20px;letter-spacing:.05em;line-height:1.7;margin-bottom:12px;color:#fff;}
 .svc-card p{font-size:13.5px;color:#B9B9B4;font-weight:400;}
-.svc-card .main-flag{
+.svc-card .main-flag,.svc-card .hot-flag{
   position:absolute;top:0;right:0;background:var(--red);color:#fff;
   font-size:11px;font-weight:700;letter-spacing:.24em;padding:7px 18px 7px 22px;
   border-radius:0 0 0 14px;
 }
 .svc-lang{
-  margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;
-  font-size:12.5px;color:#B9B9B4;
+  margin-top:26px;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;
+  font-size:13px;color:#B9B9B4;
 }
+.svc-lang .lang-label{
+  font-size:11px;letter-spacing:.2em;color:#8B8B87;font-weight:600;
+}
+.svc-lang .lang-list{color:#D6D6D2;letter-spacing:.05em;}
 .chip{
   border:1px solid #4A4A4A;border-radius:999px;padding:5px 16px;
   font-size:12px;letter-spacing:.14em;color:#D6D6D2;font-weight:500;
 }
 .chip.on{background:var(--red);border-color:var(--red);color:#fff;font-weight:700;}
 .svc-tags{
-  margin-top:56px;background:var(--dark-2);border:1px solid var(--dark-line);border-radius:16px;
-  padding:28px 30px;text-align:center;
+  margin-top:52px;text-align:center;
 }
 .svc-tags .tt{font-size:12.5px;letter-spacing:.2em;color:#8B8B87;display:block;margin-bottom:16px;font-weight:500;}
 .svc-tags .tag-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
@@ -546,7 +549,7 @@ body{--amb:#FFC93C;--amb-deep:#C7920A;}
 .sec-label::before{background:var(--amb);}
 .sec-label{color:var(--red-deep);}
 .stat .badge{background:var(--amb);color:#1C2B36;}
-.svc-card .main-flag{background:var(--amb);color:#1C2B36;}
+.svc-card .hot-flag{background:var(--amb);color:#1C2B36;}
 .mq-item svg path{fill:var(--amb);}
 .tk-item .d{color:var(--amb-deep);}
 .news .nt{color:var(--amb-deep);}
@@ -1001,12 +1004,12 @@ textarea.q-input{resize:vertical;min-height:92px;}
 
       <div class="svc-grid">
         <div class="svc-card reveal">
-          <span class="main-flag">主打</span>
+          <span class="main-flag">專門</span>
           <span class="en-tag">Cross-border Branding & Web</span>
           <h3>跨境品牌 × 多語網站</h3>
           <p>市場定位、品牌語氣轉譯、UI 設計到 Webflow／前端實作與多語系統建置——交付到正式上線為止。含跨境在地化診斷（小額入門、可折抵專案）。</p>
           <div class="svc-lang">
-            <span class="chip on">中文</span><span class="chip on">日本語</span><span class="chip on">English</span><span class="chip">한국어 等協作對應</span>
+            <span class="lang-label">對應語言</span><span class="lang-list">中文・日本語・English・한국어（協作）</span>
           </div>
         </div>
         <div class="svc-card reveal" style="transition-delay:.08s">
@@ -1015,6 +1018,7 @@ textarea.q-input{resize:vertical;min-height:92px;}
           <p>App／SaaS 進軍日本或海外市場的介面與流程在地化。不只翻字串——從 onboarding 到轉換，每一步都重新對齊當地使用者的直覺，交付可直接進開發的設計。</p>
         </div>
         <div class="svc-card reveal" style="transition-delay:.16s">
+          <span class="hot-flag">熱門</span>
           <span class="en-tag">Showcase Websites</span>
           <h3>展示型網頁（NGO・小品牌・婚禮・活動）</h3>
           <p>為 NGO、用心經營的小品牌，以及婚禮、活動等重要時刻，做有溫度的展示網頁——多語、互動查詢、線上金流、動態敘事都可以。你們重要的訊息，我幫你好好說出去。</p>
@@ -1029,8 +1033,9 @@ textarea.q-input{resize:vertical;min-height:92px;}
       <div class="svc-tags reveal">
         <span class="tt">服務範圍一覽</span>
         <div class="tag-row">
-          <span class="chip">UX 研究・流程</span><span class="chip">UI 設計</span>
-          <span class="chip">多語網站</span><span class="chip">Webflow 開發</span>
+          <span class="chip">UX 研究・流程</span><span class="chip">UI/UX 設計</span>
+          <span class="chip">多語網站</span><span class="chip">全日文網站</span>
+          <span class="chip">Webflow 設計</span><span class="chip">Webflow 開發</span><span class="chip">Framer 設計</span>
           <span class="chip">產品在地化</span><span class="chip">在地化診斷</span><span class="chip">流程數位化</span>
           <span class="chip">展示型網頁</span>
         </div>
