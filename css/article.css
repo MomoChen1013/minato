@@ -127,7 +127,7 @@ nav .cta:hover{background:var(--red-deep);color:#fff;transform:translateY(-2px);
 .tldr li::before{content:"→";position:absolute;left:0;color:var(--red);font-weight:700;}
 
 /* ========== 目次（sticky TOC） ========== */
-.toc{position:static;margin-bottom:40px}
+.toc{position:sticky;top:110px;margin-bottom:40px}
 @media(max-width:920px){
   .toc{position:static;margin-bottom:40px;border:1px solid var(--line);border-radius:14px;padding:22px 24px;}
 }
