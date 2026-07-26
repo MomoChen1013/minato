@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://minato.3udesign.website/sitemap-index.xml

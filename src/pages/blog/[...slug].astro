@@ -1,0 +1,29 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('blog')).filter((p) => !p.data.draft);
+  return posts.map((post) => {
+    // 相關文章：同分類優先，其次依日期新→舊，取 3 篇
+    const others = posts.filter((p) => p.id !== post.id);
+    const related = [
+      ...others.filter((p) => p.data.category === post.data.category),
+      ...others.filter((p) => p.data.category !== post.data.category),
+    ]
+      .sort((a, b) => +b.data.date - +a.data.date)
+      .slice(0, 3);
+    return { params: { slug: post.id }, props: { post, related } };
+  });
+}
+
+const { post, related } = Astro.props;
+const { Content, headings } = await render(post);
+
+// 閱讀時間：優先用 frontmatter，否則以中文字元數估算（約 450 字/分）
+const chars = post.body?.replace(/\s/g, '').length ?? 0;
+const readingTime = post.data.readingTime ?? `${Math.max(1, Math.round(chars / 450))} 分鐘`;
+---
+<ArticleLayout post={post} headings={headings} readingTime={readingTime} related={related}>
+  <Content />
+</ArticleLayout>
