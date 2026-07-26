@@ -107,8 +107,9 @@ nav .cta:hover{background:var(--red-deep);color:#fff;transform:translateY(-2px);
 }
 .card.c2 .thumb{background:linear-gradient(120deg,var(--dark) 0%,var(--red) 130%);}
 .card.c3 .thumb{background:linear-gradient(120deg,var(--red-deep) 0%,var(--amb) 150%);}
+.card .thumb .thumb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .card .thumb .rc-cat{
-  position:absolute;left:16px;top:16px;
+  position:absolute;left:16px;top:16px;z-index:1;
   background:rgba(255,255,255,.92);color:var(--red-deep);
   font-family:var(--en);font-weight:700;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
   padding:6px 12px;border-radius:999px;
