@@ -1,0 +1,35 @@
+/* ============================================================
+   共用頁首樣式 header.css
+   首頁／部落格列表／文章內頁三處共用，避免各頁 CSS 各自複製後走鐘。
+   僅使用 CSS 變數（--red、--ink、--line…），由各頁自己的 :root 供給，
+   因此不同頁面的配色仍會各自解析，樣式結構則保持一致。
+   使用方式：於各頁 <head> 內、頁面專用 CSS 之前引用：
+     <link rel="stylesheet" href="/css/header.css">
+   ============================================================ */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:80;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px clamp(18px,3.5vw,36px);
+  background:rgba(255,255,255,0);transition:background .35s,box-shadow .35s,transform .35s;
+}
+header.scrolled{background:rgba(253,254,255,.95);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);min-width:0;}
+.logo .nm{font-weight:900;font-size:15.5px;letter-spacing:.1em;}
+.logo .nm small{display:block;font-family:var(--en);font-weight:500;font-size:10px;letter-spacing:.22em;color:var(--ink-soft);line-height:1.2;}
+nav{display:flex;align-items:center;gap:26px;}
+nav a{font-size:13.5px;font-weight:500;letter-spacing:.1em;color:var(--ink);text-decoration:none;transition:color .25s;}
+nav a:hover{color:var(--red);}
+nav a.on{color:var(--red);}
+nav .cta{
+  background:var(--red);color:#fff;font-weight:700;white-space:nowrap;flex-shrink:0;
+  padding:11px 24px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;
+  transition:background .25s,transform .3s;
+}
+nav .cta:hover{background:var(--red-deep);color:#fff;transform:translateY(-2px);}
+@media(max-width:760px){nav a:not(.cta){display:none;}}
+/* 手機：標語限制寬度，按鈕一行寫完（省略箭頭） */
+@media(max-width:520px){
+  .logo .nm small{display:block;max-width:15em;white-space:normal;}
+  nav .cta{padding:10px 18px;}
+  nav .cta .cta-ar{display:none;}
+}
