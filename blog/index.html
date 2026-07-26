@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>部落格｜台日跨境設計與在地化筆記｜小港製作所 Minato Studio</title>
+<meta name="description" content="小港製作所的跨境筆記：把台日市場、多語系網站、品牌在地化與 UX 設計的實戰經驗，整理成可以照著做的文章。從進軍日本前的準備，到上線後的細節優化。">
+<meta name="keywords" content="台日跨境設計,日文網站,在地化,多語系網站,品牌進軍日本,UX,localization,部落格">
+<meta name="author" content="小港製作所 Minato Studio">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<link rel="canonical" href="https://minato.3udesign.website/blog/">
+
+<!-- favicon（沿用首頁品牌港灣標誌 inline SVG） -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2048%2048'%3E%3Crect%20width%3D'48'%20height%3D'48'%20rx%3D'11'%20fill%3D'%232C7CB0'%2F%3E%3Cg%20stroke%3D'%23fff'%20stroke-width%3D'2.4'%20stroke-linecap%3D'round'%20stroke-linejoin%3D'round'%20fill%3D'none'%3E%3Cpath%20d%3D'M20%2033%20L21.5%2017%20L28.5%2017%20L30%2033'%2F%3E%3Cpath%20d%3D'M20.8%2022.5%20L29.2%2022.5%20M20.4%2028%20L29.6%2028'%2F%3E%3Cpath%20d%3D'M11%2037%20Q15.5%2034%2020%2037%20T29%2037%20T38%2037'%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D'25'%20cy%3D'11'%20r%3D'2'%20fill%3D'%23FFC93C'%2F%3E%3C%2Fsvg%3E">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="小港製作所 Minato Studio">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="部落格｜台日跨境設計與在地化筆記">
+<meta property="og:description" content="把台日市場、多語系網站、品牌在地化與 UX 設計的實戰經驗，整理成可以照著做的文章。">
+<meta property="og:url" content="https://minato.3udesign.website/blog/">
+<meta property="og:image" content="https://minato.3udesign.website/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="部落格｜台日跨境設計與在地化筆記">
+<meta name="twitter:description" content="台日跨境設計、多語系網站與品牌在地化的實戰筆記。">
+<meta name="twitter:image" content="https://minato.3udesign.website/og-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Archivo:ital,wght@0,500;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+<style>
+:root,body{
+  --white:#FDFEFF;
+  --paper:#F2F8FC;
+  --ink:#1C2B36;
+  --ink-soft:#5D6E7B;
+  --red:#2C7CB0;
+  --red-deep:#22698F;
+  --dark:#16303F;
+  --dark-2:#1E3D50;
+  --dark-line:#31556C;
+  --line:#DFEAF2;
+  --acc-sh:rgba(61,154,209,.32);
+  --amb:#E8A93C;
+  --amb-deep:#B9820F;
+  --sans:"Noto Sans TC","Zen Kaku Gothic New",sans-serif;
+  --en:"Archivo",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--white);color:var(--ink);
+  font-family:var(--sans);line-height:1.9;letter-spacing:.04em;
+  overflow-x:hidden;
+}
+::selection{background:var(--red);color:#fff;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,48px);}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+
+/* ========== header ========== */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:80;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px clamp(18px,3.5vw,36px);
+  background:rgba(255,255,255,0);transition:background .35s,box-shadow .35s;
+}
+header.scrolled{background:rgba(253,254,255,.95);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);}
+.logo .nm{font-weight:900;font-size:15.5px;letter-spacing:.1em;}
+.logo .nm small{display:block;font-family:var(--en);font-weight:500;font-size:10px;letter-spacing:.22em;color:var(--ink-soft);line-height:1.2;}
+nav{display:flex;align-items:center;gap:26px;}
+nav a{font-size:13.5px;font-weight:500;letter-spacing:.1em;color:var(--ink);text-decoration:none;transition:color .25s;}
+nav a:hover{color:var(--red);}
+nav a.on{color:var(--red);}
+nav .cta{
+  background:var(--red);color:#fff;font-weight:700;
+  padding:11px 24px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;
+  transition:background .25s,transform .3s;
+}
+nav .cta:hover{background:var(--red-deep);color:#fff;transform:translateY(-2px);}
+@media(max-width:760px){nav a:not(.cta){display:none;}}
+
+/* ========== deco ========== */
+.deco{position:absolute;pointer-events:none;z-index:0;color:#AECBDE;}
+.deco path,.deco circle,.deco line{
+  fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;filter:url(#pencil);
+}
+.deco .amb{color:#EAC27C;}
+
+/* ========== list hero ========== */
+.l-hero{position:relative;padding:150px 0 30px;overflow:hidden;background:var(--white);}
+.deco-lhero{top:80px;right:5%;width:180px;height:110px;opacity:.7;}
+@media(max-width:760px){.deco-lhero{display:none;}}
+.crumb{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  font-size:12px;letter-spacing:.1em;color:var(--ink-soft);margin-bottom:24px;
+}
+.crumb a{text-decoration:none;color:var(--ink-soft);transition:color .2s;}
+.crumb a:hover{color:var(--red);}
+.crumb .sep{color:var(--line);}
+.l-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;
+  font-family:var(--en);font-weight:700;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--red-deep);
+}
+.l-eyebrow::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--amb);}
+.l-hero h1{font-weight:900;font-size:clamp(30px,5.4vw,52px);line-height:1.4;letter-spacing:.03em;max-width:16em;}
+.l-hero h1 .hl{color:var(--red);}
+.l-hero .sub{margin-top:22px;max-width:34em;font-size:15.5px;color:var(--ink-soft);line-height:2;}
+
+/* ========== category filter ========== */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px;}
+.filters button{
+  font-family:inherit;font-size:12.5px;letter-spacing:.08em;color:var(--ink-soft);
+  background:var(--white);border:1px solid var(--line);border-radius:999px;padding:8px 18px;cursor:pointer;
+  transition:color .2s,border-color .2s,background .2s;
+}
+.filters button:hover{color:var(--red);border-color:var(--red);}
+.filters button.on{background:var(--red);border-color:var(--red);color:#fff;}
+
+/* ========== post grid ========== */
+.l-body{padding:48px 0 100px;background:var(--white);}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:620px){.grid{grid-template-columns:1fr;}}
+
+.card{
+  display:flex;flex-direction:column;text-decoration:none;color:var(--ink);
+  border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--white);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s;
+}
+.card:hover{transform:translateY(-6px);border-color:var(--red);box-shadow:0 18px 40px rgba(28,43,54,.08);}
+.card .thumb{
+  aspect-ratio:16/10;
+  background:linear-gradient(120deg,var(--red) 0%,color-mix(in srgb,var(--red),white 42%) 55%,var(--amb) 135%);
+  position:relative;
+}
+.card.c2 .thumb{background:linear-gradient(120deg,var(--dark) 0%,var(--red) 130%);}
+.card.c3 .thumb{background:linear-gradient(120deg,var(--red-deep) 0%,var(--amb) 150%);}
+.card .thumb .rc-cat{
+  position:absolute;left:16px;top:16px;
+  background:rgba(255,255,255,.92);color:var(--red-deep);
+  font-family:var(--en);font-weight:700;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  padding:6px 12px;border-radius:999px;
+}
+.card .body{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1;}
+.card .meta{font-size:11.5px;letter-spacing:.08em;color:var(--ink-soft);display:flex;gap:12px;align-items:center;margin-bottom:12px;}
+.card .meta .dot{width:3px;height:3px;border-radius:50%;background:var(--line);}
+.card h2{font-weight:900;font-size:18px;line-height:1.6;letter-spacing:.03em;margin-bottom:10px;}
+.card p{font-size:13.5px;color:var(--ink-soft);line-height:1.9;}
+.card .go{margin-top:auto;padding-top:16px;font-size:12.5px;letter-spacing:.14em;color:var(--red-deep);font-weight:700;}
+
+/* 即將推出（尚未發佈，非連結） */
+.card.soon{opacity:.72;cursor:default;}
+.card.soon:hover{transform:none;border-color:var(--line);box-shadow:none;}
+.card.soon .go{color:var(--ink-soft);}
+.card.soon .thumb{filter:saturate(.55);}
+
+.empty{display:none;text-align:center;color:var(--ink-soft);font-size:14px;padding:60px 0;}
+
+/* ========== end CTA ========== */
+.end-cta{background:var(--dark);color:#fff;text-align:center;padding:100px 0;position:relative;overflow:hidden;}
+.deco-endcta{left:0;right:0;bottom:0;width:100%;height:150px;opacity:.4;color:#3E6076;}
+.end-cta .mini{
+  width:96px;height:96px;border-radius:50%;background:var(--red);margin:0 auto 26px;
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:14px;letter-spacing:.08em;line-height:1.6;
+  box-shadow:0 14px 34px var(--acc-sh);position:relative;
+}
+.end-cta .mini::after{content:"";position:absolute;left:6px;bottom:2px;width:18px;height:18px;background:var(--red);border-radius:50% 50% 0 50%;transform:rotate(35deg);z-index:-1;}
+.end-cta h2{font-weight:900;font-size:clamp(23px,3.8vw,36px);letter-spacing:.05em;line-height:1.55;color:#fff;}
+.end-cta h2 .rd{color:var(--amb);}
+.end-cta p{margin:16px auto 36px;color:#B7C7D1;font-size:14.5px;max-width:32em;}
+.btn{
+  display:inline-flex;align-items:center;gap:12px;text-decoration:none;
+  font-weight:700;font-size:14.5px;letter-spacing:.12em;padding:17px 36px;border-radius:999px;
+  background:var(--red);color:#fff;box-shadow:0 10px 26px var(--acc-sh);
+  transition:transform .3s,background .25s;
+}
+.btn:hover{background:var(--red-deep);transform:translateY(-3px);}
+.btn .ar{transition:transform .3s;}
+.btn:hover .ar{transform:translateX(5px);}
+
+footer{background:var(--dark);color:#8FA6B3;padding:34px 0 42px;font-size:12px;letter-spacing:.1em;border-top:1px solid var(--dark-line);}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;}
+footer .en{font-family:var(--en);font-weight:500;letter-spacing:.2em;color:#6E8593;}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1);}
+.reveal.in{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <filter id="pencil" x="-20%" y="-20%" width="140%" height="140%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="4.5"/>
+  </filter>
+</defs></svg>
+
+<header id="hd">
+  <a class="logo" href="/index.html">
+    <svg width="38" height="38" viewBox="0 0 48 48" aria-hidden="true">
+      <circle cx="24" cy="24" r="21.5" fill="none" stroke="#1C2B36" stroke-width="2.4"/>
+      <g stroke="#1C2B36" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <path d="M26 31 L27.5 15.5 L33.5 15.5 L35 31"/>
+        <path d="M26.6 20.5 L34.4 20.5 M26.2 25.5 L34.8 25.5"/>
+        <path d="M28.5 15.5 L28.5 11.5 L32.5 11.5 L32.5 15.5"/>
+        <path d="M10 34 Q15 31 20 34 T30 34 T40 34" stroke-width="2"/>
+        <path d="M12 27.5 Q14.5 23 17.5 27.5 Z" fill="#1C2B36" stroke="none"/>
+        <path d="M11 29.5 L18.8 29.5" stroke-width="2"/>
+      </g>
+      <g stroke="#FFC93C" stroke-width="2.2" stroke-linecap="round">
+        <path d="M27 9 L24 6.2 M30.5 8 L30.5 4.4 M34 9 L37 6.2" fill="none"/>
+        <circle cx="30.5" cy="13.5" r="1.4" fill="#FFC93C" stroke="none"/>
+      </g>
+    </svg>
+    <span class="nm">小港製作所<small>MINATO STUDIO — CROSS-BORDER DESIGN</small></span>
+  </a>
+  <nav>
+    <a href="/index.html#services">服務內容</a>
+    <a href="/index.html#works">實戰案例</a>
+    <a href="/blog/" class="on">部落格</a>
+    <a class="cta" href="/index.html#inquiry">諮詢洽談 →</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ===== hero ===== -->
+  <section class="l-hero">
+    <svg class="deco deco-lhero" viewBox="0 0 180 110" aria-hidden="true">
+      <path d="M20 40 Q30 30 40 40 M40 40 Q50 30 60 40"/>
+      <path d="M96 24 Q104 16 112 24 M112 24 Q120 16 128 24" opacity=".7"/>
+      <circle cx="150" cy="66" r="3" class="amb"/>
+      <path d="M10 92 Q34 82 58 92 T106 92 T160 92" opacity=".5"/>
+    </svg>
+    <div class="wrap">
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="/index.html">首頁</a><span class="sep">/</span>
+        <span>部落格</span>
+      </nav>
+      <span class="l-eyebrow">Cross-border Journal</span>
+      <h1>跨境的路上，<span class="hl">我們把踩過的坑寫下來</span>。</h1>
+      <p class="sub">台日市場、多語系網站、品牌在地化與 UX 設計——把實戰現場的觀察，整理成可以照著做的筆記。給正準備出海、或已經在海上的你。</p>
+
+      <div class="filters" role="tablist" aria-label="文章分類篩選">
+        <button class="on" data-cat="all" aria-pressed="true">全部</button>
+        <button data-cat="localization" aria-pressed="false">跨境在地化</button>
+        <button data-cat="market" aria-pressed="false">日本市場</button>
+        <button data-cat="guide" aria-pressed="false">實作指南</button>
+        <button data-cat="case" aria-pressed="false">案例</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== post grid ===== -->
+  <section class="l-body">
+    <div class="wrap">
+      <div class="grid" id="grid">
+
+        <!-- 已發佈文章 -->
+        <a class="card reveal" href="/blog/japan-localization-not-translation" data-cat="localization">
+          <span class="thumb"><span class="rc-cat">Localization</span></span>
+          <span class="body">
+            <span class="meta"><time datetime="2026-07-26">2026.07.26</time><span class="dot"></span><span>7 分鐘</span></span>
+            <h2>台灣品牌的日文網站，為什麼日本人一看就「出戲」？</h2>
+            <p>翻對了字，感覺卻全錯——用 5 個檢查點，自我診斷日文網站的違和感。</p>
+            <span class="go">閱讀文章 →</span>
+          </span>
+        </a>
+
+        <!-- 尚未發佈：以「即將推出」佔位，發佈後把 div.card.soon 換成 <a class="card" href="/blog/slug"> -->
+        <div class="card soon c2 reveal" data-cat="guide" aria-disabled="true">
+          <span class="thumb"><span class="rc-cat">Guide</span></span>
+          <span class="body">
+            <span class="meta"><span>即將推出</span></span>
+            <h2>婚禮網站要準備什麼？從邀請到 RSVP 的完整清單</h2>
+            <p>自己做婚禮網站前，先看這份不踩雷的規劃指南。</p>
+            <span class="go">敬請期待</span>
+          </span>
+        </div>
+
+        <div class="card soon c3 reveal" data-cat="market" aria-disabled="true">
+          <span class="thumb"><span class="rc-cat">Market</span></span>
+          <span class="body">
+            <span class="meta"><span>即將推出</span></span>
+            <h2>在日本接案，為什麼「紹介」比廣告更有用？</h2>
+            <p>日本市場的信任機制，和你想的不一樣。</p>
+            <span class="go">敬請期待</span>
+          </span>
+        </div>
+
+        <div class="card soon reveal" data-cat="case" aria-disabled="true">
+          <span class="thumb"><span class="rc-cat">Case</span></span>
+          <span class="body">
+            <span class="meta"><span>即將推出</span></span>
+            <h2>使命型組織的網站，怎麼把訊息好好說出去</h2>
+            <p>從公益專案談 NGO 的數位化與資訊架構。</p>
+            <span class="go">敬請期待</span>
+          </span>
+        </div>
+
+        <div class="card soon c2 reveal" data-cat="localization" aria-disabled="true">
+          <span class="thumb"><span class="rc-cat">Localization</span></span>
+          <span class="body">
+            <span class="meta"><span>即將推出</span></span>
+            <h2>多語系網站的 URL 結構：/ja、子網域還是獨立網域？</h2>
+            <p>hreflang 怎麼設，才不會讓 Google 搞混你的語言版本。</p>
+            <span class="go">敬請期待</span>
+          </span>
+        </div>
+
+        <div class="card soon c3 reveal" data-cat="market" aria-disabled="true">
+          <span class="thumb"><span class="rc-cat">Market</span></span>
+          <span class="body">
+            <span class="meta"><span>即將推出</span></span>
+            <h2>特定商取引法怎麼標？日本電商上線前的法定資訊清單</h2>
+            <p>少一項就可能被平台下架——一次把該標的都標齊。</p>
+            <span class="go">敬請期待</span>
+          </span>
+        </div>
+
+      </div>
+      <p class="empty" id="empty">這個分類目前還在醞釀中，先看看其他文章吧。</p>
+    </div>
+  </section>
+
+  <!-- ===== end CTA ===== -->
+  <section class="end-cta">
+    <svg class="deco deco-endcta" viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-20 95 Q70 80 160 95 T340 95 T520 95 T700 95 T880 95 T1060 95 T1240 95 T1460 95" opacity=".8"/>
+      <path d="M-20 120 Q80 106 180 120 T380 120 T580 120 T780 120 T980 120 T1180 120 T1460 120" opacity=".45"/>
+    </svg>
+    <div class="wrap">
+      <div class="mini">聊聊<br>吧。</div>
+      <h2>有想問的，<span class="rd">不用等文章寫完</span>。</h2>
+      <p>正準備進日本、或卡在某個環節？先從一場免費的 20 分鐘對談開始，我們會在兩個工作天內回覆。</p>
+      <a class="btn" href="/index.html#inquiry">預約免費對談 <span class="ar">→</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 小港製作所 Minato Studio</span>
+    <span class="en">EVERY VOYAGE BEGINS AT A HARBOR.</span>
+  </div>
+</footer>
+
+<!-- ================= SEO：結構化資料（JSON-LD） ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Blog",
+      "name": "小港製作所 Minato Studio 部落格",
+      "description": "台日跨境設計、多語系網站與品牌在地化的實戰筆記。",
+      "url": "https://minato.3udesign.website/blog/",
+      "inLanguage": "zh-Hant",
+      "publisher": {
+        "@type": "Organization",
+        "name": "小港製作所 Minato Studio",
+        "logo": { "@type": "ImageObject", "url": "https://minato.3udesign.website/logo.png" }
+      },
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "台灣品牌的日文網站，為什麼日本人一看就「出戲」？",
+          "url": "https://minato.3udesign.website/blog/japan-localization-not-translation",
+          "datePublished": "2026-07-26T09:00:00+09:00",
+          "dateModified": "2026-07-26T09:00:00+09:00",
+          "author": { "@type": "Organization", "name": "小港製作所 Minato Studio" }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://minato.3udesign.website/" },
+        { "@type": "ListItem", "position": 2, "name": "部落格", "item": "https://minato.3udesign.website/blog/" }
+      ]
+    }
+  ]
+}
+</script>
+
+<script>
+// header bg on scroll
+const hd=document.getElementById('hd');
+addEventListener('scroll',()=>{hd.classList.toggle('scrolled',scrollY>40)},{passive:true});
+
+// reveal
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// category filter
+const btns=[...document.querySelectorAll('.filters button')];
+const cards=[...document.querySelectorAll('#grid .card')];
+const empty=document.getElementById('empty');
+btns.forEach(b=>b.addEventListener('click',()=>{
+  const cat=b.dataset.cat;
+  btns.forEach(x=>{const on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on);});
+  let shown=0;
+  cards.forEach(c=>{
+    const hit=cat==='all'||c.dataset.cat===cat;
+    c.style.display=hit?'':'none';
+    if(hit)shown++;
+  });
+  empty.style.display=shown?'none':'block';
+}));
+</script>
+</body>
+</html>
