@@ -101,14 +101,6 @@ nav .cta:hover{background:var(--red-deep);color:#fff;transform:translateY(-2px);
   display:flex;align-items:flex-end;padding:20px 26px;
   font-size:11px;letter-spacing:.24em;color:rgba(255,255,255,.85);font-weight:500;
 }
-/* 主視覺實際圖片（放上圖檔後使用；尺寸與 lead-strip 對齊）
-   背景漸層作為圖檔尚未就位時的優雅退場 */
-.a-hero .lead-img{
-  margin-top:40px;display:block;width:100%;height:clamp(160px,32vw,320px);
-  object-fit:cover;border-radius:16px;box-shadow:0 18px 44px var(--acc-sh);
-  background:linear-gradient(120deg,var(--red) 0%,color-mix(in srgb,var(--red),white 40%) 55%,var(--amb) 130%);
-}
-
 /* ========== body layout：文＋側欄目次 ========== */
 .a-body-wrap{padding:60px 0 30px;background:var(--white);position:relative;}
 .a-grid{    
