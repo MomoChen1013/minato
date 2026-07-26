@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ========================================================= -->
+<!-- ⬇⬇⬇ 每篇文章要替換的欄位，都集中在這裡 ⬇⬇⬇                 -->
+<!-- 1) <title> 與 og:title：控制在 30 字內，含關鍵字            -->
+<!-- 2) meta description / og:description：120–155 字，含關鍵字   -->
+<!-- 3) 所有 URL（canonical / og:url / 圖片 / JSON-LD @id）        -->
+<!-- 4) 發佈日 datePublished / 更新日 dateModified              -->
+<!-- 5) FAQ 問答（可增減）— 記得可見內容與下方 JSON-LD 兩邊同步   -->
+<!-- ========================================================= -->
+
+<title>網站很漂亮，為什麼卻沒有人詢問？｜小港製作所</title>
+<meta name="description" content="網站漂亮卻沒詢問，通常不是設計不夠美，而是沒把「下一步」變簡單。更根本的問題是：你有沒有真正想清楚，你的客戶是誰。先看懂客戶，設計要怎麼改答案自己就會浮現。">
+<meta name="keywords" content="網站沒有詢問,網站轉換率,UX 設計,網站改版,CTA,客戶輪廓,決策路徑">
+<meta name="author" content="小港製作所 Minato Studio">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<!-- 正式網址（canonical）：這篇文章的最終網址 -->
+<link rel="canonical" href="https://minato.3udesign.website/blog/beautiful-website-no-inquiry">
+
+<!-- favicon（品牌港灣標誌，圖檔置於 /src） -->
+<link rel="icon" type="image/svg+xml" href="/src/favicon.svg">
+
+<!-- Open Graph（Facebook / LINE / Threads 分享卡） -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="小港製作所 Minato Studio">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="網站很漂亮，為什麼卻沒有人詢問？">
+<meta property="og:description" content="漂亮解決第一印象，詢問來自清楚的引導。更根本的是：你有沒有真正想清楚，你的客戶是誰。">
+<meta property="og:url" content="https://minato.3udesign.website/blog/beautiful-website-no-inquiry">
+<meta property="og:image" content="https://minato.3udesign.website/src/og/beautiful-website-no-inquiry.jpg">
+<meta property="article:published_time" content="2026-07-26T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-07-26T09:00:00+09:00">
+<meta property="article:author" content="小港製作所 Minato Studio">
+<meta property="article:section" content="UX 與轉換">
+
+<!-- Twitter / X 卡片 -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="網站很漂亮，為什麼卻沒有人詢問？">
+<meta name="twitter:description" content="漂亮 ≠ 好用。詢問來自引導，不是視覺——先看懂客戶，再改造網站。">
+<meta name="twitter:image" content="https://minato.3udesign.website/src/og/beautiful-website-no-inquiry.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Archivo:ital,wght@0,500;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/article.css">
+</head>
+<body>
+
+<div class="progress" id="prog"></div>
+
+<!-- pencil wobble filter -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <filter id="pencil" x="-20%" y="-20%" width="140%" height="140%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="4.5"/>
+  </filter>
+</defs></svg>
+
+<!-- 共用頁首（header 由 /js/include.js 從 /partials/header.html 注入） -->
+<div id="site-header"></div>
+
+<!-- ================= ARTICLE ================= -->
+<main>
+<article>
+
+  <!-- ===== hero ===== -->
+  <section class="a-hero">
+    <svg class="deco deco-ahero" viewBox="0 0 180 110" aria-hidden="true">
+      <path d="M20 40 Q30 30 40 40 M40 40 Q50 30 60 40"/>
+      <path d="M96 24 Q104 16 112 24 M112 24 Q120 16 128 24" opacity=".7"/>
+      <circle cx="150" cy="66" r="3" class="amb"/>
+      <path d="M10 92 Q34 82 58 92 T106 92 T160 92" opacity=".5"/>
+    </svg>
+    <div class="wrap">
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="/index.html">首頁</a><span class="sep">/</span>
+        <a href="/blog/">部落格</a><span class="sep">/</span>
+        <span>漂亮 ≠ 有詢問</span>
+      </nav>
+
+      <span class="a-cat">UX &amp; Conversion</span>
+      <h1>網站很漂亮，<br>為什麼卻<span class="hl">沒有人詢問</span>？</h1>
+
+      <div class="a-meta">
+        <span class="who"><span class="av">港</span>小港製作所 Minato Studio</span>
+        <span class="dot"></span>
+        <time datetime="2026-07-26">2026 年 7 月 26 日</time>
+        <span class="dot"></span>
+        <span>閱讀約 6 分鐘</span>
+        <span class="dot"></span>
+        <span>UX 與轉換</span>
+      </div>
+
+      <!-- 主視覺：可換成 <img src alt> 作品圖，建議 1200×630 -->
+      <div class="lead-strip" role="img" aria-label="漂亮的網站畫面與模糊不清的下一步 CTA 對照的主視覺示意">主視覺圖片（建議 1200×630、含 alt 文字）</div>
+    </div>
+  </section>
+
+  <!-- ===== body ===== -->
+  <div class="a-body-wrap">
+    <div class="wrap a-grid">
+
+      <!-- 目次側欄 -->
+      <aside class="toc" aria-label="目次">
+        <div class="tt">目次 Contents</div>
+        <ol>
+          <li><a href="#s1">為什麼漂亮，卻沒有人詢問</a></li>
+          <li><a href="#s2">先幫你看懂客戶，再改造網站</a></li>
+          <li><a href="#s3">案例：只改動線與說法就有詢問</a></li>
+          <li><a href="#s4">適合哪些品牌</a></li>
+          <li><a href="#s5">先做一次適配對談就好</a></li>
+        </ol>
+      </aside>
+
+      <!-- 內文 -->
+      <div class="article-body">
+
+        <div class="tldr">
+          <div class="tt">重點摘要 TL;DR</div>
+          <ul>
+            <li>漂亮 ≠ 好用。<strong>詢問來自引導，不是視覺。</strong></li>
+            <li>常見死因：CTA 不明確、視覺層級混亂、信任不足、心理負擔太高。</li>
+            <li>但更根本的問題往往是：你有沒有真正想清楚「<strong>你的客戶是誰</strong>」。</li>
+          </ul>
+        </div>
+
+        <p class="lead">因為使用者沒有被帶到「下一步」。漂亮解決的是第一印象，但「詢問」來自清楚的引導。畫面再精緻，如果使用者不知道自己現在該做什麼、也不確定為什麼要選你，他就不會主動聯絡你。換句話說——沒有詢問，通常不是設計不夠美，而是網站沒有替使用者把「決定」變簡單。</p>
+
+        <h2 id="s1">為什麼網站漂亮，卻沒有人詢問？</h2>
+        <p>把常見原因攤開來看，多數不是「不夠美」，而是「沒把下一步鋪清楚」：</p>
+        <ol>
+          <li><strong>CTA 不明確。</strong>使用者找不到下一步，或不知道按下去會發生什麼。</li>
+          <li><strong>視覺層級混亂。</strong>什麼都想強調，結果什麼都不突出，眼睛不知道該看哪。</li>
+          <li><strong>信任不足。</strong>沒有讓人放心把資料交給你的線索（実績、案例、真人、清楚的聯絡方式）。</li>
+          <li><strong>心理負擔太高。</strong>表單太長、承諾太重、沒有輕鬆的退路，讓人還沒行動就先卻步。</li>
+          <li><strong>（最根本）沒有先定義客戶。</strong>網站是為「想像中的所有人」做的，結果對誰都不夠有說服力。</li>
+        </ol>
+        <p>前四點是症狀，第五點才是病根。很多網站不是設計壞掉，而是從一開始就沒想清楚：這個網站到底是在對「誰」說話。</p>
+
+        <blockquote>真正影響詢問的，常常不是配色，而是你有沒有替一個「具體的人」把決定變簡單。</blockquote>
+
+        <h2 id="s2">我的做法：先幫你看懂客戶，再改造網站</h2>
+        <p>在動手改版之前，我會先問你一個問題：</p>
+        <p><strong>你，真正理解你的客戶想要的是什麼嗎？</strong></p>
+        <p>很多人答不上來，或答得很籠統——「就是喜歡我們產品的人」。這不是你的問題，幾乎每個卡住的網站，都是從這裡開始的。</p>
+        <p>所以我不會一開始就談配色、字體或版型。我會先引導你，一步一步把你的客戶描繪清楚：</p>
+        <ul>
+          <li>他是誰？來到你的網站之前，他正卡在什麼問題上？</li>
+          <li>他在猶豫什麼？他需要看到什麼，才會放心把資料交給你？</li>
+          <li>他打開這一頁的時候，心裡真正想問的，是哪一句話？</li>
+        </ul>
+        <p>當這些描繪清楚之後，網站要怎麼改，答案往往會自己浮現：哪個資訊該往前、哪句 CTA 該怎麼寫、哪些內容其實可以拿掉。</p>
+
+        <div class="callout">
+          <span class="tag">我的角色</span>
+          <p>我的角色不是「幫你把網站變漂亮」，而是先幫你看懂你的客戶，再依照這份理解去改造網站。設計，只是最後把這份理解變成畫面而已。</p>
+        </div>
+
+        <h2 id="s3">案例：同一個網站，只改動線與說法就開始有詢問</h2>
+        <ul>
+          <li><strong>問題：</strong>一個網站設計得很好看，流量也不差，但幾乎沒有人送出詢問表單。</li>
+          <li><strong>分析：</strong>一起描繪客戶之後才發現，真正會來的客戶，最在意的是「你有沒有做過我這種案子」——但這件事被藏在網站很後面，首頁全是產品特色，沒有回答他心裡最急的那個問題。</li>
+          <li><strong>做法：</strong>把「相關案例與實績」往前挪、放到使用者猶豫的那一刻；把原本客氣又模糊的 CTA，改成明確、低壓、講清楚「按下去會發生什麼」的說法。</li>
+          <li><strong>結果：</strong>幾乎沒動配色，只重排資訊順序、重寫幾句話，詢問就開始進來了。這也是我最常遇到的情況——問題不在美不美，而在有沒有對準那個人。</li>
+        </ul>
+
+        <h2 id="s4">適合哪些品牌？</h2>
+        <ul>
+          <li>重新設計過網站，但成效一直沒起色。</li>
+          <li>有流量卻幾乎沒有詢問。</li>
+          <li>說不太清楚「我的客戶到底是誰、他在猶豫什麼」。</li>
+        </ul>
+
+        <h2 id="s5">網站沒有詢問，先別急著換配色</h2>
+        <p>多數時候，真正的問題是——你還沒真正想清楚，這個網站是在對誰說話、對方在猶豫什麼。把客戶描繪清楚，設計要怎麼改，答案自己就會浮現。</p>
+        <p><a class="link" href="/index.html#inquiry">先從一場免費的 20 分鐘適配對談開始</a>——我們一起把你的客戶描繪清楚，不合作也完全沒關係。</p>
+
+        <!-- FAQ（GEO：直接對應 FAQPage schema） -->
+        <h2 id="faq">常見問題</h2>
+        <div class="faq">
+          <details>
+            <summary>漂亮的網站為什麼不等於好用？<span class="ic">＋</span></summary>
+            <p>漂亮解決第一印象，好用解決「使用者知不知道下一步該做什麼」。兩者不一定同時發生——很多漂亮的網站，只是沒把行動路徑鋪清楚。</p>
+          </details>
+          <details>
+            <summary>我要先準備好完整的客戶輪廓，才能找你嗎？<span class="ic">＋</span></summary>
+            <p>不用。描繪客戶正是我會引導你一起做的事。你只要帶著你的觀察和疑問來，我會用提問一步步把它問清楚。</p>
+          </details>
+          <details>
+            <summary>一頁只能放一個 CTA 嗎？<span class="ic">＋</span></summary>
+            <p>不一定，但每一頁都該有一個「最主要」的下一步。CTA 太多、彼此競爭，反而會讓人不知道先做哪個。</p>
+          </details>
+          <details>
+            <summary>表單欄位是不是越少越好？<span class="ic">＋</span></summary>
+            <p>方向上是的——每多一個欄位，就是多一分心理負擔。但重點不是「越少」，而是「只留下你這一步真正需要的」。</p>
+          </details>
+          <details>
+            <summary>改造網站一定要整個重做嗎？<span class="ic">＋</span></summary>
+            <p>不一定。很多時候不是重做，而是重排資訊順序、重寫幾句關鍵文案。先看懂客戶，才知道到底要不要大改。</p>
+          </details>
+        </div>
+
+        <!-- 作者盒（E-E-A-T） -->
+        <div class="author-box">
+          <div class="av">港</div>
+          <div class="info">
+            <div class="nm">小港製作所 Minato Studio<small>CROSS-BORDER DESIGN STUDIO ・ 台北 ⇄ 札幌</small></div>
+            <p class="bio">小港製作所是專注台日跨境的設計工作室，服務範圍涵蓋品牌識別、多語系網站與產品 UX 在地化。我們以中・日・英三語進行內容轉譯，從市場定位、資訊架構到上線，提供一條龍的整合交付。相信好的設計始於「先把你的故事聽懂」——不只是把網站變漂亮，而是先看懂你的客戶，再讓每一個決定變簡單。</p>
+            <div class="cred">
+              <span class="chip">UX 與轉換優化</span>
+              <span class="chip">客戶輪廓梳理</span>
+              <span class="chip">資訊架構與 CTA</span>
+              <span class="chip">台北 ⇄ 札幌</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== related ===== -->
+  <section class="related">
+    <svg class="deco deco-rel" viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-20 95 Q70 80 160 95 T340 95 T520 95 T700 95 T880 95 T1060 95 T1240 95 T1460 95" opacity=".8"/>
+      <path d="M-20 120 Q80 106 180 120 T380 120 T580 120 T780 120 T980 120 T1180 120 T1460 120" opacity=".45"/>
+    </svg>
+    <div class="wrap">
+      <span class="sec-label">Read next</span>
+      <h2 class="reveal">接著看這幾篇</h2>
+      <div class="rel-grid">
+        <a class="rel-card reveal" href="/blog/japan-localization-not-translation.html">
+          <span class="rc-cat">Localization</span>
+          <h3>為什麼做真正的多語系網站，不能只靠翻譯社、AI 翻譯？</h3>
+          <p>翻譯讓人看得懂，在地化讓人願意行動——那是設計工作。</p>
+          <span class="go">閱讀文章 →</span>
+        </a>
+        <div class="rel-card soon reveal" style="transition-delay:.08s">
+          <span class="rc-cat">Guide</span>
+          <h3>婚禮網站要準備什麼？從邀請到 RSVP 的完整清單</h3>
+          <p>自己做婚禮網站前，先看這份不踩雷的規劃指南。</p>
+          <span class="go">即將推出</span>
+        </div>
+        <div class="rel-card soon reveal" style="transition-delay:.16s">
+          <span class="rc-cat">Case</span>
+          <h3>使命型組織的網站，怎麼把訊息好好說出去</h3>
+          <p>從公益專案談 NGO 的數位化。</p>
+          <span class="go">即將推出</span>
+        </div>
+      </div>
+      <div class="rel-more reveal">
+        <a href="/blog/">瀏覽所有文章 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== end CTA ===== -->
+  <section class="end-cta">
+    <svg class="deco deco-endcta" viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-20 95 Q70 80 160 95 T340 95 T520 95 T700 95 T880 95 T1060 95 T1240 95 T1460 95" opacity=".8"/>
+      <path d="M-20 120 Q80 106 180 120 T380 120 T580 120 T780 120 T980 120 T1180 120 T1460 120" opacity=".45"/>
+      <g transform="translate(300,40)" class="amb" opacity=".9"><path d="M0 30 Q4 40 15 40 L48 40 Q58 40 62 30 Z"/><path d="M28 30 L28 4 M28 7 Q48 10 48 24 L28 26"/></g>
+    </svg>
+    <div class="wrap">
+      <div class="mini">聊聊<br>吧。</div>
+      <h2>有流量卻<span class="rd">沒有詢問</span>？</h2>
+      <p>先從一場免費的 20 分鐘適配對談開始——我們一起把你的客戶描繪清楚，不合作也完全沒關係。</p>
+      <a class="btn" href="/index.html#inquiry">預約免費對談 <span class="ar">→</span></a>
+    </div>
+  </section>
+
+</article>
+</main>
+
+<!-- 共用頁尾（footer 由 /js/include.js 從 /partials/footer.html 注入） -->
+<div id="site-footer"></div>
+
+<!-- ================= SEO / GEO：結構化資料（JSON-LD） ================= -->
+<!-- 發文時只需同步更新：headline、description、url、image、日期、FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "網站很漂亮，為什麼卻沒有人詢問？",
+      "description": "網站漂亮卻沒詢問，通常不是設計不夠美，而是沒把「下一步」變簡單。更根本的問題是：你有沒有真正想清楚，你的客戶是誰。",
+      "image": "https://minato.3udesign.website/src/og/beautiful-website-no-inquiry.jpg",
+      "datePublished": "2026-07-26T09:00:00+09:00",
+      "dateModified": "2026-07-26T09:00:00+09:00",
+      "inLanguage": "zh-Hant",
+      "articleSection": "UX 與轉換",
+      "keywords": "網站沒有詢問, 網站轉換率, UX 設計, 網站改版, CTA, 客戶輪廓",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://minato.3udesign.website/blog/beautiful-website-no-inquiry"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "小港製作所 Minato Studio",
+        "url": "https://minato.3udesign.website/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "小港製作所 Minato Studio",
+        "logo": { "@type": "ImageObject", "url": "https://minato.3udesign.website/src/logo.png" }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://minato.3udesign.website/" },
+        { "@type": "ListItem", "position": 2, "name": "部落格", "item": "https://minato.3udesign.website/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "漂亮 ≠ 有詢問" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "漂亮的網站為什麼不等於好用？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "漂亮解決第一印象，好用解決使用者知不知道下一步該做什麼。兩者不一定同時發生——很多漂亮的網站，只是沒把行動路徑鋪清楚。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "我要先準備好完整的客戶輪廓，才能找你嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不用。描繪客戶正是我會引導你一起做的事。你只要帶著你的觀察和疑問來，我會用提問一步步把它問清楚。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "一頁只能放一個 CTA 嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不一定，但每一頁都該有一個最主要的下一步。CTA 太多、彼此競爭，反而會讓人不知道先做哪個。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "表單欄位是不是越少越好？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "方向上是的——每多一個欄位，就是多一分心理負擔。但重點不是越少，而是只留下你這一步真正需要的。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "改造網站一定要整個重做嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不一定。很多時候不是重做，而是重排資訊順序、重寫幾句關鍵文案。先看懂客戶，才知道到底要不要大改。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="/js/include.js"></script>
+<script src="/js/article.js"></script>
+</body>
+</html>
