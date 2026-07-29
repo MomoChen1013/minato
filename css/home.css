@@ -622,3 +622,18 @@ textarea.q-input{resize:vertical;min-height:92px;}
   .opt{padding:11px 15px;font-size:var(--fs-ss);}
   .inq-btn{padding:13px 22px;font-size:var(--fs-ss);}
 }
+
+/* ================= 手繪圖示 c-ico ================= */
+/* fill/stroke 系列是可繼承的 presentation property，設在 .c-ico 上會傳進 <use> 的 shadow tree；
+   filter 不可繼承、外部選擇器也選不到 shadow tree，因此筆觸濾鏡與琥珀色寫在 partials/icons.html 內。 */
+.c-ico{
+  width:56px;height:56px;display:block;margin-bottom:18px;
+  color:var(--deco);transition:color .3s ease;
+  fill:none;stroke:currentColor;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.svc-card .c-ico{width:64px;height:64px;}
+/* pain-card 底色是 --red、svc-card 底色是 --dark-2，hover 用 --white 才看得見 */
+.pain-card:hover .c-ico,
+.svc-card:hover .c-ico{color:var(--white);}
+@media(prefers-reduced-motion:reduce){.c-ico{transition:none;}}
