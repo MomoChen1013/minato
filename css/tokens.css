@@ -1,0 +1,87 @@
+/* ============================================================
+   全站設計 token — tokens.css
+   顏色・字型・字級・行高・字距集中在這一份，其餘 CSS 只放版面。
+   使用方式：於每頁 <head> 內「最先」引用，早於 header.css 與頁面 CSS：
+     <link rel="stylesheet" href="/css/tokens.css">
+     <link rel="stylesheet" href="/css/header.css">
+     <link rel="stylesheet" href="/css/{page}.css">
+   ============================================================ */
+:root{
+
+  /* ---------- 顏色：F・空 天空藍 × 琥珀 ---------- */
+  --white:#FDFEFF;
+  --paper:#F2F8FC;
+  --ink:#1C2B36;
+  --ink-soft:#5D6E7B;
+  --red:#2C7CB0;      /* 主色，白字對比 4.55 */
+  --red-deep:#22698F; /* hover 與強調，白字對比 6.0 */
+  --dark:#16303F;
+  --dark-2:#1E3D50;
+  --dark-line:#31556C;
+  --line:#DFEAF2;
+  --acc-sh:rgba(61,154,209,.32);
+  --amb:#E8A93C;
+  --amb-deep:#B9820F;
+
+  /* 深色底上的文字階（原本散落在各檔的字面色，統一命名） */
+  --on-dark:#B7C7D1;      /* 深色區內文 */
+  --on-dark-soft:#8FA6B3; /* 深色區次要文字、footer */
+  --on-dark-dim:#6E8593;  /* 深色區最弱：分隔符、footer 標語 */
+  --deco:#AECBDE;         /* 手繪裝飾線 */
+  --deco-amb:#EAC27C;     /* 手繪裝飾・琥珀 */
+  --deco-dark:#3E6076;    /* 深色區的手繪裝飾 */
+
+  /* ---------- 字型 ---------- */
+  /* 英文・數字：Sora（可變 100–800，無斜體） */
+  --en:"Sora",sans-serif;
+  /* 中日文：預設繁中優先，日文頁由下方 :lang(ja) 覆寫 */
+  --sans:"Noto Sans TC","Zen Kaku Gothic New",sans-serif;
+
+  /* ---------- 字級：內文／UI（固定 px） ---------- */
+  --fs-2xs:11px;  /* eyebrow、英文微標籤、圖說 */
+  --fs-xs:12px;   /* meta、註解、fine print */
+  --fs-ss:13px;   /* 卡片內文、表格內文、導覽列 */
+  --fs-sm:14px;   /* 次級內文、小按鈕、幣別 */
+  --fs-re:15px;   /* 按鈕、區塊說明 sec-sub */
+  --fs-md:16px;   /* 內文基準：文章 p / li、Logo 中文 */
+  --fs-lg:18px;   /* lead 段、卡片大標 */
+
+  /* ---------- 字級：標題（clamp 響應式） ---------- */
+  --fs-t4:clamp(18px,1.8vw,20px);
+  --fs-t3:clamp(21px,2.4vw,26px);
+  --fs-t2:clamp(26px,3.6vw,40px);
+  --fs-t1:clamp(32px,5.4vw,56px);
+
+  /* ---------- 字級：刻意的例外（不納入階梯） ---------- */
+  --fs-display:clamp(44px,8.6vw,104px);   /* 首頁主視覺，品牌招牌 */
+  --fs-watermark:clamp(90px,14vw,180px);  /* 首頁背景浮水印，裝飾 */
+  --fs-num-hero:clamp(42px,5.2vw,60px);   /* 首頁 stat 大數字（Sora 較寬，上限自 66 下修） */
+  --fs-num:34px;                          /* 方案價格數字（Sora 較寬，自 38 下修） */
+
+  /* ---------- 行高 ---------- */
+  --lh-tight:1.4;   /* 大標題 */
+  --lh-snug:1.6;    /* 小標題、卡片標題 */
+  --lh-normal:1.9;  /* body 預設 */
+  --lh-loose:2.05;  /* 文章內文 */
+
+  /* ---------- 字距 ---------- */
+  --ls-body:.04em;   /* body 預設 */
+  --ls-title:.05em;  /* 標題 */
+  --ls-label:.16em;  /* eyebrow／英文標籤（Sora 本身較寬，自 .3em 下修） */
+  --ls-wide:.2em;    /* footer 標語等刻意拉開處 */
+}
+
+/* ============================================================
+   語言分流：同一組 token，依頁面語言換 CJK 字型優先序
+   - 中文頁（html lang="zh-Hant"）：Noto Sans TC 主 → 繁中字形與置中標點
+   - 日文頁（html lang="ja"）：Zen Kaku Gothic New 主 → 日文字形與日式標點
+   也支援頁內局部標記，例如 <span lang="ja">みなと製作所</span>
+   ============================================================ */
+:lang(ja){
+  --sans:"Zen Kaku Gothic New","Noto Sans TC",sans-serif;
+  font-family:var(--sans);
+}
+:lang(zh-Hant),:lang(zh-TW),:lang(zh){
+  --sans:"Noto Sans TC","Zen Kaku Gothic New",sans-serif;
+  font-family:var(--sans);
+}
