@@ -48,6 +48,9 @@
   </filter>
 </defs></svg>
 
+<!-- 手繪圖示 sprite（由 /js/include.js 從 /partials/icons.html 注入） -->
+<div id="site-icons"></div>
+
 <!-- 共用頁首（header 由 /js/include.js 從 /partials/header.html 注入） -->
 <div id="site-header"></div>
 
@@ -149,6 +152,7 @@
 
         <!-- 羅盤 -->
         <article class="plan reveal">
+          <svg class="c-ico" aria-hidden="true"><use href="#ico-compass"/></svg>
           <span class="p-en">Compass</span>
           <h3>羅盤</h3>
           <p class="p-tag">先確定方向，把品牌好好地立在網路上。</p>
@@ -191,6 +195,7 @@
         <!-- 燈塔 -->
         <article class="plan feat reveal" style="transition-delay:.08s">
           <span class="ribbon">最多人選的方案</span>
+          <svg class="c-ico" aria-hidden="true"><use href="#ico-lighthouse"/></svg>
           <span class="p-en">Lighthouse</span>
           <h3>燈塔</h3>
           <p class="p-tag">不只被看見，還要被搜尋到、被記住，並且收得到名單。</p>
@@ -233,6 +238,7 @@
 
         <!-- 出航 -->
         <article class="plan reveal" style="transition-delay:.16s">
+          <svg class="c-ico" aria-hidden="true"><use href="#ico-sail"/></svg>
           <span class="p-en">Set Sail</span>
           <h3>出航</h3>
           <p class="p-tag">讓網站自己會說故事，而且你自己就能養它。</p>

@@ -1,6 +1,6 @@
 /* ============================================================
    共用元件載入器 include.js
-   - 把 /partials/header.html、/partials/footer.html 注入頁面
+   - 把 /partials/header.html、/partials/footer.html、/partials/icons.html 注入頁面
    - 綁定所有頁面共用的行為：頁首捲動變色、目前分頁高亮、reveal 進場動畫
    使用方式：頁面放入 <div id="site-header"></div>、<div id="site-footer"></div>，
    並在 </body> 前載入 <script src="/js/include.js"></script>
@@ -50,6 +50,7 @@
 
   function init() {
     Promise.all([
+      inject('site-icons', '/partials/icons.html'),
       inject('site-header', '/partials/header.html'),
       inject('site-footer', '/partials/footer.html')
     ]).then(() => {
