@@ -1,9 +1,18 @@
 /* 首頁：跑馬燈複製、諮詢表單多步驟流程、Calendly 預約彈窗 */
 
 // duplicate marquee sets for seamless loop
+// 動畫是 translateX(-50%)，所以「單組寬度」必須大於視窗寬度才不會出現空白。
+// 項目變少時單組會不夠長，因此先補到夠寬，最後再整組複製一份。
 ['mqset', 'tkset'].forEach(id => {
   const set = document.getElementById(id);
-  if (set) { set.parentElement.appendChild(set.cloneNode(true)); }
+  if (!set) return;
+  const items = [...set.children];
+  if (!items.length) return;
+  let guard = 0;
+  while (set.scrollWidth < innerWidth && guard++ < 8) {
+    items.forEach(el => set.appendChild(el.cloneNode(true)));
+  }
+  set.parentElement.appendChild(set.cloneNode(true));
 });
 
 /* ============ inquiry form ============ */

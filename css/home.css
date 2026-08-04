@@ -47,16 +47,17 @@ img{max-width:100%;display:block;}
   .hero-band .strip.s3{display:none;}
 }
 .hero-stage{position:relative;z-index:1;}
+/* 標題為單一 <h1>，三行以 <span class="h-line"> 分行（保持語意完整） */
+.hero-h1{
+  font-weight:900;font-size:var(--fs-display);
+  line-height:1.28;letter-spacing:.04em;
+}
 .h-line{
   display:flex;align-items:center;gap:clamp(14px,3vw,34px);
-  margin-bottom:clamp(2px,1vw,10px);
+  margin-bottom:clamp(2px,1vw,10px);white-space:nowrap;
 }
 .h-line.l2{justify-content:flex-end;}
 .h-line.l3{padding-left:clamp(0px,6vw,80px);}
-.h-line h1,.h-line .h1{
-  font-weight:900;font-size:var(--fs-display);
-  line-height:1.28;letter-spacing:.04em;white-space:nowrap;
-}
 .strip{
   height:clamp(38px,6vw,72px);border-radius:10px;flex:0 1 auto;
   min-width:clamp(90px,16vw,230px);
@@ -136,7 +137,7 @@ img{max-width:100%;display:block;}
 
 /* ================= stats dark band ================= */
 .stats{background:var(--dark);color:#fff;padding:96px 0 70px;}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:44px 34px;}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px 34px;}
 @media(max-width:960px){.stats-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:560px){.stats-grid{grid-template-columns:1fr;}}
 .stat{position:relative;padding-top:6px;}
@@ -169,6 +170,10 @@ img{max-width:100%;display:block;}
   color:var(--amb);text-transform:uppercase;
 }
 .testi-head .tz{font-weight:900;font-size:var(--fs-t3);letter-spacing:.08em;color:#fff;}
+.testi-head .tz small{
+  display:block;margin-top:6px;font-weight:400;font-size:var(--fs-xs);
+  letter-spacing:.1em;color:#9C9C98;
+}
 .testi-head .ln{flex:1;height:1px;background:var(--dark-line);}
 .testi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
 @media(max-width:880px){.testi-row{grid-template-columns:1fr;max-width:520px;}}
@@ -291,6 +296,14 @@ section{position:relative;}
 .wl-result b{color:var(--red);font-weight:700;letter-spacing:.08em;}
 .wl-result .wl-time{display:inline-block;}
 .wl-result .wl-time b{color:var(--amb-deep);}
+/* 案例詳細頁尚未上線：卡片維持展示，但不做成假連結 */
+.wl-card.soon{cursor:default;}
+.wl-card.soon:hover{transform:none;border-color:var(--line);box-shadow:none;}
+.wl-result .wl-note{
+  display:inline-block;margin-left:10px;padding:3px 10px;border-radius:999px;
+  background:var(--paper);border:1px dashed var(--line);
+  font-size:var(--fs-2xs);letter-spacing:.1em;color:var(--ink-soft);
+}
 .wl-cta{
   border:1.5px dashed color-mix(in srgb,var(--red),white 45%);border-radius:18px;
   padding:30px 30px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
@@ -310,6 +323,8 @@ section{position:relative;}
 .services .sec-title{color:#fff;}
 .services .sec-sub{color:#B9B9B4;}
 .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:54px;}
+/* 主力服務（多語系網站）橫跨整列，其餘服務並排在下 */
+.svc-card.lead{grid-column:1 / -1;}
 @media(max-width:840px){.svc-grid{grid-template-columns:1fr;}}
 .svc-card{
   background:var(--dark-2);border:1px solid var(--dark-line);border-radius:18px;
@@ -509,13 +524,10 @@ body{--amb:#FFC93C;--amb-deep:#C7920A;}
 .btn:hover .ar{transform:translateX(5px);}
 .contact .fine{margin-top:30px;font-size:var(--fs-xs);letter-spacing:.12em;color:var(--ink-soft);}
 
-footer{background:var(--dark);color:#8B8B87;padding:34px 0 42px;font-size:var(--fs-xs);letter-spacing:.1em;}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;}
-footer .en{font-family:var(--en);font-weight:500;letter-spacing:.2em;color:#6E6E6A;}
+/* 頁尾樣式已抽至共用 /css/header.css（於 <head> 內引用） */
 
 /* ================= inquiry form ================= */
 .inquiry{background:var(--paper);padding:120px 0 130px;position:relative;overflow:hidden;scroll-margin-top:64px;}
-.inquiry #contact{position:absolute;top:0;}
 .inq-head{text-align:center;max-width:44em;margin:0 auto 44px;position:relative;z-index:1;}
 .inq-head .mini-circle{
   width:110px;height:110px;border-radius:50%;background:var(--red);margin:0 auto 30px;
