@@ -1,9 +1,18 @@
 /* 首頁：跑馬燈複製、諮詢表單多步驟流程、Calendly 預約彈窗 */
 
 // duplicate marquee sets for seamless loop
+// 動畫是 translateX(-50%)，所以「單組寬度」必須大於視窗寬度才不會出現空白。
+// 項目變少時單組會不夠長，因此先補到夠寬，最後再整組複製一份。
 ['mqset', 'tkset'].forEach(id => {
   const set = document.getElementById(id);
-  if (set) { set.parentElement.appendChild(set.cloneNode(true)); }
+  if (!set) return;
+  const items = [...set.children];
+  if (!items.length) return;
+  let guard = 0;
+  while (set.scrollWidth < innerWidth && guard++ < 8) {
+    items.forEach(el => set.appendChild(el.cloneNode(true)));
+  }
+  set.parentElement.appendChild(set.cloneNode(true));
 });
 
 /* ============ inquiry form ============ */
@@ -103,7 +112,20 @@
     return ok;
   }
 
-  nextBtn.addEventListener('click', () => { if (validate(cur) && cur < pages.length - 1) show(cur + 1); });
+  // GA4：第一次動到表單時記一次 form_start（診斷書 10.2）
+  let started = false;
+  form.addEventListener('input', () => {
+    if (started) return;
+    started = true;
+    window.track && track('form_start', { form_name: 'inquiry' });
+  }, { once: false });
+
+  nextBtn.addEventListener('click', () => {
+    if (validate(cur) && cur < pages.length - 1) {
+      show(cur + 1);
+      window.track && track('form_step', { form_name: 'inquiry', step: cur + 1 });
+    }
+  });
   backBtn.addEventListener('click', () => { if (cur > 0) show(cur - 1); });
 
   form.addEventListener('input', e => {
@@ -170,6 +192,7 @@
       .then(res => {
         if (!res.success) throw new Error(res.message || '送出失敗');
         if (window.gtag) gtag('event', 'generate_lead', { form_name: 'inquiry', budget: data.budget || '', timeline: data.timeline || '' });
+        window.track && track('form_submit', { form_name: 'inquiry', budget: data.budget || '', timeline: data.timeline || '' });
         pages.forEach(p => p.hidden = true);
         done.hidden = false;
         backBtn.hidden = nextBtn.hidden = submitBtn.hidden = true;
@@ -191,6 +214,7 @@
   if (calBtn) {
     calBtn.addEventListener('click', () => {
       if (window.gtag) gtag('event', 'schedule_click', { source: 'form_done' });
+      window.track && track('calendly_open', { source: 'form_done' });
       if (window.Calendly) {
         Calendly.initPopupWidget({ url: CALENDLY_URL });
       } else {
