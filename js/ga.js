@@ -18,4 +18,44 @@
   window.gtag = function () { dataLayer.push(arguments); };
   gtag('js', new Date());
   gtag('config', GA_ID);
+
+  // 全站共用的送出函式；各頁自訂事件（如 home.js）一律走這裡
+  window.track = function (name, params) {
+    if (typeof gtag === 'function') gtag('event', name, params || {});
+  };
+
+  // ---- 全站共用事件 --------------------------------------------------
+  function bindCommon() {
+    // ① 標了 data-ev 的連結／按鈕（LINE、案例卡等）
+    document.addEventListener('click', function (e) {
+      var el = e.target.closest && e.target.closest('[data-ev]');
+      if (!el) return;
+      track(el.dataset.ev, { label: el.dataset.evLabel || el.textContent.trim().slice(0, 60) });
+    }, true);
+
+    // ② 捲動深度 25/50/75/90，各只送一次
+    var marks = [25, 50, 75, 90], sent = {};
+    function onScroll() {
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - innerHeight;
+      if (max <= 0) return;
+      var pct = (scrollY / max) * 100;
+      marks.forEach(function (m) {
+        if (!sent[m] && pct >= m) { sent[m] = 1; track('scroll_depth', { percent: m }); }
+      });
+      if (sent[90]) removeEventListener('scroll', onScroll);
+    }
+    addEventListener('scroll', onScroll, { passive: true });
+
+    // ③ 進到方案頁 / Demo 頁時各記一次
+    var path = location.pathname;
+    if (path.indexOf('/plan') === 0) track('plan_view');
+    if (path.indexOf('/demo') === 0) track('demo_view');
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bindCommon);
+  } else {
+    bindCommon();
+  }
 })();

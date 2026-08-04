@@ -66,6 +66,13 @@ section{position:relative;}
 .p-hero .rule{width:64px;height:5px;border-radius:99px;background:var(--amb);margin:26px 0 24px;}
 .p-hero .lede{max-width:33em;font-size:var(--fs-re);color:var(--ink-soft);}
 .p-hero .lede b{color:var(--ink);font-weight:700;}
+/* 「這個網站本身就是交付樣本」宣告 */
+.p-hero .self-demo{
+  margin-top:22px;max-width:33em;padding:16px 20px;
+  border-left:3px solid var(--amb);background:var(--paper);border-radius:0 12px 12px 0;
+  font-size:var(--fs-ss);color:var(--ink-soft);line-height:1.95;letter-spacing:.06em;
+}
+.p-hero .self-demo b{color:var(--ink);font-weight:700;}
 .formula{
   margin-top:34px;display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
   background:var(--paper);border:1px solid var(--line);border-radius:16px;

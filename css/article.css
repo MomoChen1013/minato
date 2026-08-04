@@ -255,6 +255,10 @@ a{color:inherit;}
 .btn:hover{background:var(--red-deep);transform:translateY(-3px);}
 .btn .ar{transition:transform .3s;}
 .btn:hover .ar{transform:translateX(5px);}
+/* 結尾雙出口：主要 CTA ＋ LINE 次要出口 */
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-alt{background:transparent;color:var(--ink);border:1.5px solid var(--line);box-shadow:none;}
+.btn-alt:hover{background:var(--ink);color:#fff;border-color:var(--ink);}
 
 /* 頁尾樣式已抽至共用 /css/header.css（於 <head> 內引用） */
 

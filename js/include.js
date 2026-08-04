@@ -12,7 +12,8 @@
     let key = '';
     if (path === '/' || path === '/index.html') key = '';        // 首頁不特別高亮
     else if (path.indexOf('/blog') === 0) key = 'blog';          // 部落格與文章頁
-    else if (path.indexOf('/plan') === 0) key = 'plan';          // 方案與價格頁
+    else if (path.indexOf('/plan') === 0) key = 'plan';          // 服務與方案頁
+    else if (path.indexOf('/about') === 0) key = 'about';        // 關於頁
     const link = key && document.querySelector('#hd nav a[data-nav="' + key + '"]');
     if (link) link.classList.add('on');
   }

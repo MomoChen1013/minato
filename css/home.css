@@ -9,6 +9,7 @@ body{
 }
 ::selection{background:var(--red);color:#fff;}
 .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,48px);}
+.wrap.narrow{max-width:940px;}
 img{max-width:100%;display:block;}
 
 /* 頁首樣式已抽至共用 /css/header.css（於 <head> 內引用） */
@@ -85,6 +86,21 @@ img{max-width:100%;display:block;}
 .news .nt{font-family:var(--en);font-weight:700;letter-spacing:.2em;font-size:var(--fs-2xs);color:var(--red);display:block;}
 .news a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .25s,color .25s;}
 .news a:hover{color:var(--red);border-color:var(--red);}
+/* 首屏事實列：三項可查證事實（診斷書 6.5 ③） */
+.hero-facts{
+  margin-top:clamp(20px,3vw,30px);list-style:none;
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px clamp(16px,2.4vw,28px);
+  font-size:var(--fs-ss);color:var(--ink-soft);letter-spacing:.08em;
+}
+.hero-facts li{display:flex;align-items:center;gap:10px;}
+.hero-facts li+li::before{
+  content:"";width:1px;height:14px;background:var(--line);
+  margin-right:clamp(6px,1.2vw,14px);
+}
+.hero-facts b{color:var(--ink);font-weight:700;}
+/* 首屏雙 CTA（診斷書 6.5 ④） */
+.hero-cta{margin-top:clamp(22px,3vw,32px);display:flex;flex-wrap:wrap;gap:14px;}
+.hero-cta .btn{font-size:var(--fs-ss);padding:15px 30px;}
 
 /* ================= red speech circle ================= */
 .hello{position:relative;padding:40px 0 130px;background:var(--white);}
@@ -137,6 +153,11 @@ img{max-width:100%;display:block;}
 
 /* ================= stats dark band ================= */
 .stats{background:var(--dark);color:#fff;padding:96px 0 70px;}
+.stats .sec-label{color:var(--amb);}
+.why-title{
+  font-weight:900;font-size:var(--fs-t2);letter-spacing:.05em;color:#fff;
+  margin:14px 0 48px;
+}
 .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px 34px;}
 @media(max-width:960px){.stats-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:560px){.stats-grid{grid-template-columns:1fr;}}
@@ -251,20 +272,45 @@ section{position:relative;}
 }
 .pain-card:hover .sol .cir{transform:translateX(4px);}
 
-/* ================= thanks ticker ================= */
-.ticker{
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  background:var(--white);padding:13px 0;overflow:hidden;
+/* ================= problem：換一種語言會壞掉什麼 ================= */
+.problem{background:var(--white);border-top:1px solid var(--line);}
+.problem .sec-sub{max-width:52em;margin-top:20px;}
+.problem .sec-sub b{color:var(--ink);font-weight:700;}
+.tbl-scroll{margin-top:44px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+table.pb-tbl{
+  width:100%;min-width:820px;border-collapse:collapse;
+  font-size:var(--fs-ss);text-align:left;
 }
-.ticker .marquee{animation-duration:26s;}
-.tk-item{
-  display:flex;align-items:center;gap:14px;padding:0 34px;white-space:nowrap;
-  font-size:var(--fs-xs);letter-spacing:.12em;color:var(--red);font-weight:500;
+table.pb-tbl th,table.pb-tbl td{
+  padding:15px 16px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.85;
 }
-.tk-item .d{font-family:var(--en);font-weight:700;color:var(--ink-soft);}
+table.pb-tbl thead th{
+  background:var(--dark);color:#fff;font-weight:700;
+  font-size:var(--fs-xs);letter-spacing:.14em;border-bottom:none;
+}
+table.pb-tbl thead th:first-child{border-radius:12px 0 0 0;}
+table.pb-tbl thead th:last-child{border-radius:0 12px 0 0;}
+table.pb-tbl tbody th{
+  font-weight:700;color:var(--ink);white-space:nowrap;background:var(--paper);
+}
+table.pb-tbl td{color:var(--ink-soft);}
+table.pb-tbl td.jp{color:var(--ink);background:color-mix(in srgb,var(--amb) 8%,transparent);}
+table.pb-tbl td.jp b{color:var(--red-deep);font-weight:700;}
+table.pb-tbl .who{color:var(--ink-soft);font-size:var(--fs-xs);letter-spacing:.06em;}
+table.pb-tbl thead th.who{color:var(--amb);}
+.pb-punch{
+  margin-top:26px;font-size:var(--fs-md);font-weight:700;letter-spacing:.06em;color:var(--ink-soft);
+}
+.pb-punch b{color:var(--red-deep);}
+.problem .pain-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px;}
+@media(max-width:880px){.problem .pain-cards{grid-template-columns:1fr;}}
 
 /* ================= works light (solutions-style) ================= */
 .works-lt{background:var(--paper);border-top:1px solid var(--line);}
+.works-lt .sec-title small{
+  display:block;margin-top:8px;font-size:var(--fs-ss);font-weight:400;
+  letter-spacing:.08em;color:var(--ink-soft);
+}
 .wl-cards{display:flex;flex-direction:column;gap:18px;}
 .wl-card{
   background:var(--white);border:1px solid var(--line);border-radius:18px;
@@ -361,6 +407,11 @@ section{position:relative;}
 }
 .svc-tags .tt{font-size:var(--fs-xs);letter-spacing:.2em;color:#8B8B87;display:block;margin-bottom:16px;font-weight:500;}
 .svc-tags .tag-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+.svc-aside{
+  margin-top:34px;padding:16px 22px;border:1px dashed var(--dark-line);border-radius:14px;
+  font-size:var(--fs-ss);color:var(--on-dark);line-height:1.95;letter-spacing:.06em;
+}
+.svc-aside b{color:#fff;font-weight:700;}
 .svc-cta{margin-top:40px;text-align:center;}
 
 /* ================= process ================= */
@@ -520,9 +571,34 @@ body{--amb:#FFC93C;--amb-deep:#C7920A;}
 .btn-red:hover{background:var(--red-deep);transform:translateY(-3px);}
 .btn-line{background:transparent;color:var(--ink);border:1.5px solid var(--ink);}
 .btn-line:hover{background:var(--ink);color:#fff;transform:translateY(-3px);}
+/* 次要按鈕（外框），與 LINE 按鈕區分開來 */
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line);}
+.btn-ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-3px);}
 .btn .ar{transition:transform .3s;}
 .btn:hover .ar{transform:translateX(5px);}
 .contact .fine{margin-top:30px;font-size:var(--fs-xs);letter-spacing:.12em;color:var(--ink-soft);}
+
+
+/* ================= FAQ（對應 FAQPage schema，內容需一致） ================= */
+.faq-sec{background:var(--paper);border-top:1px solid var(--line);}
+.faq{margin-top:44px;display:flex;flex-direction:column;gap:14px;}
+.faq details{
+  border:1px solid var(--line);border-radius:14px;padding:0 24px;background:var(--white);
+  transition:border-color .25s;
+}
+.faq details[open]{border-color:var(--red);}
+.faq summary{
+  list-style:none;cursor:pointer;padding:20px 0;font-weight:700;font-size:var(--fs-md);letter-spacing:.03em;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary .ic{
+  flex:none;width:26px;height:26px;border-radius:50%;background:var(--red);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:var(--fs-md);transition:transform .25s;
+}
+.faq details[open] summary .ic{transform:rotate(45deg);}
+.faq details p{font-size:var(--fs-re);line-height:1.95;color:var(--ink-soft);padding:0 0 22px;margin:0;}
+.faq details p a{color:var(--red-deep);font-weight:700;}
 
 /* 頁尾樣式已抽至共用 /css/header.css（於 <head> 內引用） */
 

@@ -113,6 +113,10 @@ a{color:inherit;}
 .btn:hover{background:var(--red-deep);transform:translateY(-3px);}
 .btn .ar{transition:transform .3s;}
 .btn:hover .ar{transform:translateX(5px);}
+/* 結尾雙出口：主要 CTA ＋ LINE 次要出口 */
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-alt{background:transparent;color:#fff;border:1.5px solid var(--dark-line);box-shadow:none;}
+.btn-alt:hover{background:#fff;color:var(--dark);border-color:#fff;}
 
 /* 頁尾樣式已抽至共用 /css/header.css（於 <head> 內引用） */
 
