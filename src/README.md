@@ -7,7 +7,9 @@
 | 檔案 | 用途 |
 | --- | --- |
 | `favicon.svg` | 瀏覽器分頁小圖示。三個頁面的 `<link rel="icon">` 都指向這個檔案。 |
-| `logo.svg` | 品牌港灣標誌（向量檔），可用於簡報、名片或其他外部素材。頁首 header 內另有一份 inline SVG（見 `/partials/header.html`）。 |
+| `logo-f.svg` | 完整版 logo（圖 ＋「小港製作所 MINATO DESIGN STUDIO」字），淺色底用。**頁首 header 使用這一份**（見 `/partials/header.html`）。原始比例 438.68 × 128.23。 |
+| `logo-on-dark.svg` | 完整版 logo 的白色版本，深色底用。**深色底的頁尾 footer 使用這一份**（見 `/partials/footer.html`）。比例同 `logo-f.svg`。 |
+| `logo.svg` | 只有圖、沒有文字的品牌港灣標誌（100 × 100），可用於簡報、名片或其他需要方形標記的場合；首頁 JSON-LD 的 `ProfessionalService.logo` 也指向它。 |
 
 ## ⚠️ 待補上的檔案（目前仍缺，放進來即可自動生效）
 
