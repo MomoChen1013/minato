@@ -13,15 +13,15 @@
   --paper:#F2F8FC;
   --ink:#1C2B36;
   --ink-soft:#5D6E7B;
-  --red:#2C7CB0;      /* 主色，白字對比 4.55 */
-  --red-deep:#22698F; /* hover 與強調，白字對比 6.0 */
+  --sea-blue:#2C7CB0;      /* 主色，白字對比 4.55 */
+  --sea-blue-deep:#22698F; /* hover 與強調，白字對比 6.0 */
   --dark:#16303F;
   --dark-2:#1E3D50;
   --dark-line:#31556C;
   --line:#DFEAF2;
   --acc-sh:rgba(61,154,209,.32);
-  --amb:#E8A93C;
-  --amb-deep:#B9820F;
+  --amb:#FFBB44;
+  --amb-deep:#EB9F00;
 
   /* 深色底上的文字階（原本散落在各檔的字面色，統一命名） */
   --on-dark:#B7C7D1;      /* 深色區內文 */
