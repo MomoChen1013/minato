@@ -32,7 +32,7 @@
   padding:28px 26px 26px;
 }
 .ab-card .ab-n{
-  font-family:var(--en);font-weight:700;font-size:var(--fs-ss);color:var(--red);
+  font-family:var(--en);font-weight:700;font-size:var(--fs-ss);color:var(--sea-blue);
   letter-spacing:.16em;display:block;margin-bottom:12px;
 }
 .ab-card h3{font-weight:900;font-size:var(--fs-md);letter-spacing:.08em;margin-bottom:10px;}
@@ -41,7 +41,7 @@
 
 /* ========== 引述區（自問自答／語言來源） ========== */
 .ab-quote{
-  margin-top:44px;background:var(--white);border-left:4px solid var(--red);border-radius:0 16px 16px 0;
+  margin-top:44px;background:var(--white);border-left:4px solid var(--sea-blue);border-radius:0 16px 16px 0;
   padding:30px 32px;box-shadow:0 12px 30px rgba(22,48,63,.05);
 }
 .ab-quote.soft{margin-top:34px;border-left-color:var(--amb);background:var(--paper);box-shadow:none;}
@@ -67,17 +67,17 @@ table.ab-flow thead th:first-child{border-radius:12px 0 0 0;}
 table.ab-flow thead th:last-child{border-radius:0 12px 0 0;}
 table.ab-flow tbody th{font-weight:700;color:var(--ink);white-space:nowrap;}
 table.ab-flow td{color:var(--ink-soft);}
-table.ab-flow td b{color:var(--red-deep);font-weight:700;}
+table.ab-flow td b{color:var(--sea-blue-deep);font-weight:700;}
 table.ab-flow td.me,table.ab-flow td.ai{
   font-weight:700;white-space:nowrap;width:1%;
 }
-table.ab-flow td.me{color:var(--red-deep);}
+table.ab-flow td.me{color:var(--sea-blue-deep);}
 table.ab-flow td.ai{color:var(--amb-deep);}
 .ab-note{
   margin-top:24px;font-size:var(--fs-ss);line-height:1.95;color:var(--ink-soft);letter-spacing:.05em;
 }
 .ab-note b{color:var(--ink);font-weight:700;}
-.ab-note a{color:var(--red-deep);font-weight:700;}
+.ab-note a{color:var(--sea-blue-deep);font-weight:700;}
 
 /* ========== 能力邊界表 ========== */
 table.ab-bd{
@@ -96,11 +96,11 @@ table.ab-bd tbody th{font-weight:500;color:var(--ink-soft);}
 table.ab-bd td{color:var(--ink-soft);}
 table.ab-bd .c{text-align:center;width:1%;white-space:nowrap;font-weight:700;}
 table.ab-bd .no{color:var(--ink-soft);opacity:.6;}
-table.ab-bd .ok{color:var(--red);}
+table.ab-bd .ok{color:var(--sea-blue);}
 table.ab-bd tr.yes{background:var(--white);}
 table.ab-bd tr.yes th{color:var(--ink);font-weight:700;}
 table.ab-bd tr.yes td{color:var(--ink);}
-table.ab-bd tr.yes td b{color:var(--red-deep);}
+table.ab-bd tr.yes td b{color:var(--sea-blue-deep);}
 
 /* ========== 故事 ========== */
 .ab-story-body{margin-top:36px;max-width:40em;}
