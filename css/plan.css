@@ -329,8 +329,8 @@ table.ao td.r.off{color:var(--sea-blue-deep);}
   font-weight:700;font-size:var(--fs-re);letter-spacing:.12em;
   padding:17px 36px;border-radius:999px;transition:transform .3s,background .25s,color .25s;
 }
-.btn-red{background:var(--sea-blue);color:#fff;box-shadow:0 10px 26px var(--acc-sh);}
-.btn-red:hover{background:var(--sea-blue-deep);transform:translateY(-3px);}
+.btn-primary{background:var(--sea-blue);color:#fff;box-shadow:0 10px 26px var(--acc-sh);}
+.btn-primary:hover{background:var(--sea-blue-deep);transform:translateY(-3px);}
 .btn-line{background:transparent;color:var(--ink);border:1.5px solid var(--ink);}
 .btn-line:hover{background:var(--ink);color:#fff;transform:translateY(-3px);}
 .btn .ar{transition:transform .3s;}
