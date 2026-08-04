@@ -7,31 +7,24 @@
 | 檔案 | 用途 |
 | --- | --- |
 | `favicon.svg` | 瀏覽器分頁小圖示。全站 7 個頁面的 `<link rel="icon">` 都指向這個檔案。 |
-| `logo500.png` | 501 × 501 白底方形 logo（圖＋中英文字）。目前身兼三個用途：**① apple-touch-icon**（iOS 加到主畫面的圖示，全站 7 頁）、**② JSON-LD 的 `logo`**（首頁 `ProfessionalService` ＋ 部落格列表頁與兩篇文章的 `Organization`，共 4 處）、**③ 暫代的社群分享預覽圖**（見下方待補說明）。 |
+| `OG-index.png` | 1200 × 630 白底社群分享預覽圖（Open Graph / Twitter Card）。**首頁／方案／關於／部落格列表／隱私權 5 頁共用這一張**。 |
+| `logo500.png` | 501 × 501 白底方形 logo（圖＋中英文字）。兩個用途：**① apple-touch-icon**（iOS 加到主畫面的圖示，全站 7 頁）、**② JSON-LD 的 `logo`**（首頁 `ProfessionalService` ＋ 部落格列表頁與兩篇文章的 `Organization`，共 4 處）。分享預覽圖已改用 `OG-index.png`，這裡不再兼任。 |
 | `S-logo.svg` | 方形版 logo（圖 ＋「小港製作所」，無英文），100 × 100。目前網站未使用，備用素材。 |
 | `logo-f.svg` | 完整版 logo（圖 ＋「小港製作所 MINATO DESIGN STUDIO」字），淺色底用。**頁首 header 使用這一份**（見 `/partials/header.html`）。原始比例 438.68 × 128.23。 |
 | `logo-on-dark.svg` | 完整版 logo 的白色版本，深色底用。**深色底的頁尾 footer 使用這一份**（見 `/partials/footer.html`）。比例同 `logo-f.svg`。 |
 | `logo.svg` | 只有圖、沒有文字的品牌港灣標誌（100 × 100）。網站目前未直接引用（JSON-LD 的 `logo` 已改用點陣的 `logo500.png`），保留給簡報、名片等外部素材使用。 |
 
-## ⚠️ 待補上的檔案（目前仍缺，放進來即可自動生效）
+## 素材缺口
 
-> **2026.08 更新：原本缺的 `logo.png` 已由 `logo500.png` 補上，JSON-LD 不再 404。**
-> 剩下 `og-cover.jpg` 仍缺，目前由 `logo500.png` 暫代——分享出去不會是空的，但會是一張方形品牌 logo，
-> 不是為分享情境設計的橫幅。**這是目前優先度最高的素材缺口。**
+> **2026.08 更新：先前缺的兩個檔案都補齊了。**
+> `logo.png` 由 `logo500.png` 取代（JSON-LD 不再 404）；`og-cover.jpg` 由 `OG-index.png` 取代
+> （1200 × 630，`twitter:card` 維持 `summary_large_image`，不會被裁切）。目前沒有 404 的引用。
 
-| 建議檔名 | 用途 | 建議尺寸 | 目前狀態 |
-| --- | --- | --- | --- |
-| `og-cover.jpg` | 首頁 / 方案頁 / 關於頁 / 部落格列表頁 / 隱私權頁的社群分享預覽圖（Open Graph / Twitter Card） | 1200 × 630 | ⚠️ 未上傳，暫由 `logo500.png` 代替 |
+若之後想讓各頁有**各自的**分享圖（而非五頁共用 `OG-index.png`），做法是照 `OG-plan.png`、
+`OG-about.png` 之類命名放進本資料夾，再把該頁 `<head>` 裡的 `og:image` / `twitter:image` 改指向它——
+尺寸一律 1200 × 630，其餘 meta 不用動。
 
-### `og-cover.jpg` 上線後要改的地方
-
-不是放進來就好，有兩個地方要一起改（每個頁面的 `<head>` 都有註解標記）：
-
-1. 五頁的 `og:image` / `twitter:image` 改指向 `og-cover.jpg`，並把 `og:image:width` / `height` 從 `501` 改成 `1200` / `630`。
-2. 五頁的 `twitter:card` 從 `summary` 改回 `summary_large_image`。
-   （方形圖配 `summary_large_image` 會被 X 裁成 1.91:1、上下切掉，所以暫時降成小卡的 `summary`。）
-
-已經有各自分享圖、不受影響的頁面：兩篇文章內頁（`src/og/japan-localization.jpg`、`src/og/beautiful-website-no-inquiry.jpg`，皆為 1200 × 630）。
+兩篇文章內頁已各自有分享圖（`src/og/japan-localization.jpg`、`src/og/beautiful-website-no-inquiry.jpg`，皆為 1200 × 630），不共用 `OG-index.png`。
 
 > 文章內頁若要各自的分享圖，可另外放在 `src/og/` 下（例如 `src/og/japan-localization.jpg`），
 > 並於該文章的 `og:image` / `twitter:image` / JSON-LD `image` 指向它。
