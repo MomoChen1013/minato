@@ -148,12 +148,37 @@ img{max-width:100%;display:block;}
 .mq-item svg{flex:none;}
 @media(prefers-reduced-motion:reduce){.marquee{animation:none;}.hero .watermark{animation:none;}}
 
-/* ================= space（全幅照片橫幅） ================= */
+/* ================= space（全幅照片橫幅｜捲動視差） ================= */
+/* 設計稿的圖比版位高 40%（1440×672 放進 1440×480），多出來的高度就是視差的位移量 */
 .space-band{
-  height:clamp(240px,33vw,480px);overflow:hidden;background:var(--paper);
+  position:relative;height:clamp(240px,33vw,480px);
+  overflow:hidden;background:var(--paper);
 }
 .space-band img{
-  display:block;width:100%;height:100%;object-fit:cover;object-position:center 60%;
+  position:absolute;left:0;right:0;top:-20%;
+  width:100%;height:140%;object-fit:cover;object-position:center;
+  will-change:transform;
+}
+/* 圖片以比頁面慢的速度移動：版位掃過視窗時，圖在版位內從 -14.3% 位移到 +14.3%
+   （＝版位高度的 ±20%，剛好用完上下多出來的那 40%） */
+@keyframes space-parallax{
+  from{transform:translate3d(0,-14.3%,0);}
+  to{transform:translate3d(0,14.3%,0);}
+}
+@supports (animation-timeline:view()){
+  /* 時間軸掛在版位上（而不是比版位高的圖上），位移才會對齊版位掃過視窗的行程 */
+  .space-band{view-timeline-name:--space-band;}
+  .space-band img{
+    animation-name:space-parallax;
+    animation-timing-function:linear;
+    animation-fill-mode:both;
+    animation-duration:auto; /* 捲動時間軸必須是 auto，用簡寫會被寫成 0s 而不會動 */
+    animation-timeline:--space-band;
+    animation-range:cover 0% cover 100%;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .space-band img{animation:none;transform:none;}
 }
 
 /* ================= stats dark band ================= */

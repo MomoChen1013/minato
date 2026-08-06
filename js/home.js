@@ -15,6 +15,37 @@
   set.parentElement.appendChild(set.cloneNode(true));
 });
 
+/* ============ 照片橫幅捲動視差（後備） ============
+   主要靠 CSS scroll-driven animation（見 home.css 的 space-parallax），
+   這段只在瀏覽器不支援 animation-timeline:view() 時接手。 */
+(function () {
+  const bands = [...document.querySelectorAll('.space-band')];
+  if (!bands.length) return;
+  if (window.CSS && CSS.supports && CSS.supports('animation-timeline', 'view()')) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let ticking = false;
+  function update() {
+    ticking = false;
+    const vh = innerHeight;
+    bands.forEach(band => {
+      const img = band.querySelector('img');
+      if (!img) return;
+      const r = band.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > vh) return;
+      // 版位從貼齊視窗底部到離開視窗頂部＝ 0 → 1，換算成 ±14.3% 的位移
+      const p = (vh - r.top) / (vh + r.height);
+      img.style.transform = 'translate3d(0,' + ((p - .5) * 28.6).toFixed(2) + '%,0)';
+    });
+  }
+  function onScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
+  update();
+})();
+
 /* ============ inquiry form ============ */
 (function () {
   const form = document.getElementById('inqForm');
