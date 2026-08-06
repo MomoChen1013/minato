@@ -13,6 +13,18 @@
 | `logo-f.svg` | 完整版 logo（圖 ＋「小港製作所 MINATO DESIGN STUDIO」字），淺色底用。**頁首 header 使用這一份**（見 `/partials/header.html`）。原始比例 438.68 × 128.23。 |
 | `logo-on-dark.svg` | 完整版 logo 的白色版本，深色底用。**深色底的頁尾 footer 使用這一份**（見 `/partials/footer.html`）。比例同 `logo-f.svg`。 |
 | `logo.svg` | 只有圖、沒有文字的品牌港灣標誌（100 × 100）。網站目前未直接引用（JSON-LD 的 `logo` 已改用點陣的 `logo500.png`），保留給簡報、名片等外部素材使用。 |
+| `space-office-1.jpg` | 首頁全幅照片橫幅①（設計稿 Section - SPACE），位置在 **SERVICE MARQUEE 之後、SERVICES DARK 之前**。**目前是 1 × 1 的白色佔位圖**，請用同名檔案覆蓋。 |
+| `space-office-2.jpg` | 首頁全幅照片橫幅②（設計稿 Section - SPACE），位置在 **FAQ 之後、INQUIRY 之前**。**目前是 1 × 1 的白色佔位圖**，請用同名檔案覆蓋。 |
+
+### 照片橫幅（space-band）上傳規格
+
+兩張橫幅都是滿版出血，版位高度為 `clamp(240px, 33vw, 480px)`（桌機最高 480px），
+以 `object-fit:cover` 置中裁切（`object-position:center 60%`）。
+
+- 建議尺寸：**2880 × 960**（＝設計稿 1440 × 480 的 2 倍圖）
+- 格式：`.jpg`，檔名一律小寫、不要有空白
+- 覆蓋 `src/space-office-1.jpg` / `src/space-office-2.jpg` 即可，`index.html` 不用動
+- 兩張想用同一張照片也可以，就把同一個檔案存成兩個檔名
 
 ## 素材缺口
 
