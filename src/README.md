@@ -13,6 +13,24 @@
 | `logo-f.svg` | 完整版 logo（圖 ＋「小港製作所 MINATO DESIGN STUDIO」字），淺色底用。**頁首 header 使用這一份**（見 `/partials/header.html`）。原始比例 438.68 × 128.23。 |
 | `logo-on-dark.svg` | 完整版 logo 的白色版本，深色底用。**深色底的頁尾 footer 使用這一份**（見 `/partials/footer.html`）。比例同 `logo-f.svg`。 |
 | `logo.svg` | 只有圖、沒有文字的品牌港灣標誌（100 × 100）。網站目前未直接引用（JSON-LD 的 `logo` 已改用點陣的 `logo500.png`），保留給簡報、名片等外部素材使用。 |
+| `space-office-1.png` | 首頁全幅照片橫幅①（設計稿 Section - SPACE），位置在 **SERVICE MARQUEE 之後、SERVICES DARK 之前**。1940 × 934。 |
+| `japan-street.png` | 首頁全幅照片橫幅②（設計稿 Section - SPACE），位置在 **FAQ 之後、INQUIRY 之前**。1941 × 811。 |
+
+### 照片橫幅（space-band）上傳規格
+
+兩張橫幅都是滿版出血，**有捲動視差**：版位（窗口）高度為 `clamp(240px, 33vw, 480px)`
+（桌機最高 480px），圖片實際渲染高度是版位的 **140%**，多出來的 40% 就是捲動時上下位移的行程
+——跟設計稿把 1440 × 672 的圖放進 1440 × 480 的框裡是同一件事。
+
+- 建議尺寸：**2880 × 1344**（＝設計稿 1440 × 672 的 2 倍圖，比例約 15:7）
+- 構圖時請記得：**任何一個瞬間只看得到中間約 7 成的高度**，主體放中間、上下留安全區
+- 格式：照片請用 `.jpg` 或 `.webp`（**不要用 `.png`**，同一張照片會大上 5–10 倍），檔名一律小寫、不要有空白
+- 換圖時直接覆蓋 `src/space-office-1.png` / `src/japan-street.png`（換檔名的話要一起改 `index.html`）
+- 兩張想用同一張照片也可以，就把同一個檔案存成兩個檔名
+
+視差本體是 CSS scroll-driven animation（`css/home.css` 的 `space-parallax`），
+舊瀏覽器由 `js/home.js` 的後備程式接手；使用者開啟「減少動態效果」時兩者都會停用，
+變成單純的置中裁切。
 
 ## 素材缺口
 
