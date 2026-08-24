@@ -162,6 +162,10 @@ a{color:inherit;}
 .cmp-head .cmp-cell{font-weight:700;font-size:var(--fs-xs);letter-spacing:.14em;background:var(--dark);color:#fff;}
 .cmp-head .cmp-cell.good{color:var(--amb);border-left:1px solid var(--dark-line);}
 @media(max-width:560px){.cmp-row{grid-template-columns:1fr;}.cmp-cell.good{border-left:none;border-top:1px solid var(--line);}}
+.cmp-row.cmp-3col{grid-template-columns:1fr 1fr .8fr;}
+.cmp-cell.note{background:var(--paper);color:var(--ink-soft);font-size:var(--fs-xs);border-left:1px solid var(--line);}
+.cmp-head .cmp-cell.note{color:#fff;border-left:1px solid var(--dark-line);}
+@media(max-width:560px){.cmp-row.cmp-3col{grid-template-columns:1fr;}.cmp-cell.note{border-left:none;border-top:1px solid var(--line);}}
 
 /* FAQ（FAQPage schema 對應） */
 .faq{margin-top:20px;display:flex;flex-direction:column;gap:14px;}
