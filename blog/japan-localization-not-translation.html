@@ -16,9 +16,9 @@
 <!-- 5) FAQ 問答（可增減）— 記得可見內容與下方 JSON-LD 兩邊同步   -->
 <!-- ========================================================= -->
 
-<title>多語系網站，為什麼不能只靠翻譯社與 AI 翻譯？｜小港製作所</title>
-<meta name="description" content="多語系網站的核心不是把字換成另一種語言，而是讓另一個文化的人願意行動。翻譯社與 AI 處理文字，卻處理不了語氣、版面與信任——那是懂語言的 UX 設計師才能做的事。">
-<meta name="keywords" content="多語系網站,多語網站,翻譯社,AI 翻譯,網站在地化,日文網站,懂語言的 UX 設計師">
+<title>多語系網站可以只靠翻譯社跟 AI 嗎？五個翻譯救不了的地方｜小港製作所</title>
+<meta name="description" content="多語系網站的難點不在翻譯，在語氣、版面與信任線索。這篇拆解五個直譯最常出事的地方，以及為什麼翻譯和設計要由同一個人負責。">
+<meta name="keywords" content="多語系網站,日文版網站,網站在地化,多語系網站設計,日文 UX">
 <meta name="author" content="小港製作所 Minato Studio">
 <meta name="robots" content="index, follow, max-image-preview:large">
 
@@ -33,19 +33,19 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="小港製作所 Minato Studio">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:title" content="多語系網站，為什麼不能只靠翻譯社與 AI 翻譯？">
-<meta property="og:description" content="翻譯讓人看得懂，在地化讓人願意行動——後者是設計工作，不是翻譯工作。">
+<meta property="og:title" content="多語系網站可以只靠翻譯社跟 AI 嗎？">
+<meta property="og:description" content="語氣、版面與信任線索，是翻譯救不了的地方——這篇拆解五個直譯最常出事的地方。">
 <meta property="og:url" content="https://minato.3udesign.website/blog/japan-localization-not-translation">
 <meta property="og:image" content="https://minato.3udesign.website/src/og/japan-localization.jpg">
 <meta property="article:published_time" content="2026-07-26T09:00:00+09:00">
-<meta property="article:modified_time" content="2026-07-26T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-08-24T09:00:00+09:00">
 <meta property="article:author" content="小港製作所 Minato Studio">
 <meta property="article:section" content="多語系與在地化">
 
 <!-- Twitter / X 卡片 -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="多語系網站，為什麼不能只靠翻譯社與 AI 翻譯？">
-<meta name="twitter:description" content="翻譯解決「看得懂」，在地化解決「願意行動」——那是懂語言的 UX 設計師才能做的事。">
+<meta name="twitter:title" content="多語系網站可以只靠翻譯社跟 AI 嗎？">
+<meta name="twitter:description" content="五個翻譯救不了的地方：語氣、版面、CTA、信任線索，以及翻譯和設計各做各的。">
 <meta name="twitter:image" content="https://minato.3udesign.website/src/og/japan-localization.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,18 +87,18 @@
       <nav class="crumb" aria-label="breadcrumb">
         <a href="/index.html">首頁</a><span class="sep">/</span>
         <a href="/blog/">部落格</a><span class="sep">/</span>
-        <span>多語系 ≠ 翻譯</span>
+        <span>翻譯救不了的地方</span>
       </nav>
 
       <span class="a-cat">Multilingual Localization</span>
-      <h1>為什麼做真正的多語系網站，<br>不能只靠翻譯社、<span class="hl">AI 翻譯</span>？</h1>
+      <h1>多語系網站可以只靠翻譯社跟 AI 嗎？<br>五個<span class="hl">翻譯救不了</span>的地方</h1>
 
       <div class="a-meta">
         <span class="who"><span class="av">港</span>小港製作所 Minato Studio</span>
         <span class="dot"></span>
         <time datetime="2026-07-26">2026 年 7 月 26 日</time>
         <span class="dot"></span>
-        <span>閱讀約 8 分鐘</span>
+        <span>閱讀約 10 分鐘</span>
         <span class="dot"></span>
         <span>多語系與在地化</span>
       </div>
@@ -113,10 +113,12 @@
       <aside class="toc" aria-label="目次">
         <div class="tt">目次 Contents</div>
         <ol>
-          <li><a href="#s1">翻譯社和 AI，翻不出「對的網站」</a></li>
+          <li><a href="#s1">翻譯社和 AI 交出來的，跟網站需要的不一樣</a></li>
           <li><a href="#s2">五個翻譯救不了的地方</a></li>
-          <li><a href="#s3">為什麼要「懂語言的 UX 設計師」</a></li>
-          <li><a href="#s4">我實際怎麼做</a></li>
+          <li><a href="#s3">直譯和在地化，實際差在哪？</a></li>
+          <li><a href="#s4">為什麼要找懂語言的 UX 設計師？</a></li>
+          <li><a href="#s5">我實際的做法</a></li>
+          <li><a href="#s6">兩個常被忽略的技術細節</a></li>
         </ol>
       </aside>
 
@@ -126,105 +128,153 @@
         <div class="tldr">
           <div class="tt">重點摘要</div>
           <ul>
-            <li>翻譯讓人「看得懂」，在地化讓人「願意行動」——後者是<strong>設計工作</strong>，不是翻譯工作。</li>
-            <li>語氣、留白、CTA、信任元素會因文化而不同，這些沒辦法靠翻字完成。</li>
-            <li>由「<strong>懂語言的 UX 設計師</strong>」一手處理，翻譯才不會和設計脫節。</li>
+            <li>翻譯讓人「看得懂」，在地化讓人「願意行動」——後者要處理語氣、版面節奏和信任線索，這些都是<strong>設計決定</strong>。</li>
+            <li>同一份文案直譯成日文，最常在五個地方出事：語氣、版面、CTA、信任線索，以及翻譯和設計各做各的。</li>
+            <li>由<strong>讀得懂當地語言的 UX 設計師</strong>一手處理，譯文才會在設計當下就被決定，而不是事後貼進版面。</li>
           </ul>
         </div>
 
-        <p class="lead">不行。真正的多語系網站，核心從來不是「把中文換成日文或英文」，而是「讓另一個文化的使用者，在你的網站上感到安心、並且願意行動」。翻譯社和 AI 能處理「文字」，卻處理不了語氣、版面節奏、信任線索，以及當地使用者的決策直覺——而這些全都是設計問題，不是翻譯問題。</p>
+        <p class="lead">有次幫客戶把官網翻成日文，上線前我自己先拿手機開來看。首頁那句「立即諮詢，把握機會」，日文版直接照翻，按鈕被撐成兩行，字卡在中間斷成「機会を逃」和「さないで」——一句話被腰斬。客戶當下沒說什麼，隔了幾天才回信問，能不能再看一次日文版。</p>
+        <p>我後來才搞懂，多語系網站真正難的部分不在翻譯那一段。</p>
 
-        <h2 id="s1">翻譯社和 AI，翻不出「對的網站」</h2>
-        <p>翻譯社交給你的是「正確的文字」，AI 給你的是「又快又便宜的文字」。但網站要成交，靠的從來不是文字正確，而是整體體驗讓對方願意信任你、往下一步走。</p>
-        <p>問題就出在：翻譯處理的是「一句話怎麼說」，設計處理的是「一個人看到這一頁時會有什麼感覺、會不會行動」。這兩件事在多語網站上是綁在一起的，一旦分開處理，就會出現斷層。</p>
+        <h2 id="s1">翻譯社和 AI 交出來的，跟網站需要的不一樣</h2>
+        <p>翻譯社的交付物通常是一份 Word 或 Excel，左欄原文右欄譯文。這在流程上很合理，但它預設了一件事：文字可以從版面裡抽出來，翻完再放回去。</p>
+        <p>網頁不是這樣運作的。</p>
+        <p>按鈕上的字有寬度上限，標題在手機上只能佔兩行，導覽列的六個項目要塞進 375px 的螢幕。這些限制在 Word 檔裡看不到，所以譯者不會知道「関連サービスのご案内」會讓導覽列爆版，他只知道這句翻得很精準。</p>
+        <p>AI 的狀況類似，只是換一個方向。它的日文文法幾乎不會錯，錯的是「沒有人會這樣說」——這個差別要有人聽得出來，它自己聽不出來。</p>
 
-        <blockquote>翻譯解決「看得懂」，在地化解決「願意行動」。前者是文字，後者是設計。</blockquote>
+        <blockquote>翻譯處理的是一句話怎麼說，在地化處理的是一個人看到這一頁時的感受和下一步動作。網站要成交靠的是後者，而後者是設計問題。</blockquote>
 
         <h2 id="s2">五個翻譯救不了的地方</h2>
-        <p>同一份中文文案硬翻成日文，最常在這五個地方露餡——而它們沒有一個是「翻得更準」能解決的：</p>
-        <ol>
-          <li><strong>字對了，語氣錯了。</strong>日文有它的丁寧與距離感。把中文直譯過去，常常不是太熱情、就是太生硬——日本人一讀就覺得「這是外國公司」。</li>
-          <li><strong>版面沒有跟著換。</strong>中文習慣高資訊密度，日文習慣更多留白；而且同一句話翻成不同語言，長度差很多，原本排好的版型會整個壞掉。</li>
-          <li><strong>CTA 直接套用。</strong>「馬上購買」在台灣是熱鬧，在日本可能讓人覺得被推。同一顆按鈕，不同市場要用不同語氣。</li>
-          <li><strong>信任線索缺席。</strong>日本使用者要看到公司情報、実績、規約才會安心下單。要不要放、放在哪、怎麼呈現——這是資訊架構的決定，翻譯不會幫你做。</li>
-          <li><strong>翻譯和設計各做各的。</strong>翻譯社交檔案、設計師套進版面，沒有人為「整體體驗」負責。斷層，就是這樣產生的。</li>
-        </ol>
+        <p>同一份文案直譯成日文，最常在這五個地方露餡。沒有一個是「翻得更準」能解決的。</p>
+
+        <h3>1. 字對了，語氣錯了</h3>
+        <p>日文有明確的丁寧語層級，敬語的距離感是設計決定，不是翻譯決定。中文直譯過去，通常不是太熱情就是太生硬，日本使用者一讀就知道這是外國公司做的網站。</p>
+        <p>同一個網站裡語氣還要一致。首頁用です・ます，服務頁突然變成だ・である，讀起來會像兩個人寫的。</p>
+
+        <h3>2. 版面沒有跟著換</h3>
+        <p>中文習慣高資訊密度，日文習慣更多留白。同一段文案翻成不同語言，長度差距也比多數人想像的大——中翻英大概膨脹到 1.2 到 1.5 倍，德文更誇張。</p>
+        <p>「聯絡我們」四個字，日文是「お問い合わせ」六個字元，英文 Contact Us 十個字母。用中文版的按鈕寬度做完設計，另外兩個語言一定出事。</p>
+        <p>除了長度，還有幾件事是中文版不會遇到的：</p>
+        <ul>
+          <li><strong>行高。</strong>日文有假名和漢字混排，行高開到 1.8 以上才不會糊在一起，中文版的 1.5 直接套過去會很擁擠。</li>
+          <li><strong>粗體。</strong>日文網站用粗體強調的頻率比中文低很多，整頁粗體讀起來很吵。</li>
+          <li><strong>禁則處理。</strong>「、」「。」「」」不能出現在行首，被斷到下一行開頭是很明顯的破綻，CSS 要另外處理。</li>
+          <li><strong>斷行。</strong>中日文沒有空格，瀏覽器的斷行邏輯跟英文完全不同，長標題經常斷在很怪的位置。</li>
+        </ul>
+        <p>這些都不是翻譯錯誤，是排版問題——但讀者只會覺得這個網站怪怪的。</p>
+
+        <h3>3. CTA 直接套用</h3>
+        <p>「馬上購買」在台灣是熱鬧，在日本容易讓人覺得被推著走。同一顆按鈕在不同市場要用不同語氣，有時候還要不同長度——日文的 CTA 通常比中文長，因為客氣需要字數。</p>
+        <p>日本網站的 CTA 也常常會附一句補充：回覆時間、是否免費、要不要留電話。那不是贅字，是降低點擊的心理成本。</p>
+
+        <h3>4. 信任線索缺席</h3>
+        <p>日本使用者要看到公司情報、実績、利用規約才會安心往下走。這些要不要放、放在哪一層、用什麼形式呈現，是資訊架構的決定。翻譯不會幫你做這個決定，因為原本的版本可能根本沒有這些頁面。</p>
+
+        <h3>5. 翻譯和設計各做各的</h3>
+        <p>翻譯社交檔案、設計師把字塞進版面，中間沒有人為整體體驗負責。前面四件事會同時發生，而且沒有人有權限修改譯文。</p>
+
+        <h2 id="s3">直譯和在地化，實際差在哪？</h2>
 
         <div class="callout">
           <span class="tag">多語現場筆記</span>
-          <p>同一句話，機器直譯和在地化轉譯寫出來的差別，往往就是「日本人願不願意往下讀」的差別。下面這張對照表，右邊那欄不是「翻得比較好」，而是「當地人本來就會這樣講」。</p>
+          <p>下面這張表的右欄不是翻得比較準，是當地人本來就會這樣講。</p>
         </div>
 
         <div class="cmp">
-          <div class="cmp-row cmp-head">
-            <div class="cmp-cell bad">機翻・直譯（出戲）</div>
-            <div class="cmp-cell good">在地化・轉譯（自然）</div>
+          <div class="cmp-row cmp-head cmp-3col">
+            <div class="cmp-cell bad">直譯（出戲）</div>
+            <div class="cmp-cell good">在地化（自然）</div>
+            <div class="cmp-cell note">差在哪</div>
           </div>
-          <div class="cmp-row">
+          <div class="cmp-row cmp-3col">
             <div class="cmp-cell bad">私たちの製品は最高です！今すぐ購入！</div>
             <div class="cmp-cell good">確かな品質を、まずは一度お試しください。</div>
+            <div class="cmp-cell note">把斷言換成邀請，降低壓迫感</div>
           </div>
-          <div class="cmp-row">
+          <div class="cmp-row cmp-3col">
             <div class="cmp-cell bad">お問い合わせはこちらをクリック</div>
             <div class="cmp-cell good">ご相談はこちらから（2営業日以内にご返信）</div>
+            <div class="cmp-cell note">補上回覆時間，降低心理成本</div>
           </div>
-          <div class="cmp-row">
+          <div class="cmp-row cmp-3col">
             <div class="cmp-cell bad">私たちについて</div>
             <div class="cmp-cell good">わたしたちのこと</div>
+            <div class="cmp-cell note">平假名讓語氣變柔，適合品牌頁</div>
+          </div>
+          <div class="cmp-row cmp-3col">
+            <div class="cmp-cell bad">詳細はこちら</div>
+            <div class="cmp-cell good">サービス内容を見る</div>
+            <div class="cmp-cell note">說清楚點下去會看到什麼</div>
+          </div>
+          <div class="cmp-row cmp-3col">
+            <div class="cmp-cell bad">送信</div>
+            <div class="cmp-cell good">この内容で送信する</div>
+            <div class="cmp-cell note">表單送出前的最後一步要明確</div>
           </div>
         </div>
 
-        <h2 id="s3">為什麼一定要「懂語言的 UX 設計師」？</h2>
-        <p>這是關鍵，也是多數團隊最容易忽略的一點。</p>
-        <p>如果翻譯和設計是兩個人、兩個環節，再好的翻譯稿，交到不懂那個語言的設計師手上，他也只能把字塞進版面——他沒辦法判斷「這句話這樣說，日本人會不會覺得有距離」「這個標題斷句在這裡，讀起來順不順」。反過來，再厲害的翻譯，如果不懂 UX、不懂你的品牌，也給不出「這段資訊該往前、那個 CTA 該重寫」的設計判斷。</p>
-        <p>真正對的多語網站，需要一個人同時具備兩種能力：讀得懂當地語言的語感，也懂使用者在畫面上怎麼思考、怎麼決定。這時候翻譯就不再是「外包出去的一個環節」，而是設計決策的一部分——<strong>每一句話怎麼說，是在設計當下就一起決定的</strong>。</p>
+        <p>左欄每一句的文法都是對的。差別在於日本使用者讀到左欄會停一下，讀到右欄不會。</p>
 
-        <h2 id="s4">我實際怎麼做</h2>
-        <p>多數人的順序是「翻譯 → 排版 → 上線」。我多加了兩步，而且順序不一樣：</p>
+        <h2 id="s4">為什麼要找懂語言的 UX 設計師？</h2>
+        <p>因為翻譯和設計拆成兩個人的時候，中間那些判斷沒有人做得了。</p>
+        <p>再好的翻譯稿交到不懂那個語言的設計師手上，他也只能把字塞進版面。他沒辦法判斷這句話這樣說日本人會不會覺得有距離、這個標題斷在這裡讀起來順不順。</p>
+        <p>反過來也一樣。再厲害的譯者如果不懂 UX、不熟你的品牌，也給不出「這段資訊該往前」「這個 CTA 要重寫」這種設計判斷。他手上只有文字，看不到那個頁面上下文。</p>
+        <p>一個人同時具備兩種能力的時候，譯文會在設計當下就被決定，不是事後才貼進去。</p>
+
+        <h2 id="s5">我實際的做法</h2>
+        <p>多數人的順序是「翻譯 → 排版 → 上線」。我多加了兩步，順序也不太一樣。</p>
         <ul>
-          <li><strong>先決定這一頁要說服誰。</strong>不同語言的讀者在意的事不一樣，資訊順序就該不一樣——而不是拿中文版直接翻。</li>
-          <li><strong>初譯用工具跑，判斷由我做。</strong>AI 產出的日文文法通常是對的，但常常「沒有人會這樣說」。那個差別要有人聽得出來。</li>
-          <li><strong>譯文一定要進版面實測。</strong>爆行、斷行禁則、按鈕被撐開、表單欄位不對——這些在 Word 檔裡完全看不到。</li>
-          <li><strong>上線前做全站一致性檢查。</strong>敬語層級、專有名詞、數字格式，跨頁不能各寫各的。</li>
+          <li><strong>先決定這一頁要說服誰。</strong>不同語言的讀者在意的事不一樣，資訊順序就該不一樣。日文版的首頁區塊順序跟中文版不同是正常的，不需要為了一致而一致。</li>
+          <li><strong>初譯用 AI 跑，判斷由我做。</strong>AI 適合壓成本和跑初稿，也適合掃一批文案看有沒有漏翻。但要上線的東西還是要有人為語氣負責。</li>
+          <li><strong>把字數上限跟 Figma 截圖一起給譯者。</strong>一個欄位標一個數字：這裡最多 8 個字、這裡最多 14 個。這樣做之後，回來的譯文幾乎不用再為了塞不進按鈕而砍字重寫。</li>
+          <li><strong>譯文一定要進版面實測。</strong>爆行、斷行禁則、按鈕被撐開、表單欄位對不上——這些在 Word 檔裡完全看不到，只有放進去才知道。</li>
+          <li><strong>上線前做全站一致性檢查。</strong>敬語層級、專有名詞、數字格式、日期寫法，跨頁不能各寫各的。</li>
         </ul>
 
-        <div class="callout">
-          <span class="tag">適合哪些品牌</span>
-          <p>準備進日本或海外市場、希望第一印象就到位的台灣品牌；已經有多語網站、但當地客戶「看了沒反應、一眼出戲」；以及重視轉換與信任，而不只是「有翻譯就好」的品牌與團隊。</p>
-        </div>
+        <h2 id="s6">兩個常被忽略的技術細節</h2>
+        <p><strong>hreflang 標籤。</strong>這個標籤是用來告訴搜尋引擎「這幾個頁面是同一份內容的不同語言版本」。少了它，Google 有機會把日文版和中文版當成兩份互相打架的重複內容。</p>
+        <p><strong>關鍵字不能直接翻。</strong>台灣人搜「網頁設計」，日本人搜的是「ホームページ制作」，不是「ウェブデザイン」。後者語意完全正確，搜尋量卻差一大截。多語系網站的 SEO 要重新查一次當地人實際在搜什麼詞，這件事 AI 幫不上忙，因為它給的是語意最接近的譯法。</p>
+        <p>順帶一提，圖片裡的文字是另一個常見的漏網之魚。banner 標語做成圖，翻譯的時候整批被跳過，上線之後日文版首頁還掛著中文標題。</p>
+        <p>還有語言切換器：不要用國旗。英文要放哪一國的旗？西班牙文呢？直接用語言本身的名稱寫（日本語 / 繁體中文 / English）就好。</p>
 
         <!-- FAQ（GEO：直接對應 FAQPage schema） -->
         <h2 id="faq">常見問題</h2>
         <div class="faq">
           <details>
             <summary>AI 翻譯是不是完全不能用？<span class="ic">＋</span></summary>
-            <p>可以用，但只能當「原料」不能當「成品」。它適合壓成本、跑初稿，但要上線的多語網站，還是需要人為語氣和設計負責。</p>
+            <p>可以用，但只能當原料不能當成品。它適合壓成本、跑初稿、做一致性掃描。要上線的多語系網站還是需要人為語氣和設計負責。</p>
           </details>
           <details>
             <summary>在地化和翻譯到底差在哪？<span class="ic">＋</span></summary>
-            <p>翻譯讓人「看得懂」，在地化讓人「願意行動」。前者處理文字，後者處理整體體驗——包含語氣、版面與信任線索。</p>
+            <p>翻譯處理的是文字，讓人看得懂。在地化處理的是整體體驗，包含語氣、版面和信任線索，目的是讓人願意往下一步走。</p>
           </details>
           <details>
             <summary>那我找一個母語是日文的人來翻，不就好了？<span class="ic">＋</span></summary>
-            <p>語言會對，但如果他不懂 UX、也不懂你的品牌，翻好的字交到設計端還是可能脫節。關鍵不是「誰翻的」，而是「翻譯和設計有沒有同一個人負責」。</p>
+            <p>語言會對。但如果他不懂 UX、也不熟你的品牌，翻好的字交到設計端還是可能脫節。差別在於翻譯和設計有沒有同一個人負責。</p>
           </details>
           <details>
-            <summary>為什麼要找懂語言的 UX 設計師，而不是翻譯和設計分開找？<span class="ic">＋</span></summary>
-            <p>分開找，最常見的結果就是斷層：設計師看不懂語言、翻譯不懂設計，沒有人為「整體體驗」負責。由一個人同時處理，語氣和設計才會是一致的判斷。</p>
+            <summary>一個多語系網站的在地化大概要多久？<span class="ic">＋</span></summary>
+            <p>依語言數量和內容量而定。真正花時間的不是翻字，是每個語言版本都要重新對齊當地使用者的直覺。</p>
           </details>
           <details>
-            <summary>一個多語網站的在地化，大概要多久？<span class="ic">＋</span></summary>
-            <p>依語言數量和內容量而定。重點不是快，而是每個語言版本都要重新對齊當地使用者的直覺，而不是趕著把字翻完。</p>
+            <summary>已經有日文版網站了，還需要重做嗎？<span class="ic">＋</span></summary>
+            <p>先做健檢比較實際。多數狀況不需要整站重做，問題常常集中在幾個關鍵頁面：首頁、服務頁、聯絡表單。</p>
           </details>
         </div>
+
+        <h2 id="s7">開始之前先想清楚的事</h2>
+        <p>多語系網站真正的成本不在翻譯費，在於你要在設計階段就決定：哪些內容三個語言共用、哪些各自寫、之後改版誰負責同步。</p>
+        <p>我看過最麻煩的狀況是三個語言版本各自長成不同的樣子，改一個地方要同時開三個檔案比對，最後沒有人敢動。</p>
+        <p>如果你正在評估要不要做日文版或英文版，歡迎跟我說你現在卡在哪一段——是還沒開始，還是已經有一版但當地客戶沒反應。這兩種狀況要做的事完全不同，我可以幫你看看哪些部分值得先做。</p>
 
         <!-- 作者盒（E-E-A-T） -->
         <div class="author-box">
           <div class="av">港</div>
           <div class="info">
             <div class="nm">小港製作所 Minato Studio<small>MULTILINGUAL WEB UX</small></div>
-            <p class="bio">我是小港製作所的設計師。專注多語系網站的 UX 與在地化。</p>
-            <p class="bio">我協助品牌處理日文版、英文版網站的版面適配、語感校對與資訊架構，從品牌定位到網站上線都由同一個人負責，讓每一次接觸，都成為建立信任的開始。</p>
+            <p class="bio">我是小港製作所的設計師，專注多語系網站的 UX 與在地化。</p>
+            <p class="bio">我協助品牌處理日文版、英文版網站的版面適配、語感校對與資訊架構，從品牌定位到網站上線由同一個人負責。</p>
             <p class="bio">比起快速開始設計，我更重視先理解品牌、理解市場，也理解你真正想吸引的人。</p>
             <div class="cred">
               <span class="chip">多語系網站 UX</span>
@@ -302,14 +352,14 @@
   "@graph": [
     {
       "@type": "BlogPosting",
-      "headline": "為什麼做真正的多語系網站，不能只靠翻譯社、AI 翻譯？",
-      "description": "多語系網站的核心不是把字換成另一種語言，而是讓另一個文化的人願意行動。翻譯社與 AI 處理文字，卻處理不了語氣、版面與信任——那是懂語言的 UX 設計師才能做的事。",
+      "headline": "多語系網站可以只靠翻譯社跟 AI 嗎？五個翻譯救不了的地方",
+      "description": "多語系網站的難點不在翻譯，在語氣、版面與信任線索。這篇拆解五個直譯最常出事的地方，以及為什麼翻譯和設計要由同一個人負責。",
       "image": "https://minato.3udesign.website/src/og/japan-localization.jpg",
       "datePublished": "2026-07-26T09:00:00+09:00",
-      "dateModified": "2026-07-26T09:00:00+09:00",
+      "dateModified": "2026-08-24T09:00:00+09:00",
       "inLanguage": "zh-Hant",
       "articleSection": "多語系與在地化",
-      "keywords": "多語系網站, 多語網站, 翻譯社, AI 翻譯, 網站在地化, 日文網站",
+      "keywords": "多語系網站, 日文版網站, 網站在地化, 多語系網站設計, 日文 UX",
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://minato.3udesign.website/blog/japan-localization-not-translation"
@@ -332,7 +382,7 @@
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://minato.3udesign.website/" },
         { "@type": "ListItem", "position": 2, "name": "部落格", "item": "https://minato.3udesign.website/blog/" },
-        { "@type": "ListItem", "position": 3, "name": "多語系 ≠ 翻譯" }
+        { "@type": "ListItem", "position": 3, "name": "翻譯救不了的地方" }
       ]
     },
     {
@@ -343,7 +393,7 @@
           "name": "AI 翻譯是不是完全不能用？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "可以用，但只能當「原料」不能當「成品」。它適合壓成本、跑初稿，但要上線的多語網站，還是需要人為語氣和設計負責。"
+            "text": "可以用，但只能當原料不能當成品。它適合壓成本、跑初稿、做一致性掃描。要上線的多語系網站還是需要人為語氣和設計負責。"
           }
         },
         {
@@ -351,7 +401,7 @@
           "name": "在地化和翻譯到底差在哪？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "翻譯讓人看得懂，在地化讓人願意行動。前者處理文字，後者處理整體體驗——包含語氣、版面與信任線索。"
+            "text": "翻譯處理的是文字，讓人看得懂。在地化處理的是整體體驗，包含語氣、版面和信任線索，目的是讓人願意往下一步走。"
           }
         },
         {
@@ -359,23 +409,23 @@
           "name": "那我找一個母語是日文的人來翻，不就好了？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "語言會對，但如果他不懂 UX、也不懂你的品牌，翻好的字交到設計端還是可能脫節。關鍵不是誰翻的，而是翻譯和設計有沒有同一個人負責。"
+            "text": "語言會對。但如果他不懂 UX、也不熟你的品牌，翻好的字交到設計端還是可能脫節。差別在於翻譯和設計有沒有同一個人負責。"
           }
         },
         {
           "@type": "Question",
-          "name": "為什麼要找懂語言的 UX 設計師，而不是翻譯和設計分開找？",
+          "name": "一個多語系網站的在地化大概要多久？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "分開找，最常見的結果就是斷層：設計師看不懂語言、翻譯不懂設計，沒有人為整體體驗負責。由一個人同時處理，語氣和設計才會是一致的判斷。"
+            "text": "依語言數量和內容量而定。真正花時間的不是翻字，是每個語言版本都要重新對齊當地使用者的直覺。"
           }
         },
         {
           "@type": "Question",
-          "name": "一個多語網站的在地化，大概要多久？",
+          "name": "已經有日文版網站了，還需要重做嗎？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "依語言數量和內容量而定。重點不是快，而是每個語言版本都要重新對齊當地使用者的直覺，而不是趕著把字翻完。"
+            "text": "先做健檢比較實際。多數狀況不需要整站重做，問題常常集中在幾個關鍵頁面：首頁、服務頁、聯絡表單。"
           }
         }
       ]
