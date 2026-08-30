@@ -15,6 +15,22 @@
 | `logo.svg` | 只有圖、沒有文字的品牌港灣標誌（100 × 100）。網站目前未直接引用（JSON-LD 的 `logo` 已改用點陣的 `logo500.png`），保留給簡報、名片等外部素材使用。 |
 | `space-office-1.png` | 首頁全幅照片橫幅①（設計稿 Section - SPACE），位置在 **SERVICE MARQUEE 之後、SERVICES DARK 之前**。1940 × 934。 |
 | `japan-street.png` | 首頁全幅照片橫幅②（設計稿 Section - SPACE），位置在 **FAQ 之後、INQUIRY 之前**。1941 × 811。 |
+| `works/minato-studio-site.png` | 成果展示頁 Case 01 的主要圖片（本站首頁截圖）。1600 × 1000。 |
+| `works/ngo-mission-care.svg` | 成果展示頁 Case 02 的主要圖片。**目前是暫用的品牌示意圖**，拿到可公開的實際畫面後直接換掉。 |
+
+### 成果展示（/works/）主要圖片上傳規格
+
+成果展示頁每一則案例只有兩樣東西：**一張主要圖片、一段文字說明**。
+圖片放在 `src/works/`，檔名用案例的英文 slug，並在 `/works/index.html` 對應的
+`<img src="/src/works/…">` 指過去。
+
+- 建議尺寸：**1600 × 1000**（比例 8:5，與版位的 `aspect-ratio:8/5` 一致）
+- 版位會以 `object-fit:cover`、`object-position:top center` 裁切，**主體請放上半部**
+- 格式：實際畫面截圖用 `.png`（介面截圖），照片類請用 `.jpg` 或 `.webp`
+- 尚未能公開的案例，先放一張品牌示意圖（例如 `ngo-mission-care.svg`），
+  並在 `<article>` 上加 `class="case reveal soon"`，拿到實際畫面後換掉檔案即可
+- 新增案例：複製 `/works/index.html` 裡整個 `<article class="case reveal">` 區塊，
+  換 id、圖片、編號與文字說明就好，左右兩欄會自動交替
 
 ### 照片橫幅（space-band）上傳規格
 

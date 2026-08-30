@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== Google Analytics 4（評估 ID 集中於 /js/ga.js 管理） ===== -->
+<script src="/js/ga.js"></script>
+
+<!-- ========================================================= -->
+<!-- ⬇⬇⬇ 每篇文章要替換的欄位，都集中在這裡 ⬇⬇⬇                 -->
+<!-- 原始 Markdown 稿：/blog/_source/webflow-wordpress-static-comparison.md -->
+<!-- ========================================================= -->
+
+<title>企業官網要用 Webflow、WordPress 還是自己開發？｜小港製作所</title>
+<meta name="description" content="公司網站架設前最該問的不是哪個平台好，而是誰維護、多久更新、會不會擴充。本文拆解 WordPress、Webflow、靜態網站的維護成本、多語系做法與資產歸屬，附上中小企業的選擇情境。">
+<meta name="keywords" content="公司網站架設,企業網站架設,Webflow,WordPress,網站架設費用,中小企業網站架設,多語系網站">
+<meta name="author" content="momo｜小港製作所 Minato Studio">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<!-- 正式網址（canonical）：這篇文章的最終網址 -->
+<link rel="canonical" href="https://minato.3udesign.website/blog/webflow-wordpress-static-comparison">
+
+<!-- favicon（品牌港灣標誌，圖檔置於 /src） -->
+<link rel="icon" type="image/svg+xml" href="/src/favicon.svg">
+<link rel="apple-touch-icon" href="/src/logo500.png">
+
+<!-- Open Graph（Facebook / LINE / Threads 分享卡） -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="小港製作所 Minato Studio">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="企業官網要用 Webflow、WordPress，還是自己開發？">
+<meta property="og:description" content="決定平台的不是哪個比較厲害，是誰維護、多久更新、會不會擴充。三種做法的維護成本與多語系差異一次講完。">
+<meta property="og:url" content="https://minato.3udesign.website/blog/webflow-wordpress-static-comparison">
+<!-- 這篇尚未有專屬分享圖，先共用站台預設圖（見 src/README.md） -->
+<meta property="og:image" content="https://minato.3udesign.website/src/OG-index.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="小港製作所 Minato Design Studio">
+<meta property="article:published_time" content="2026-08-26T09:00:00+08:00">
+<meta property="article:modified_time" content="2026-08-26T09:00:00+08:00">
+<meta property="article:author" content="小港製作所 Minato Studio">
+<meta property="article:section" content="網站建置">
+
+<!-- Twitter / X 卡片 -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="企業官網要用 Webflow、WordPress，還是自己開發？">
+<meta name="twitter:description" content="決定平台的三個問題：誰維護、多久更新、會不會擴充。">
+<meta name="twitter:image" content="https://minato.3udesign.website/src/OG-index.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Sora:wght@500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/article.css">
+</head>
+<body>
+
+<div class="progress" id="prog"></div>
+
+<!-- pencil wobble filter -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <filter id="pencil" x="-20%" y="-20%" width="140%" height="140%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="4.5"/>
+  </filter>
+</defs></svg>
+
+<!-- 共用頁首（header 由 /js/include.js 從 /partials/header.html 注入） -->
+<div id="site-header"></div>
+
+<!-- ================= ARTICLE ================= -->
+<main>
+<article>
+
+  <!-- ===== hero ===== -->
+  <section class="a-hero">
+    <svg class="deco deco-ahero" viewBox="0 0 180 110" aria-hidden="true">
+      <path d="M20 40 Q30 30 40 40 M40 40 Q50 30 60 40"/>
+      <path d="M96 24 Q104 16 112 24 M112 24 Q120 16 128 24" opacity=".7"/>
+      <circle cx="150" cy="66" r="3" class="amb"/>
+      <path d="M10 92 Q34 82 58 92 T106 92 T160 92" opacity=".5"/>
+    </svg>
+    <div class="wrap">
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="/index.html">首頁</a><span class="sep">/</span>
+        <a href="/blog/">部落格</a><span class="sep">/</span>
+        <span>官網要用什麼做</span>
+      </nav>
+
+      <span class="a-cat">Web Platform</span>
+      <h1>企業官網要用 Webflow、WordPress，<br>還是<span class="hl">自己開發</span>？</h1>
+
+      <div class="a-meta">
+        <span class="who"><span class="av">港</span>momo｜小港製作所 Minato Studio</span>
+        <span class="dot"></span>
+        <time datetime="2026-08-26">2026 年 8 月 26 日</time>
+        <span class="dot"></span>
+        <span>閱讀約 12 分鐘</span>
+        <span class="dot"></span>
+        <span>網站建置</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== body ===== -->
+  <div class="a-body-wrap">
+    <div class="wrap a-grid">
+
+      <!-- 目次側欄 -->
+      <aside class="toc" aria-label="目次">
+        <div class="tt">目次 Contents</div>
+        <ol>
+          <li><a href="#s1">網域、主機、CMS、前端是四件事</a></li>
+          <li><a href="#s2">WordPress 適合什麼樣的企業</a></li>
+          <li><a href="#s3">Webflow 適合什麼樣的企業</a></li>
+          <li><a href="#s4">靜態網站適合什麼樣的企業</a></li>
+          <li><a href="#s5">三種做法的成本怎麼比較</a></li>
+          <li><a href="#s6">如果你是中小企業，我會怎麼選</a></li>
+          <li><a href="#faq">常見問題</a></li>
+        </ol>
+      </aside>
+
+      <!-- 內文 -->
+      <div class="article-body">
+
+        <div class="tldr">
+          <div class="tt">重點摘要</div>
+          <ul>
+            <li>決定平台的是三個問題：<strong>誰維護、多久更新一次、兩年後會不會長出新東西</strong>。</li>
+            <li>內容幾乎不動、要求速度和多語系可控 → <strong>靜態網站</strong>。</li>
+            <li>行銷或設計人員要自己改版面、不只是改文字 → <strong>Webflow</strong>。</li>
+            <li>文章、商品、會員、複雜分類一直長 → <strong>WordPress</strong>。</li>
+            <li>比價的時候把「兩年」放進去算，第一年最貴的方案第三年常常最便宜。</li>
+          </ul>
+        </div>
+
+        <p class="lead">我自己的工作室網站是純手寫的 HTML、CSS 跟一點 vanilla JS，放在 GitHub Pages 上，網域從 Namecheap 指過來。講出來偶爾會被問：你不是做設計的嗎，怎麼不用 Webflow？</p>
+
+        <p>我的理由很普通。這個站一個月大概改兩到三次，改的都是文字和新文章，改的人從頭到尾只有我一個。為了這個需求去養一個 CMS、每個月付方案費，我自己會覺得怪。</p>
+
+        <p>「網站要用什麼做？」通常是企業開始找設計公司之後問的第一個問題。我後來發現它不好回答，因為問題本身預設了有一個「比較好的平台」。真正會決定答案的是另外三件事：這個網站誰要維護、多久更新一次、兩年後會不會長出新東西。</p>
+
+        <h2 id="s1">網域、主機、CMS、前端，其實是四件不同的事</h2>
+        <p><strong>很多報價單看起來差很多，是因為上面那幾個名詞不在同一層。</strong>先把層次拆開，後面的比較才有意義。</p>
+        <ul>
+          <li><strong>網域（Domain）</strong>：你的地址，像 <code>example.com</code>。在 Namecheap、Gandi、Cloudflare 這類註冊商買，一年幾百到一千多台幣。</li>
+          <li><strong>主機／Hosting</strong>：放網站檔案的地方。共享主機、雲端主機、GitHub Pages、Cloudflare Pages 都算。</li>
+          <li><strong>CMS（內容管理系統）</strong>：讓不會寫程式的人自己更新內容的後台。WordPress 是 CMS，Webflow 內建 CMS，靜態網站預設沒有。</li>
+          <li><strong>前端</strong>：使用者實際看到的畫面，由 HTML、CSS、JavaScript 組成。</li>
+          <li><strong>DNS</strong>：把網域指到主機的那張對照表，通常在註冊商後台改。</li>
+        </ul>
+        <p>我自己的站，網域在 Namecheap、檔案在 GitHub Pages、DNS 記錄在 Namecheap 設定、沒有 CMS、前端我自己寫。四層東西分散在三個地方。所以有人問我「網站放在哪裡」的時候，我會先確認他問的是哪一層。</p>
+        <p>把四層拆開之後你會發現，換平台很少是整個搬走，多數時候動到的只有其中一到兩層。網域可以留著，內容可以留著，換掉的常常只有前端跟主機。</p>
+
+        <h2 id="s2">WordPress 適合什麼樣的企業？</h2>
+        <p><strong>WordPress 適合內容量會持續增加、而且要由公司內部的人自己更新的網站。</strong>它的市占率長年是所有 CMS 裡最高的，代表你要找人接手、找外掛、找教學都相對容易。</p>
+        <p>它的強項很明確：</p>
+        <ul>
+          <li>後台編輯，行銷人員可以自己發文章、換 banner、開活動頁</li>
+          <li>外掛生態成熟，表單、SEO、金流、會員大多有現成方案</li>
+          <li>部落格與文章分類的架構是原生的，不用另外做</li>
+          <li>多語系可以靠 WPML 或 Polylang 這類外掛處理</li>
+        </ul>
+        <p>要付的代價也很明確，而且是每個月的：</p>
+        <ul>
+          <li>主機、WordPress 核心、佈景主題、外掛，四層都要更新</li>
+          <li>外掛之間會衝突，尤其是版型類的外掛加上頁面編輯器</li>
+          <li>安全性問題大多不是 WordPress 本身，是停留在舊版本的外掛</li>
+          <li>裝到十幾個外掛之後，載入速度會很明顯地掉下來</li>
+        </ul>
+        <p>我看過的 WordPress 網站，狀況大概分成兩種。一種是行銷團隊一週發兩三篇文章，後台每天有人登入，工具跟需求完全對得上。另一種是三年前做好之後就沒有人再進去過，外掛停在很舊的版本，連後台密碼都要找很久（通常最後是在某個離職同事的交接文件裡）。</p>
+
+        <blockquote>決定用 WordPress 之前先確認一件事：公司裡有沒有一個人的工作內容，實際包含「每個月登入後台按更新」。</blockquote>
+
+        <p>沒有的話，維護成本會在第二年、第三年變成問題。</p>
+
+        <h2 id="s3">Webflow 適合什麼樣的企業？</h2>
+        <p><strong>Webflow 適合有行銷或設計人力、需要自己調整版面而不只是改文字的品牌官網。</strong>它是視覺化的網站建置工具，拉版面的同時直接產生 HTML 和 CSS，內建 CMS、hosting 跟 CDN。</p>
+        <p>適合的情境很集中：品牌官網、產品行銷頁、活動 landing page、需要頻繁改版面測試轉換率的網站。</p>
+        <p>要注意的地方有幾個，簽約前值得一項一項確認：</p>
+        <ul>
+          <li><strong>費用是月費或年費</strong>，網站活著就要一直付，停繳網站就下線</li>
+          <li><strong>匯出的程式碼不包含 CMS</strong>，CMS 裡的內容和動態綁在平台上</li>
+          <li><strong>CMS 項目數上限跟方案綁在一起</strong>，這個數字官方會調整，簽之前自己去官網看一次現在的數字</li>
+          <li><strong>中文和日文的字體、字距、斷行</strong>要另外處理，預設值是照英文排版邏輯來的</li>
+          <li><strong>帳號歸屬</strong>：如果是設計公司幫你開的專案，網站在誰的 workspace 底下？</li>
+        </ul>
+        <p>最後那一項我每次都會問，而且會問得很直接：如果有一天我們不合作了，這個網站你拿不拿得走？</p>
+
+        <div class="callout">
+          <span class="tag">平台依賴要標價</span>
+          <p>你用月費和資產歸屬，換到的是行銷人員不用找工程師就能改版面的能力。對一個每季都在測試新 landing page 的團隊，這筆交換很划算；對一個官網三年不動的公司，就是在付一個用不到的能力。</p>
+        </div>
+
+        <h2 id="s4">靜態網站適合什麼樣的企業？</h2>
+        <p><strong>內容結構穩定、更新頻率低、對載入速度和多語系有要求的公司，靜態網站的兩年總成本通常最低。</strong>靜態網站的意思是頁面在上線前就已經產生好，使用者連進來時伺服器直接把檔案給他，中間沒有資料庫查詢。</p>
+        <p>實際的流程長這樣：</p>
+        <ol class="a-flow">
+          <li><b>Figma</b><span>介面設計定稿</span></li>
+          <li><b>HTML / CSS / JS</b><span>切版與互動</span></li>
+          <li><b>Git</b><span>版本控制</span></li>
+          <li><b>Cloudflare Pages / Firebase Hosting / GitHub Pages</b><span>部署</span></li>
+          <li><b>Custom Domain</b><span>指向自有網域</span></li>
+        </ol>
+        <p>它省下來的東西是連鎖的。沒有資料庫，就沒有資料庫效能問題；沒有外掛，就沒有外掛衝突；沒有後台登入頁，就少掉一個最常見的被攻擊入口。</p>
+        <p>我自己的站就是這樣跑的。表單交給 Web3Forms 用 AJAX 送出，加一個 honeypot 欄位擋機器人；GA4 開一個獨立的 property 追表單送出、LINE 點擊和預約點擊。要新增一篇文章，我就是複製文章模板、換內容、commit、推上去。</p>
+        <p>多語系是靜態網站我最喜歡的一段。日文版和英文版就是各自的資料夾，<code>/ja/</code>、<code>/en/</code>，加上 hreflang 標籤互相指認。因為每個語系的頁面是獨立的檔案，日文版可以有跟中文版不一樣的區塊順序、不一樣的行高、不一樣的 CTA 文案，不用被同一個模板綁死。用外掛做多語系的時候，這件事會麻煩很多——這也是我在<a class="link" href="/blog/japan-localization-not-translation.html">〈為什麼做真正的多語系網站，不能只靠翻譯社、AI 翻譯？〉</a>裡花最多篇幅講的部分。</p>
+        <p>代價只有一個，但很實際：客戶自己不能改。要嘛回來找我，要嘛接一個 headless CMS 進去，那就是另一筆預算了。</p>
+
+        <h2 id="s5">三種做法的成本怎麼比較？</h2>
+        <div class="a-table-wrap">
+          <table class="a-table">
+            <thead>
+              <tr><th scope="col">比較項目</th><th scope="col">WordPress</th><th scope="col">Webflow</th><th scope="col">靜態網站</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">初期建置成本</th><td>中</td><td>中</td><td>中偏低</td></tr>
+              <tr><th scope="row">每月固定費用</th><td>主機＋外掛授權</td><td>平台方案費</td><td>幾乎為零</td></tr>
+              <tr><th scope="row">設計自由度</th><td>高</td><td>高</td><td>非常高</td></tr>
+              <tr><th scope="row">CMS（客戶自己更新）</th><td>★★★★★</td><td>★★★★</td><td>△</td></tr>
+              <tr><th scope="row">維護心力</th><td>高</td><td>低</td><td>很低</td></tr>
+              <tr><th scope="row">載入效能</th><td>△</td><td>○</td><td>◎</td></tr>
+              <tr><th scope="row">多語系</th><td>靠外掛</td><td>平台功能，另計</td><td>完全可控</td></tr>
+              <tr><th scope="row">資產可攜性</th><td>高</td><td>中</td><td>高</td></tr>
+              <tr><th scope="row">適合的更新頻率</th><td>每週</td><td>每月</td><td>每季</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>比價的時候，我會建議把時間拉到兩年。第一年報價最低的方案，加上第二年的外掛授權、主機續約、改版工時之後，排名常常會翻過來。</p>
+        <p>順帶講一下報價這件事。同樣是「靜態網站」，套現成模板改字，跟從資訊架構重新開始，中間差的不是切版工時。我自己的報價是基本費加上頁數計價，基本費付掉的是資訊架構、內容整理和一套之後可以繼續長出新頁面的版型系統。首頁那張視覺是最後才發生的事。</p>
+
+        <h2 id="s6">如果你是中小企業，我會怎麼選？</h2>
+        <p>先回到最前面那三個問題，然後對照下面的情境：</p>
+        <ul>
+          <li><strong>內容一年更新一到兩次、主要功能是介紹公司和服務、希望載入快 → 靜態網站。</strong>公司介紹、服務說明、品牌官網、單頁 landing page 都在這一區。做完之後幾乎不用管它。</li>
+          <li><strong>行銷或企劃人員要自己改版面、每季都在調 landing page → Webflow。</strong>前提是公司裡真的有這個人，而且他有時間學工具。沒有這個人的話，你買到的是一個沒人用的後台加上每個月的帳單。</li>
+          <li><strong>文章、商品、案例、會員這些資料會一直長，而且要分類、要搜尋 → WordPress。</strong>內容型網站、媒體、要開部落格認真做 SEO 的公司，用 WordPress 的效益會回來。</li>
+          <li><strong>要做多語系 → 先決定語系之間可不可以長得不一樣。</strong>如果日文版只是中文版的翻譯，三種做法都行。如果日文版的區塊順序、內容深度、CTA 要跟中文版不同（多數進日本市場的案子都是這樣），靜態網站最好處理，細節我整理在<a class="link" href="/blog/japan-website-design-7-things.html">〈日本市場網站設計和台灣有什麼不同？〉</a>。</li>
+        </ul>
+        <p>還有一種狀況：你已經有網站了，只是覺得不好用。這時候先不要急著整站重做。我會先看流量進來之後停在哪一頁、從哪一頁離開，很多時候問題出在資訊架構和文案，換平台解決不了，重做一次只是把同樣的問題換一個比較漂亮的樣子——這個題目我寫在<a class="link" href="/blog/beautiful-website-no-inquiry.html">〈網站很漂亮，為什麼卻沒有人詢問？〉</a>。</p>
+
+        <!-- FAQ（GEO：直接對應 FAQPage schema） -->
+        <h2 id="faq">常見問題</h2>
+        <div class="faq">
+          <details>
+            <summary>公司網站架設費用大概多少？<span class="ic">＋</span></summary>
+            <p>台灣市場的落差很大，從幾萬到幾十萬都有。差異主要不在切版，在於有沒有做資訊架構、文案整理、原創設計，以及是否包含多語系。看報價的時候把「這筆錢買到哪幾層」問清楚，比單純比總價有用。</p>
+          </details>
+          <details>
+            <summary>公司網站可以自己做嗎？<span class="ic">＋</span></summary>
+            <p>可以。如果你的需求是三到五頁的公司介紹，用現成工具自己做完全合理。會需要找設計師，通常是因為你需要的不只是頁面，而是想清楚要放什麼、順序怎麼排、要讓訪客做什麼動作。</p>
+          </details>
+          <details>
+            <summary>Webflow 做的網站可以搬走嗎？<span class="ic">＋</span></summary>
+            <p>可以匯出 HTML、CSS、JS，但 CMS 的內容和動態功能不會跟著出來。如果之後可能要搬家，建議在專案一開始就確認網站建在誰的帳號底下，並寫進合約。</p>
+          </details>
+          <details>
+            <summary>靜態網站對 SEO 不利嗎？<span class="ic">＋</span></summary>
+            <p>不會。搜尋引擎看的是 HTML 結構、內容品質、載入速度和行動裝置體驗，靜態網站在速度這一項通常最有優勢。要注意的是 meta 標籤、結構化資料和 sitemap 要自己補完整。</p>
+          </details>
+          <details>
+            <summary>多語系網站要用哪一種？<span class="ic">＋</span></summary>
+            <p>如果各語系內容一致，三種都可以。如果各語系的資訊架構需要不同，靜態網站或多站台架構最好控制。用外掛做多語系時，最常卡住的是版面在切換語言後跑掉，以及第二語言的頁面沒有被正確索引。</p>
+          </details>
+        </div>
+
+        <p>如果你正在報價階段，卡的不是設計而是「到底該走哪一條路」，可以把三件事寫給我：<strong>這個網站誰負責更新、多久更新一次、需不需要日文或英文版</strong>。這三個答案通常就能把選項砍到剩一個。</p>
+        <p>我這邊有一份免費的 fit call，20 到 30 分鐘，只釐清範圍不做解決方案，講完你自己去發包也完全沒問題。<a class="link" href="/index.html#inquiry">表單</a>或 LINE 都可以找到我。</p>
+
+        <!-- 作者盒（E-E-A-T） -->
+        <div class="author-box">
+          <div class="av">港</div>
+          <div class="info">
+            <div class="nm">momo｜小港製作所 Minato Studio<small>MULTILINGUAL WEB UX</small></div>
+            <p class="bio">我是小港製作所的設計師。專注多語系網站的 UX 與在地化。</p>
+            <p class="bio">我協助品牌處理日文版、英文版網站的版面適配、語感校對與資訊架構，從品牌定位到網站上線都由同一個人負責，讓每一次接觸，都成為建立信任的開始。</p>
+            <p class="bio">這個網站本身就是純手寫的靜態網站，文中談到的每一項取捨，都是我在自己站上實際做過一次的決定。</p>
+            <div class="cred">
+              <span class="chip">網站架構選型</span>
+              <span class="chip">靜態網站建置</span>
+              <span class="chip">多語系資訊架構</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== related ===== -->
+  <section class="related">
+    <svg class="deco deco-rel" viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-20 95 Q70 80 160 95 T340 95 T520 95 T700 95 T880 95 T1060 95 T1240 95 T1460 95" opacity=".8"/>
+      <path d="M-20 120 Q80 106 180 120 T380 120 T580 120 T780 120 T980 120 T1180 120 T1460 120" opacity=".45"/>
+    </svg>
+    <div class="wrap">
+      <span class="sec-label">Read next</span>
+      <h2 class="reveal">接著看這幾篇</h2>
+      <div class="rel-grid">
+        <a class="rel-card reveal" href="/blog/japan-website-design-7-things.html">
+          <span class="rc-cat">Japan Market UX</span>
+          <h3>日本市場網站設計和台灣有什麼不同？做日文網站前一定要知道的 7 件事</h3>
+          <p>難處不在翻譯，在資訊順序、UI 長度與信任訊號。</p>
+          <span class="go">閱讀文章 →</span>
+        </a>
+        <a class="rel-card reveal" style="transition-delay:.08s" href="/blog/japan-localization-not-translation.html">
+          <span class="rc-cat">Localization</span>
+          <h3>為什麼做真正的多語系網站，不能只靠翻譯社、AI 翻譯？</h3>
+          <p>翻譯讓人看得懂，在地化讓人願意行動——那是設計工作。</p>
+          <span class="go">閱讀文章 →</span>
+        </a>
+        <a class="rel-card reveal" style="transition-delay:.16s" href="/blog/beautiful-website-no-inquiry.html">
+          <span class="rc-cat">UX &amp; Conversion</span>
+          <h3>網站很漂亮，為什麼卻沒有人詢問？</h3>
+          <p>詢問來自引導，不是視覺——先看懂客戶，再改造網站。</p>
+          <span class="go">閱讀文章 →</span>
+        </a>
+      </div>
+      <div class="rel-more reveal">
+        <a href="/blog/">瀏覽所有文章 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== end CTA ===== -->
+  <section class="end-cta">
+    <svg class="deco deco-endcta" viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-20 95 Q70 80 160 95 T340 95 T520 95 T700 95 T880 95 T1060 95 T1240 95 T1460 95" opacity=".8"/>
+      <path d="M-20 120 Q80 106 180 120 T380 120 T580 120 T780 120 T980 120 T1180 120 T1460 120" opacity=".45"/>
+      <g transform="translate(300,40)" class="amb" opacity=".9"><path d="M0 30 Q4 40 15 40 L48 40 Q58 40 62 30 Z"/><path d="M28 30 L28 4 M28 7 Q48 10 48 24 L28 26"/></g>
+    </svg>
+    <div class="wrap">
+      <div class="mini">聊聊<br>吧。</div>
+      <h2>卡在<span class="rd">該走哪一條路</span>？</h2>
+      <p>把「誰維護、多久更新、要不要日文版」三個答案寫給我，20 到 30 分鐘的 fit call 只釐清範圍，不做解決方案。</p>
+      <div class="cta-row"><a class="btn" href="/index.html#inquiry">免費諮詢 <span class="ar">→</span></a><a class="btn btn-alt" href="https://line.me/R/ti/p/%40762mydmp" target="_blank" rel="noopener" data-ev="line_click">加入官方 LINE</a></div>
+    </div>
+  </section>
+
+</article>
+</main>
+
+<!-- 共用頁尾（footer 由 /js/include.js 從 /partials/footer.html 注入） -->
+<div id="site-footer"></div>
+
+<!-- ================= SEO / GEO：結構化資料（JSON-LD） ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "企業官網要用 Webflow、WordPress，還是自己開發？中小企業網站架構怎麼選",
+      "description": "公司網站架設前最該問的不是哪個平台好，而是誰維護、多久更新、會不會擴充。本文拆解 WordPress、Webflow、靜態網站的維護成本、多語系做法與資產歸屬。",
+      "image": "https://minato.3udesign.website/src/OG-index.png",
+      "datePublished": "2026-08-26T09:00:00+08:00",
+      "dateModified": "2026-08-26T09:00:00+08:00",
+      "inLanguage": "zh-Hant",
+      "articleSection": "網站建置",
+      "keywords": "公司網站架設, 企業網站架設, Webflow, WordPress, 網站架設費用, 中小企業網站架設, 多語系網站",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://minato.3udesign.website/blog/webflow-wordpress-static-comparison"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Momo",
+        "jobTitle": "多語系網站 UX 設計師",
+        "knowsLanguage": ["zh-Hant", "ja", "en"],
+        "worksFor": { "@type": "Organization", "name": "小港製作所 Minato Studio", "url": "https://minato.3udesign.website/" }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "小港製作所 Minato Studio",
+        "logo": { "@type": "ImageObject", "url": "https://minato.3udesign.website/src/logo500.png" }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://minato.3udesign.website/" },
+        { "@type": "ListItem", "position": 2, "name": "部落格", "item": "https://minato.3udesign.website/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "官網要用什麼做" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "公司網站架設費用大概多少？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "台灣市場落差很大，從幾萬到幾十萬都有。差異主要不在切版，而在於是否包含資訊架構、文案整理、原創設計與多語系。看報價時應確認這筆費用涵蓋哪幾層工作。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "公司網站可以自己做嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。三到五頁的公司介紹用現成工具自己做是合理的選擇。需要找設計師通常是因為需求不只是頁面本身，而是要決定放什麼內容、順序如何安排、以及要引導訪客做什麼動作。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Webflow 做的網站可以搬走嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以匯出 HTML、CSS 與 JS，但 CMS 內容與動態功能不會一併匯出。若未來可能搬遷，建議專案開始時就確認網站建置在誰的帳號下，並寫入合約。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "靜態網站對 SEO 不利嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不會。搜尋引擎評估的是 HTML 結構、內容品質、載入速度與行動裝置體驗，靜態網站在速度上通常最有優勢。需要留意的是 meta 標籤、結構化資料與 sitemap 必須自行補齊。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "多語系網站要用哪一種架構？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "若各語系內容一致，三種做法皆可。若各語系的資訊架構需要不同，靜態網站或多站台架構最容易控制。使用外掛做多語系時最常見的問題是切換語言後版面跑掉，以及第二語言頁面未被正確索引。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="/js/include.js"></script>
+<script src="/js/article.js"></script>
+</body>
+</html>
