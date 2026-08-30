@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== Google Analytics 4（評估 ID 集中於 /js/ga.js 管理） ===== -->
+<script src="/js/ga.js"></script>
+
+<title>成果展示｜多語系網站設計案例｜小港製作所 Minato Studio</title>
+<meta name="description" content="小港製作所的網站設計成果展示。每一則案例只有一張主要圖片與一段文字說明——把做了什麼、為什麼這樣做寫清楚，其餘留給你自己判斷。">
+<meta name="keywords" content="網站設計案例,多語系網站案例,日文網站案例,品牌官網設計,成果展示,UX 設計作品">
+<meta name="author" content="小港製作所 Minato Studio">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<link rel="canonical" href="https://minato.3udesign.website/works/">
+
+<!-- favicon（品牌港灣標誌，圖檔置於 /src） -->
+<link rel="icon" type="image/svg+xml" href="/src/favicon.svg">
+<link rel="apple-touch-icon" href="/src/logo500.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="小港製作所 Minato Studio">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="成果展示｜多語系網站設計案例">
+<meta property="og:description" content="每一則案例只有一張主要圖片與一段文字說明——把做了什麼、為什麼這樣做寫清楚。">
+<meta property="og:url" content="https://minato.3udesign.website/works/">
+<!-- 分享預覽圖：1200×630（圖檔置於 /src，見 src/README.md） -->
+<meta property="og:image" content="https://minato.3udesign.website/src/OG-index.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="小港製作所 Minato Design Studio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="成果展示｜多語系網站設計案例">
+<meta name="twitter:description" content="小港製作所的網站設計成果展示：一張主要圖片，一段文字說明。">
+<meta name="twitter:image" content="https://minato.3udesign.website/src/OG-index.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Sora:wght@500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/works.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <filter id="pencil" x="-20%" y="-20%" width="140%" height="140%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="4.5"/>
+  </filter>
+</defs></svg>
+
+<!-- 共用頁首（header 由 /js/include.js 從 /partials/header.html 注入） -->
+<div id="site-header"></div>
+
+<main>
+
+  <!-- ===== hero ===== -->
+  <section class="w-hero">
+    <svg class="deco deco-whero" viewBox="0 0 180 110" aria-hidden="true">
+      <path d="M20 40 Q30 30 40 40 M40 40 Q50 30 60 40"/>
+      <path d="M96 24 Q104 16 112 24 M112 24 Q120 16 128 24" opacity=".7"/>
+      <circle cx="150" cy="66" r="3" class="amb"/>
+      <path d="M10 92 Q34 82 58 92 T106 92 T160 92" opacity=".5"/>
+    </svg>
+    <div class="wrap">
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="/index.html">首頁</a><span class="sep">/</span>
+        <span>成果展示</span>
+      </nav>
+      <span class="w-eyebrow">Selected Works</span>
+      <h1>做過的事，<span class="hl">攤開來看</span>。</h1>
+      <p class="sub">每一則案例只有兩樣東西：一張主要圖片，一段文字說明。把做了什麼、為什麼這樣做寫清楚就好，剩下的留給你自己判斷。</p>
+    </div>
+  </section>
+
+  <!-- ===== 案例列表 ===== -->
+  <!-- 新增一則案例：複製下面整個 <article class="case reveal"> 區塊，
+       換掉 id、圖片路徑、alt、編號、標題與說明文字即可。
+       圖片規格見 /src/README.md 的「成果展示主要圖片」一節（建議 1600 × 1000）。
+       左右兩欄會自動依序交替，不需要手動調整順序。 -->
+  <section class="w-body">
+    <div class="wrap">
+      <div class="cases">
+
+        <!-- ① 小港製作所官網（本站） -->
+        <article class="case reveal" id="minato-studio">
+          <figure class="case-shot">
+            <img src="/src/works/minato-studio-site.png" alt="小港製作所官網首頁：大標「把你的故事，設計成信任的開始。」與手繪港灣插畫" width="1600" height="1000" loading="lazy">
+          </figure>
+          <div class="case-text">
+            <span class="no">Case 01</span>
+            <h2>小港製作所官網</h2>
+            <p>你正在看的這個網站，從品牌定位、資訊架構、文案、設計到前端程式，全部由我一個人完成。它同時也是我的交付水準說明書——每一個區塊的順序、每一句文案的語氣、每一次捲動的節奏，都是我在客戶專案裡會做的同一組判斷。</p>
+            <p>技術上是純手寫的 HTML、CSS 與 vanilla JS，沒有 CMS、沒有外掛，部署在靜態主機上。選這條路的理由很單純：這個站的內容一個月更新兩三次、更新的人只有我，那就不需要為了「以後可能會用到」去養一套後台。日文版與英文版預留在 /ja、/en 兩個獨立目錄，讓每個語系可以有自己的區塊順序與行高，而不是被同一套模板綁死。</p>
+          </div>
+        </article>
+
+        <!-- ② NGO 宣教士關懷組織官網（主要圖片整理中，暫以示意圖佔位） -->
+        <article class="case reveal soon" id="ngo">
+          <figure class="case-shot">
+            <img src="/src/works/ngo-mission-care.svg" alt="NGO 宣教士關懷組織官網　案例主圖整理中，暫以品牌示意圖代替" width="1600" height="1000" loading="lazy">
+          </figure>
+          <div class="case-text">
+            <span class="no">Case 02</span>
+            <h2>NGO 宣教士關懷組織官網</h2>
+            <p>使命型組織的完整數位化。這類組織最常卡住的地方，是同時要對三種人說話——需要被關懷的對象、想投入的志工、以及決定要不要捐款的支持者。三個人想知道的事不一樣，但過去全都擠在同一頁裡。</p>
+            <p>我把三大事工拆成各自的資訊層級，重新排一次「先看到什麼、接著才問什麼」的順序，再用動畫把組織的敘事節奏帶出來，最後接上表單後台讓內部同工能自己收件、自己整理。交付範圍是網站設計、互動動畫與表單後台，參考時程約 4 到 6 週。</p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="w-note reveal">
+        <div class="tt">關於這一頁</div>
+        <p>手上的案子有些簽了保密條款，有些還在進行中，能公開的會陸續補上來。想看某一類型的實際做法（多語系、B2B 官網、活動頁），直接問我最快——我可以在對談裡把畫面與判斷過程完整說給你聽。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 結尾 CTA ===== -->
+  <section class="end-cta">
+    <svg class="deco deco-endcta" viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-20 95 Q70 80 160 95 T340 95 T520 95 T700 95 T880 95 T1060 95 T1240 95 T1460 95" opacity=".8"/>
+      <path d="M-20 120 Q80 106 180 120 T380 120 T580 120 T780 120 T980 120 T1180 120 T1460 120" opacity=".45"/>
+    </svg>
+    <div class="wrap">
+      <div class="mini">聊聊吧！</div>
+      <h2>想看的案例<span class="rd">還沒放上來</span>？</h2>
+      <p>先從一場免費的 20 分鐘對談開始，我直接把畫面與判斷過程說給你聽。不合作也完全沒關係。</p>
+      <div class="cta-row"><a class="btn" href="/index.html#inquiry">免費諮詢 <span class="ar">→</span></a><a class="btn btn-alt" href="https://line.me/R/ti/p/%40762mydmp" target="_blank" rel="noopener" data-ev="line_click">加入官方 LINE</a></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 共用頁尾（footer 由 /js/include.js 從 /partials/footer.html 注入） -->
+<div id="site-footer"></div>
+
+<!-- ================= SEO：結構化資料（JSON-LD） ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "name": "成果展示｜小港製作所 Minato Studio",
+      "description": "小港製作所的網站設計成果展示。每一則案例只有一張主要圖片與一段文字說明。",
+      "url": "https://minato.3udesign.website/works/",
+      "inLanguage": "zh-Hant",
+      "publisher": {
+        "@type": "Organization",
+        "name": "小港製作所 Minato Studio",
+        "logo": { "@type": "ImageObject", "url": "https://minato.3udesign.website/src/logo500.png" }
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "小港製作所官網",
+              "description": "從品牌定位、資訊架構、文案、設計到前端程式全部一人完成的靜態多語系官網。",
+              "image": "https://minato.3udesign.website/src/works/minato-studio-site.png",
+              "url": "https://minato.3udesign.website/works/#minato-studio"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "NGO 宣教士關懷組織官網",
+              "description": "使命型組織的完整數位化：三大事工的資訊架構、互動動畫與表單後台。",
+              "image": "https://minato.3udesign.website/src/works/ngo-mission-care.svg",
+              "url": "https://minato.3udesign.website/works/#ngo"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://minato.3udesign.website/" },
+        { "@type": "ListItem", "position": 2, "name": "成果展示", "item": "https://minato.3udesign.website/works/" }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="/js/include.js"></script>
+</body>
+</html>

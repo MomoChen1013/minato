@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" role="img" aria-label="NGO 宣教士關懷組織官網　案例主圖（暫用示意圖）">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16303F"/>
+      <stop offset="62%" stop-color="#22698F"/>
+      <stop offset="100%" stop-color="#2C7CB0"/>
+    </linearGradient>
+    <filter id="wob" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="9"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+
+  <!-- 手繪海平線（沿用全站鉛筆線語彙） -->
+  <g fill="none" stroke="#3E6076" stroke-width="4" stroke-linecap="round" filter="url(#wob)" opacity=".85">
+    <path d="M-40 700 Q160 672 360 700 T760 700 T1160 700 T1640 700"/>
+    <path d="M-40 762 Q180 736 400 762 T840 762 T1280 762 T1640 762" opacity=".7"/>
+    <path d="M-40 824 Q200 800 440 824 T920 824 T1400 824 T1640 824" opacity=".45"/>
+  </g>
+
+  <!-- 燈塔光暈 -->
+  <circle cx="1245" cy="255" r="46" fill="#FFBB44" opacity=".92"/>
+  <g fill="none" stroke="#EAC27C" stroke-width="4" stroke-linecap="round" filter="url(#wob)" opacity=".75">
+    <path d="M1245 168 L1245 128"/><path d="M1332 255 L1372 255"/>
+    <path d="M1158 255 L1118 255"/><path d="M1307 193 L1335 165"/>
+    <path d="M1183 317 L1155 345"/><path d="M1307 317 L1335 345"/>
+  </g>
+
+  <!-- 小船 -->
+  <g fill="none" stroke="#AECBDE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#wob)" opacity=".9">
+    <path d="M300 700 Q312 730 348 730 L456 730 Q492 730 504 700 Z"/>
+    <path d="M402 700 L402 566 M402 578 Q470 590 470 636 L402 646"/>
+  </g>
+
+  <text x="120" y="404" fill="#FFBB44" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="30" font-weight="700" letter-spacing="9">CASE 02</text>
+  <text x="120" y="486" fill="#FDFEFF" font-family="Hiragino Sans,Noto Sans CJK TC,Microsoft JhengHei,sans-serif" font-size="66" font-weight="700" letter-spacing="4">NGO 宣教士關懷組織官網</text>
+  <text x="120" y="552" fill="#B7C7D1" font-family="Hiragino Sans,Noto Sans CJK TC,Microsoft JhengHei,sans-serif" font-size="30" letter-spacing="3">案例主圖整理中　／　Image coming soon</text>
+</svg>

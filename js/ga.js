@@ -47,8 +47,10 @@
     }
     addEventListener('scroll', onScroll, { passive: true });
 
-    // ③ 進到方案頁 / Demo 頁時各記一次
+    // ③ 進到成果展示頁 / 方案頁 / Demo 頁時各記一次
+    //    （/plan 已從站內導覽移除，這個事件現在等同「直接輸入網址進來的人」）
     var path = location.pathname;
+    if (path.indexOf('/works') === 0) track('works_view');
     if (path.indexOf('/plan') === 0) track('plan_view');
     if (path.indexOf('/demo') === 0) track('demo_view');
   }
