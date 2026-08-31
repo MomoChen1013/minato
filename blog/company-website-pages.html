@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== Google Analytics 4（評估 ID 集中於 /js/ga.js 管理） ===== -->
+<script src="/js/ga.js"></script>
+
+<!-- ========================================================= -->
+<!-- ⬇⬇⬇ 每篇文章要替換的欄位，都集中在這裡 ⬇⬇⬇                 -->
+<!-- 原始 Markdown 稿：/blog/_source/company-website-pages.md -->
+<!-- ========================================================= -->
+
+<title>公司網站要放哪些內容？五頁的最小可行結構｜小港製作所</title>
+<meta name="description" content="公司網站不是頁面越多越好。從訪客真正會問的四個問題出發，拆解中小企業官網的五頁最小可行結構、哪些頁面可以先不要做，以及什麼時候該從五頁長到八頁。">
+<meta name="keywords" content="公司網站要放哪些內容,企業網站架構,官方網站頁面,公司網站頁面規劃,中小企業網站,網站資訊架構">
+<meta name="author" content="momo｜小港製作所 Minato Studio">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<!-- 正式網址（canonical）：這篇文章的最終網址 -->
+<link rel="canonical" href="https://minato.3udesign.website/blog/company-website-pages">
+
+<!-- favicon（品牌港灣標誌，圖檔置於 /src） -->
+<link rel="icon" type="image/svg+xml" href="/src/favicon.svg">
+<link rel="apple-touch-icon" href="/src/logo500.png">
+
+<!-- Open Graph（Facebook / LINE / Threads 分享卡） -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="小港製作所 Minato Studio">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="公司網站要放哪些內容？五頁的最小可行結構">
+<meta property="og:description" content="頁面不是照同業的選單抄，是照訪客會問的問題排。五頁最小可行結構，加上哪幾頁可以先不要做。">
+<meta property="og:url" content="https://minato.3udesign.website/blog/company-website-pages">
+<!-- 這篇尚未有專屬分享圖，先共用站台預設圖（見 src/README.md） -->
+<meta property="og:image" content="https://minato.3udesign.website/src/OG-index.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="小港製作所 Minato Design Studio">
+<meta property="article:published_time" content="2026-08-31T09:00:00+08:00">
+<meta property="article:modified_time" content="2026-08-31T09:00:00+08:00">
+<meta property="article:author" content="小港製作所 Minato Studio">
+<meta property="article:section" content="網站建置">
+
+<!-- Twitter / X 卡片 -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="公司網站要放哪些內容？五頁的最小可行結構">
+<meta name="twitter:description" content="頁面不是照同業的選單抄，是照訪客會問的問題排。">
+<meta name="twitter:image" content="https://minato.3udesign.website/src/OG-index.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Sora:wght@500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/article.css">
+</head>
+<body>
+
+<div class="progress" id="prog"></div>
+
+<!-- pencil wobble filter -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <filter id="pencil" x="-20%" y="-20%" width="140%" height="140%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="4.5"/>
+  </filter>
+</defs></svg>
+
+<!-- 共用頁首（header 由 /js/include.js 從 /partials/header.html 注入） -->
+<div id="site-header"></div>
+
+<!-- ================= ARTICLE ================= -->
+<main>
+<article>
+
+  <!-- ===== hero ===== -->
+  <section class="a-hero">
+    <svg class="deco deco-ahero" viewBox="0 0 180 110" aria-hidden="true">
+      <path d="M20 40 Q30 30 40 40 M40 40 Q50 30 60 40"/>
+      <path d="M96 24 Q104 16 112 24 M112 24 Q120 16 128 24" opacity=".7"/>
+      <circle cx="150" cy="66" r="3" class="amb"/>
+      <path d="M10 92 Q34 82 58 92 T106 92 T160 92" opacity=".5"/>
+    </svg>
+    <div class="wrap">
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="/index.html">首頁</a><span class="sep">/</span>
+        <a href="/blog/">部落格</a><span class="sep">/</span>
+        <span>公司網站要放哪些內容</span>
+      </nav>
+
+      <span class="a-cat">Site Structure</span>
+      <h1>公司網站要放哪些內容？<br>中小企業官網的<span class="hl">最小可行頁面結構</span></h1>
+
+      <div class="a-meta">
+        <span class="who"><span class="av">港</span>momo｜小港製作所 Minato Studio</span>
+        <span class="dot"></span>
+        <time datetime="2026-08-31">2026 年 8 月 31 日</time>
+        <span class="dot"></span>
+        <span>閱讀約 13 分鐘</span>
+        <span class="dot"></span>
+        <span>網站建置</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== body ===== -->
+  <div class="a-body-wrap">
+    <div class="wrap a-grid">
+
+      <!-- 目次側欄 -->
+      <aside class="toc" aria-label="目次">
+        <div class="tt">目次 Contents</div>
+        <ol>
+          <li><a href="#s1">頁面是照訪客的問題排的</a></li>
+          <li><a href="#s2">五頁的最小可行結構是什麼？</a></li>
+          <li><a href="#s3">哪些頁面可以先不要做？</a></li>
+          <li><a href="#s4">什麼時候該從五頁長到八頁？</a></li>
+          <li><a href="#s5">兩年內要做日文或英文版嗎？</a></li>
+          <li><a href="#s6">我自己怎麼幫客戶排這份清單</a></li>
+          <li><a href="#faq">常見問題</a></li>
+        </ol>
+      </aside>
+
+      <!-- 內文 -->
+      <div class="article-body">
+
+        <div class="tldr">
+          <div class="tt">重點摘要</div>
+          <ul>
+            <li>公司網站的頁面不是照同業的選單抄的，是照訪客在每個階段會問的問題排出來的。</li>
+            <li>中小企業的最小可行結構是五頁：<strong>首頁、服務、實績、關於、聯絡</strong>。</li>
+            <li>部落格、最新消息、常見問答、下載中心，這四種頁面沒有人負責更新就先不要開。</li>
+            <li>從五頁長到八頁的觸發條件只有三個，沒踩到就先不要加。</li>
+            <li>兩年內可能做日文或英文版的話，頁數要在現在就砍乾淨，因為每一頁都會乘上語系數。</li>
+          </ul>
+        </div>
+
+        <p class="lead">第一次開會的時候，客戶最常帶來的東西是一張競品網站的截圖。選單上有九個項目：關於我們、企業沿革、經營理念、服務項目、產品介紹、成功案例、最新消息、人才招募、聯絡我們。接著問我一句：我們是不是也要這些？</p>
+
+        <p>我的回答通常會讓氣氛安靜幾秒——那九個項目裡，大概有四個是他們現在不需要的。</p>
+
+        <p>「公司網站要放哪些內容」被搜尋的時候，多數人心裡想的是一份清單。但清單很好找，Google 第一頁全部都是。真正難的是刪，是知道哪幾頁對你這間公司現在的階段沒有用，而且做了之後還會變成負債。</p>
+
+        <h2 id="s1">公司網站的頁面，是照訪客的問題排的</h2>
+        <p><strong>決定頁面結構的不是同業，是訪客進站後依序會問的四個問題。</strong>這四個問題的順序幾乎不會變：</p>
+        <ol>
+          <li>你們是做什麼的？（三秒內要答完，答不完他就走了）</li>
+          <li>這個能不能解決我現在的問題？</li>
+          <li>憑什麼相信你們做得到？</li>
+          <li>那我接下來要怎麼找你？</li>
+        </ol>
+        <p>一個問題對應一個頁面，五頁就出來了。多出來的頁面如果沒有對應到任何一個問題，它存在的理由通常是「別人有」。</p>
+
+        <h3>為什麼照抄同業的選單會出事</h3>
+        <p>同業的選單是他們業務結構的產物，不是設計的產物。</p>
+        <p>一間有三條產品線、兩個事業處、每年招五十個人的公司，選單上會有產品分類、事業群介紹、人才招募，因為公司內部真的有人在負責這幾件事。你把選單抄過來，得到的是一個看起來像大公司、但點進去每一頁都很空的網站。</p>
+        <blockquote>訪客不會覺得你們很有規模。他會覺得這個網站沒什麼內容。</blockquote>
+
+        <h2 id="s2">五頁的最小可行結構是什麼？</h2>
+        <p><strong>首頁、服務、實績、關於、聯絡。</strong>大部分中小企業在這五頁之內就能把該說的說完，而且五頁的內容密度撐得起來。</p>
+
+        <h3>首頁：三秒之內要回答的事</h3>
+        <p>首頁的第一屏只需要做三件事：說清楚你是誰、你解決什麼問題、下一步往哪裡點。</p>
+        <p>我判斷第一屏有沒有寫好的方法很土法煉鋼：把那句主標題唸給一個完全不懂你這行的人聽，請他用自己的話複述一次。複述得出來就過關。複述不出來的通常有兩種——寫得太抽象（「打造企業數位新未來」），或者寫得太內行（滿滿的產業術語）。</p>
+        <p>第一屏之下，首頁的其他區塊是各個內頁的入口，不是內頁的複製品。首頁不需要把服務講完，它只需要讓人願意點進服務頁。</p>
+
+        <h3>服務頁：報價之前對方一定會看的那一頁</h3>
+        <p><strong>服務頁真正的功能是幫訪客判斷「這間適不適合我」，不是把所有能做的事列出來。</strong></p>
+        <p>我會建議寫進去的東西：</p>
+        <ul>
+          <li>這個服務解決的是什麼狀況（用客戶會說的話，不是用你的產業詞）</li>
+          <li>實際的流程與各階段大概多久</li>
+          <li>包含什麼、不包含什麼</li>
+          <li>怎麼開始（不是「歡迎來電洽詢」，是具體的第一步）</li>
+        </ul>
+        <div class="callout">
+          <span class="tag">把邊界寫在頁面上</span>
+          <p>「不包含什麼」是我每次都會建議加、但客戶通常最猶豫的一段。擔心寫了會失去機會，我理解。但實際上會被那段勸退的客戶，本來也會在報價之後才發現不合，那時候雙方已經各花掉兩三個小時。把邊界寫在頁面上，濾掉的是不會成交的詢問。</p>
+        </div>
+
+        <h3>實績頁：還沒有案例的公司怎麼辦</h3>
+        <p>沒有可公開的案例，是中小企業做網站最常卡住的一頁。</p>
+        <p>可以放的替代方案有幾種，可信度由高到低：客戶願意具名的合作內容、去識別化的專案（產業別＋規模＋做了什麼＋結果的方向）、代表性情境（我通常怎麼處理某一類需求，一步一步寫出來）、過去在別的組織累積的經驗。</p>
+        <p>要避免的是把方向寫得像數字。「提升 30% 詢問量」這種句子，如果你手上沒有那份數據，就不要寫。B2B 的訪客對這種數字的反應是自動略過，寫了沒有加分，被追問的時候反而扣分。</p>
+
+        <h3>關於：不是公司沿革，是可信度</h3>
+        <p><strong>關於頁要回答的是「這件事是誰在做」，不是「這間公司哪一年成立」。</strong></p>
+        <p>年表對訪客的價值很低，除非你有一個真的很長的年份。真正有用的是：主要負責人是誰、做這行多久、為什麼是你們在做這件事、團隊多大（小也沒關係，講清楚比含糊好）、工作方式是什麼樣子。</p>
+        <p>一人工作室或十人以下的公司，我會直接建議把人放上來。規模小的時候，信任是靠人建立的，不是靠「本公司秉持專業理念」這種句子。</p>
+
+        <h3>聯絡頁：表單要問幾個欄位</h3>
+        <p><strong>每多一個必填欄位，就多一個中途放棄的點。</strong></p>
+        <p>三到五個欄位是我的預設值：姓名、聯絡方式、需求說明，這三個就能開始對話。公司名稱、預算範圍、期望時程可以放，但設成選填。</p>
+        <p>還有一件常被忽略的事：表單送出之後要讓人知道發生了什麼。停在原地沒有反應是最糟的狀況，訪客會不確定送出去了沒有，然後再送一次。至少要有一句「已收到，我會在兩個工作天內回覆」，而且那個時效要是你真的做得到的。</p>
+        <p>關於表單和 CTA 的細節，我在<a class="link" href="/blog/beautiful-website-no-inquiry.html">〈網站很漂亮，為什麼卻沒有人詢問？〉</a>裡寫得比較完整。</p>
+
+        <h2 id="s3">哪些頁面可以先不要做？</h2>
+        <p>這一段是我覺得最值得看的部分。以下四種頁面，在沒有人負責更新的情況下，做了會比不做更傷。</p>
+        <ul>
+          <li><strong>部落格。</strong>一個沒有文章的部落格，或是最後一篇停在兩年前的部落格，傳達的訊息是這間公司沒在經營。開部落格之前先確認：公司裡有沒有一個人的工作內容包含寫文章，而且他一個月生得出至少一篇。生不出來就先不要開，之後隨時可以加。</li>
+          <li><strong>最新消息。</strong>判斷方式更簡單：如果一年發不到六則，就不要做成獨立頁面，把它縮成首頁的一個小區塊，放三則就好。空的消息列表頁對 SEO 沒有幫助，對訪客只有反效果。</li>
+          <li><strong>常見問答。</strong>內容量不夠的時候，把問答直接放在服務頁最底下就好。等到累積超過十題、而且有人真的在搜尋這些問題，再獨立出來。</li>
+          <li><strong>下載中心、人才招募。</strong>前者需要持續有東西可以下載，後者需要真的在招人。沒有的話，招募資訊放在關於頁下方一小段就夠了。</li>
+        </ul>
+
+        <h2 id="s4">什麼時候該從五頁長到八頁？</h2>
+        <p><strong>觸發條件只有三個，沒踩到就先不要加。</strong></p>
+        <div class="a-table-wrap">
+          <table class="a-table">
+            <thead>
+              <tr><th scope="col">觸發條件</th><th scope="col">該加什麼</th><th scope="col">為什麼</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">業務線超過兩條，而且面對的是不同客戶</th><td>各自的服務頁</td><td>同一頁同時對兩種客戶說話，兩邊都會覺得不是在講自己</td></tr>
+              <tr><th scope="row">開始投廣告或做特定關鍵字</th><td>對應的 landing page</td><td>廣告流量落在首頁的轉換通常很差，訊息對不起來</td></tr>
+              <tr><th scope="row">開始有人搜尋「你的品牌名 ＋ 某個問題」</th><td>對應的內容頁或案例頁</td><td>需求已經被驗證了，這種頁面做了就有用</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>沒有踩到這三條，多做的頁面不會帶來詢問，只會讓你之後每次改版都要多改幾頁。如果你已經有網站、正在考慮要不要動它，判斷的順序我寫在<a class="link" href="/blog/website-redesign-or-rebuild.html">〈官網該改版、重做，還是只調整？〉</a>。</p>
+
+        <h2 id="s5">如果兩年內要做日文或英文版，現在要先決定什麼？</h2>
+        <p><strong>頁數會乘上語系數，所以多語系的公司更需要在第一版就把頁面砍乾淨。</strong></p>
+        <p>十頁的中文網站加一個日文版，實際要處理的是二十頁的內容——而且不是翻譯二十頁那麼單純，是二十頁的內容都要維護。中文版改了，日文版沒改，兩邊會慢慢對不起來。</p>
+        <p>現在就要先決定的三件事：</p>
+        <ul>
+          <li><strong>哪些頁不需要翻。</strong>招募、在地活動、只對本國客戶有意義的內容，多數時候日文版不用有。</li>
+          <li><strong>網址結構要先留。</strong>之後才決定要不要做多語系的話，網址通常要重排一次，那會影響已經累積的排名。</li>
+          <li><strong>哪些內容會頻繁更新。</strong>這一項決定了日文版該做全站還是只做精選頁面。</li>
+        </ul>
+        <p>規劃的細節我寫在<a class="link" href="/blog/chinese-japanese-bilingual-website.html">〈中日雙語網站怎麼規劃？〉</a>，如果日文版已經在計畫裡，建議連著看。</p>
+
+        <h2 id="s6">我自己怎麼幫客戶排這份清單</h2>
+        <p>順序是固定的，而且視覺是最後一步。</p>
+        <ol class="a-flow">
+          <li><b>寫訪客問題清單</b><span>不寫頁面，只寫問題，通常十五到二十個</span></li>
+          <li><b>一個問題對應一個區塊</b><span>會發現有些問題其實是同一件事，合併</span></li>
+          <li><b>把區塊分頁</b><span>頁面結構是長出來的，不是套的</span></li>
+          <li><b>然後才畫版面</b><span>視覺永遠是最後一步</span></li>
+        </ol>
+        <p>第二步通常會刪掉三分之一的區塊。不是因為那些內容不好，是因為它們回答的問題沒有人在問。</p>
+        <p>我遇過幾次客戶在第二步的時候自己說：那這一頁好像不用做。那句話出現的時候，這個專案通常會很順利——因為刪東西的決定他自己做了，後面就不會再回頭加。</p>
+        <p>至於這五頁最後要用什麼工具承載，那是排完清單之後才需要決定的事，取捨我整理在<a class="link" href="/blog/wix-website-hidden-costs.html">〈還在用 Wix 做網站嗎？〉</a>。</p>
+
+        <!-- FAQ（GEO：直接對應 FAQPage schema） -->
+        <h2 id="faq">常見問題</h2>
+        <div class="faq">
+          <details>
+            <summary>公司網站需要幾個頁面？<span class="ic">＋</span></summary>
+            <p>中小企業五頁通常就夠：首頁、服務、實績、關於、聯絡。頁面數量應該由訪客會問的問題決定，不是由同業的選單決定。等到業務線增加、開始投廣告，或有明確的搜尋需求時再擴充。</p>
+          </details>
+          <details>
+            <summary>公司網站一定要有部落格嗎？<span class="ic">＋</span></summary>
+            <p>不一定。部落格對 SEO 有長期效益，但前提是有人持續寫。公司內部沒有人的工作包含寫文章的話，建議先不要開，一個停在兩年前的部落格反而會傷害專業印象。</p>
+          </details>
+          <details>
+            <summary>沒有案例可以放什麼？<span class="ic">＋</span></summary>
+            <p>可以放去識別化的專案描述（產業別、規模、做了什麼、結果方向）、代表性的處理情境、或負責人過去的經驗。要避免的是寫出手上沒有數據支持的成效數字。</p>
+          </details>
+          <details>
+            <summary>關於我們頁面要寫什麼？<span class="ic">＋</span></summary>
+            <p>寫「這件事是誰在做、做多久、為什麼是你們」，而不是公司沿革年表。規模在十人以下的公司，把負責人放上來通常比強調公司規模更有效。</p>
+          </details>
+          <details>
+            <summary>聯絡表單要放幾個欄位？<span class="ic">＋</span></summary>
+            <p>三到五個。姓名、聯絡方式、需求說明設為必填就足以開始對話，其餘設為選填。送出後一定要有明確的回饋訊息與回覆時效。</p>
+          </details>
+        </div>
+
+        <p>如果你已經列出一份想做的頁面清單，但不確定順序該怎麼排、哪幾頁可以先不做，可以預約一場 20 分鐘網站方向諮詢。帶著你手上的清單來，我們一起把它刪到剩下必要的部分——刪完之後你自己去發包，也完全沒問題。</p>
+
+        <!-- 作者盒（E-E-A-T） -->
+        <div class="author-box">
+          <div class="av">港</div>
+          <div class="info">
+            <div class="nm">momo｜小港製作所 Minato Studio<small>MULTILINGUAL WEB UX</small></div>
+            <p class="bio">我是小港製作所的設計師。專注多語系網站的 UX 與在地化。</p>
+            <p class="bio">我協助品牌處理日文版、英文版網站的版面適配、語感校對與資訊架構，從品牌定位到網站上線都由同一個人負責，讓每一次接觸，都成為建立信任的開始。</p>
+            <p class="bio">這篇寫的是我每一個專案開頭都會做的那一步：先把頁面清單刪乾淨，再開始畫任何東西。</p>
+            <div class="cred">
+              <span class="chip">資訊架構規劃</span>
+              <span class="chip">企業官網內容盤點</span>
+              <span class="chip">多語系頁面取捨</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== related ===== -->
+  <section class="related">
+    <svg class="deco deco-rel" viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-20 95 Q70 80 160 95 T340 95 T520 95 T700 95 T880 95 T1060 95 T1240 95 T1460 95" opacity=".8"/>
+      <path d="M-20 120 Q80 106 180 120 T380 120 T580 120 T780 120 T980 120 T1180 120 T1460 120" opacity=".45"/>
+    </svg>
+    <div class="wrap">
+      <span class="sec-label">Read next</span>
+      <h2 class="reveal">接著看這幾篇</h2>
+      <div class="rel-grid">
+        <a class="rel-card reveal" href="/blog/beautiful-website-no-inquiry.html">
+          <span class="rc-cat">UX &amp; Conversion</span>
+          <h3>網站很漂亮，為什麼卻沒有人詢問？</h3>
+          <p>詢問來自引導，不是視覺——先看懂客戶，再改造網站。</p>
+          <span class="go">閱讀文章 →</span>
+        </a>
+        <a class="rel-card reveal" style="transition-delay:.08s" href="/blog/website-redesign-or-rebuild.html">
+          <span class="rc-cat">Redesign</span>
+          <h3>官網該改版、重做，還是只調整？三個判斷點</h3>
+          <p>決定的不是上線幾年，是資訊架構還撐不撐得住現在的業務。</p>
+          <span class="go">閱讀文章 →</span>
+        </a>
+        <a class="rel-card reveal" style="transition-delay:.16s" href="/blog/wix-website-hidden-costs.html">
+          <span class="rc-cat">Hidden Cost</span>
+          <h3>還在用 Wix 做網站嗎？找平台做網站後，你不知道的隱藏成本</h3>
+          <p>月費不是建置費，是租金。把兩年攤開來算一次再決定。</p>
+          <span class="go">閱讀文章 →</span>
+        </a>
+      </div>
+      <div class="rel-more reveal">
+        <a href="/blog/">瀏覽所有文章 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== end CTA ===== -->
+  <section class="end-cta">
+    <svg class="deco deco-endcta" viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-20 95 Q70 80 160 95 T340 95 T520 95 T700 95 T880 95 T1060 95 T1240 95 T1460 95" opacity=".8"/>
+      <path d="M-20 120 Q80 106 180 120 T380 120 T580 120 T780 120 T980 120 T1180 120 T1460 120" opacity=".45"/>
+      <g transform="translate(300,40)" class="amb" opacity=".9"><path d="M0 30 Q4 40 15 40 L48 40 Q58 40 62 30 Z"/><path d="M28 30 L28 4 M28 7 Q48 10 48 24 L28 26"/></g>
+    </svg>
+    <div class="wrap">
+      <div class="mini">聊聊<br>吧。</div>
+      <h2>把清單<span class="rd">刪到剩必要的</span>。</h2>
+      <p>帶著你手上那份想做的頁面清單來，20 分鐘我們一起排順序、砍掉現在還不需要的幾頁。刪完之後你自己去發包，也完全沒問題。</p>
+      <div class="cta-row"><a class="btn" href="/index.html#inquiry">預約 20 分鐘諮詢 <span class="ar">→</span></a><a class="btn btn-alt" href="https://line.me/R/ti/p/%40762mydmp" target="_blank" rel="noopener" data-ev="line_click">加入官方 LINE</a></div>
+    </div>
+  </section>
+
+</article>
+</main>
+
+<!-- 共用頁尾（footer 由 /js/include.js 從 /partials/footer.html 注入） -->
+<div id="site-footer"></div>
+
+<!-- ================= SEO / GEO：結構化資料（JSON-LD） ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "公司網站要放哪些內容？中小企業官網的最小可行頁面結構",
+      "description": "公司網站不是頁面越多越好。從訪客真正會問的四個問題出發，拆解中小企業官網的五頁最小可行結構、哪些頁面可以先不要做，以及什麼時候該從五頁長到八頁。",
+      "image": "https://minato.3udesign.website/src/OG-index.png",
+      "datePublished": "2026-08-31T09:00:00+08:00",
+      "dateModified": "2026-08-31T09:00:00+08:00",
+      "inLanguage": "zh-Hant",
+      "articleSection": "網站建置",
+      "keywords": "公司網站要放哪些內容, 企業網站架構, 官方網站頁面, 公司網站頁面規劃, 中小企業網站, 網站資訊架構",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://minato.3udesign.website/blog/company-website-pages"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Momo",
+        "jobTitle": "多語系網站 UX 設計師",
+        "knowsLanguage": ["zh-Hant", "ja", "en"],
+        "worksFor": { "@type": "Organization", "name": "小港製作所 Minato Studio", "url": "https://minato.3udesign.website/" }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "小港製作所 Minato Studio",
+        "logo": { "@type": "ImageObject", "url": "https://minato.3udesign.website/src/logo500.png" }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://minato.3udesign.website/" },
+        { "@type": "ListItem", "position": 2, "name": "部落格", "item": "https://minato.3udesign.website/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "公司網站要放哪些內容" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "公司網站需要幾個頁面？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "中小企業五頁通常就足夠：首頁、服務、實績、關於、聯絡。頁面數量應由訪客會問的問題決定，而非參考同業的選單。等到業務線增加、開始投放廣告，或出現明確的搜尋需求時再擴充。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "公司網站一定要有部落格嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不一定。部落格對 SEO 有長期效益，前提是有人持續撰寫。若公司內部沒有人負責寫文章，建議先不要開設，一個停留在兩年前的部落格反而會損害專業印象。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "公司網站沒有案例可以放什麼？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以放去識別化的專案描述、代表性的處理情境，或負責人過去累積的經驗。應避免寫出手上沒有數據支持的成效數字，這類敘述在 B2B 情境中無法建立可信度。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "關於我們頁面要寫什麼？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "應回答「這件事是誰在做、做了多久、為什麼是你們」，而不是列出公司沿革年表。規模在十人以下的公司，將負責人資訊放上來通常比強調公司規模更能建立信任。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "公司網站的聯絡表單要放幾個欄位？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "建議三到五個。姓名、聯絡方式、需求說明設為必填即可開始對話，其餘欄位設為選填。表單送出後必須顯示明確的回饋訊息與回覆時效。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="/js/include.js"></script>
+<script src="/js/article.js"></script>
+</body>
+</html>

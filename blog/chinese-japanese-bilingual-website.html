@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== Google Analytics 4（評估 ID 集中於 /js/ga.js 管理） ===== -->
+<script src="/js/ga.js"></script>
+
+<!-- ========================================================= -->
+<!-- ⬇⬇⬇ 每篇文章要替換的欄位，都集中在這裡 ⬇⬇⬇                 -->
+<!-- 原始 Markdown 稿：/blog/_source/chinese-japanese-bilingual-website.md -->
+<!-- ========================================================= -->
+
+<title>中日雙語網站怎麼規劃？六個必須先決定的事｜小港製作所</title>
+<meta name="description" content="做中日雙語網站前要先決定六件事：日文版的範圍、網址結構、hreflang、版型能不能不一樣、語言切換怎麼放、日文內容誰維護。附上可以直接拿去問廠商的規劃清單。">
+<meta name="keywords" content="中日雙語網站,雙語網站製作,多語系網站規劃,日文網站架設,hreflang,語言切換設計">
+<meta name="author" content="momo｜小港製作所 Minato Studio">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<!-- 正式網址（canonical）：這篇文章的最終網址 -->
+<link rel="canonical" href="https://minato.3udesign.website/blog/chinese-japanese-bilingual-website">
+
+<!-- favicon（品牌港灣標誌，圖檔置於 /src） -->
+<link rel="icon" type="image/svg+xml" href="/src/favicon.svg">
+<link rel="apple-touch-icon" href="/src/logo500.png">
+
+<!-- Open Graph（Facebook / LINE / Threads 分享卡） -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="小港製作所 Minato Studio">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="中日雙語網站怎麼規劃？六個必須先決定的事">
+<meta property="og:description" content="雙語網站最貴的不是第二套設計，是第二套內容的長期維護。開始之前先做完這六個決定。">
+<meta property="og:url" content="https://minato.3udesign.website/blog/chinese-japanese-bilingual-website">
+<!-- 這篇尚未有專屬分享圖，先共用站台預設圖（見 src/README.md） -->
+<meta property="og:image" content="https://minato.3udesign.website/src/OG-index.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="小港製作所 Minato Design Studio">
+<meta property="article:published_time" content="2026-08-31T09:00:00+08:00">
+<meta property="article:modified_time" content="2026-08-31T09:00:00+08:00">
+<meta property="article:author" content="小港製作所 Minato Studio">
+<meta property="article:section" content="多語系與在地化">
+
+<!-- Twitter / X 卡片 -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="中日雙語網站怎麼規劃？六個必須先決定的事">
+<meta name="twitter:description" content="最貴的不是第二套設計，是第二套內容的長期維護。">
+<meta name="twitter:image" content="https://minato.3udesign.website/src/OG-index.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Sora:wght@500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/article.css">
+</head>
+<body>
+
+<div class="progress" id="prog"></div>
+
+<!-- pencil wobble filter -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <filter id="pencil" x="-20%" y="-20%" width="140%" height="140%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="4.5"/>
+  </filter>
+</defs></svg>
+
+<!-- 共用頁首（header 由 /js/include.js 從 /partials/header.html 注入） -->
+<div id="site-header"></div>
+
+<!-- ================= ARTICLE ================= -->
+<main>
+<article>
+
+  <!-- ===== hero ===== -->
+  <section class="a-hero">
+    <svg class="deco deco-ahero" viewBox="0 0 180 110" aria-hidden="true">
+      <path d="M20 40 Q30 30 40 40 M40 40 Q50 30 60 40"/>
+      <path d="M96 24 Q104 16 112 24 M112 24 Q120 16 128 24" opacity=".7"/>
+      <circle cx="150" cy="66" r="3" class="amb"/>
+      <path d="M10 92 Q34 82 58 92 T106 92 T160 92" opacity=".5"/>
+    </svg>
+    <div class="wrap">
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="/index.html">首頁</a><span class="sep">/</span>
+        <a href="/blog/">部落格</a><span class="sep">/</span>
+        <span>中日雙語網站怎麼規劃</span>
+      </nav>
+
+      <span class="a-cat">Bilingual Site</span>
+      <h1>中日雙語網站怎麼規劃？<br>從網址結構到內容取捨的<span class="hl">六個決定</span></h1>
+
+      <div class="a-meta">
+        <span class="who"><span class="av">港</span>momo｜小港製作所 Minato Studio</span>
+        <span class="dot"></span>
+        <time datetime="2026-08-31">2026 年 8 月 31 日</time>
+        <span class="dot"></span>
+        <span>閱讀約 14 分鐘</span>
+        <span class="dot"></span>
+        <span>多語系與在地化</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== body ===== -->
+  <div class="a-body-wrap">
+    <div class="wrap a-grid">
+
+      <!-- 目次側欄 -->
+      <aside class="toc" aria-label="目次">
+        <div class="tt">目次 Contents</div>
+        <ol>
+          <li><a href="#s1">決定一：日文版要做到哪裡？</a></li>
+          <li><a href="#s2">決定二：網址結構怎麼選？</a></li>
+          <li><a href="#s3">決定三：hreflang 要不要設？</a></li>
+          <li><a href="#s4">決定四：版型可以不一樣嗎？</a></li>
+          <li><a href="#s5">決定五：語言切換按鈕放哪裡？</a></li>
+          <li><a href="#s6">決定六：日文內容誰寫、誰維護？</a></li>
+          <li><a href="#s7">可以直接拿去問廠商的清單</a></li>
+          <li><a href="#faq">常見問題</a></li>
+        </ol>
+      </aside>
+
+      <!-- 內文 -->
+      <div class="article-body">
+
+        <div class="tldr">
+          <div class="tt">重點摘要</div>
+          <ul>
+            <li>六個決定的順序是：<strong>範圍 → 網址結構 → hreflang → 版型 → 語言切換 → 誰維護</strong>。順序顛倒的話會重做。</li>
+            <li>日文版不一定要做全站。多數 B2B 網站只需要精選頁面就能開始。</li>
+            <li>沒有日本法人的話，網址用 <code>/ja/</code> 子目錄最實際，SEO 的累積也留在同一個網域上。</li>
+            <li>兩個語系的版型可以不一樣，而且多數時候應該不一樣——日文會讓同一個介面明顯變長。</li>
+            <li>雙語網站最貴的一筆不是第二套設計，是<strong>第二套內容的長期維護</strong>。</li>
+          </ul>
+        </div>
+
+        <p class="lead">我自己的網站在做日文版的時候，第一個卡住的地方不是翻譯，是導覽列。</p>
+
+        <p>中文版的選單五個項目，排得剛剛好。換成日文之後，同樣的五個項目變成一整排擠在一起，右邊的按鈕被推到掉下去。日文的名詞比中文長，這件事在規劃階段完全沒有人會想到，一直到把字放進去才會看見。</p>
+
+        <p>那時候要處理的選項有三個：縮字級、改斷點、或者日文版本來就用不一樣的導覽方式。我選了第三個——然後才意識到，「兩個語系可以長得不一樣」這件事如果沒有在一開始就決定，後面每一步都會卡。</p>
+
+        <p>雙語網站的問題幾乎都是這樣：不是翻譯的問題，是決定順序的問題。</p>
+
+        <p>至於「為什麼不能只交給翻譯社或 AI」，我在<a class="link" href="/blog/japan-localization-not-translation.html">〈為什麼做真正的多語系網站，不能只靠翻譯社、AI 翻譯？〉</a>裡寫過，這篇不重複，直接講怎麼做。</p>
+
+        <h2 id="s1">決定一：日文版要做到哪裡？</h2>
+        <p><strong>先決定範圍，再決定其他所有事情。範圍沒定就開始設計，一定會回頭重來。</strong></p>
+        <p>三種常見的做法：</p>
+        <div class="a-table-wrap">
+          <table class="a-table">
+            <thead>
+              <tr><th scope="col">做法</th><th scope="col">內容量</th><th scope="col">適合的狀況</th><th scope="col">主要風險</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">全站對譯</th><td>100%</td><td>日本是主力市場、已有日本客戶或代理</td><td>維護成本翻倍，中日兩版容易脫節</td></tr>
+              <tr><th scope="row">精選頁面</th><td>30–50%</td><td>日本市場在測試階段、B2B 少量客戶</td><td>訪客點到未翻譯頁面時的動線要處理</td></tr>
+              <tr><th scope="row">獨立 landing</th><td>單頁</td><td>展會、參展前、特定產品試水溫</td><td>難累積 SEO，適合短期</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>判斷的依據不是預算，是<strong>日本客戶會在決策的哪個階段來看你的網站</strong>。</p>
+        <p>如果對方是先在展會或介紹認識你，網站的角色是「確認這間公司真的存在、看起來可靠」，那精選頁面就夠了——会社概要、服務、實績、問合せ，四頁到六頁。</p>
+        <p>如果你期待日本客戶是從搜尋找到你的，那需要的是全站，而且要有持續產出的日文內容，因為 SEO 是靠內容量累積的。</p>
+        <blockquote>我的預設建議是從精選頁面開始。全站對譯做完之後，第二年會發現中文版改了很多次、日文版一次都沒動，那時候的落差比一開始少做幾頁還難處理。</blockquote>
+        <p>日文版要挑哪幾頁，可以對照<a class="link" href="/blog/company-website-pages.html">〈公司網站要放哪些內容？〉</a>裡的五頁結構去砍。</p>
+
+        <h2 id="s2">決定二：網址結構要用子目錄、子網域，還是獨立網域？</h2>
+        <p><strong>沒有日本法人與獨立營運團隊的話，用子目錄。</strong></p>
+        <div class="a-table-wrap">
+          <table class="a-table">
+            <thead>
+              <tr><th scope="col">結構</th><th scope="col">長相</th><th scope="col">優點</th><th scope="col">代價</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">子目錄</th><td><code>example.com/ja/</code></td><td>網域權重共用、管理最單純、成本最低</td><td>無法針對日本做主機層級的區隔</td></tr>
+              <tr><th scope="row">子網域</th><td><code>ja.example.com</code></td><td>可獨立部署、可分開管理</td><td>搜尋引擎可能視為不同站，權重累積較慢</td></tr>
+              <tr><th scope="row">獨立網域</th><td><code>example.co.jp</code></td><td>對日本使用者最有在地感</td><td>要從零累積 SEO、需符合註冊條件、成本最高</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><code>.co.jp</code> 需要在日本登記的法人才能申請，<code>.jp</code> 的申請也有在地聯絡人或住址的要求，這類規定會調整，真的要走這條路之前請去註冊管理單位的官網確認當下的條件。</p>
+        <p>台灣公司在還沒有日本法人的階段，我幾乎都建議子目錄。理由很實際：你目前所有的搜尋累積都在原本那個網域上，切出去等於重新開始，而重新開始的那段空窗期，通常剛好是你最需要日本客戶找到你的時候。</p>
+        <p>網域策略還牽涉到公司資訊、聯絡窗口這些非設計的準備，那部分我整理在<a class="link" href="/blog/japan-market-website-checklist.html">〈台灣企業進日本市場，網站需要準備什麼？〉</a>。</p>
+
+        <h2 id="s3">決定三：hreflang 要不要設，怎麼設？</h2>
+        <p><strong>hreflang 是一段告訴搜尋引擎「這一頁還有其他語言版本」的標記，兩個語言以上就該設。</strong></p>
+        <p>它解決的問題是：讓日本的使用者搜尋時看到日文版、台灣的使用者看到中文版，而不是兩邊互相搶同一個排名位置。</p>
+        <p>基本做法有三個重點：</p>
+        <ul>
+          <li><strong>雙向宣告。</strong>中文頁要指向日文頁，日文頁也要指回中文頁。只有單邊宣告的話，搜尋引擎會忽略它。</li>
+          <li><strong>每一頁都要對應到內容相同的那一頁。</strong>不是全部指向對方的首頁。日文版沒有對應頁面的時候，那一頁就不要設。</li>
+          <li><strong><code>x-default</code> 指定預設版本。</strong>給的是「都不符合的時候要去哪裡」的答案。</li>
+        </ul>
+        <p>寫法在 Google 官方文件上有完整說明，實作細節請以官方當下的版本為準。</p>
+
+        <h3>雙語網站會被 Google 當成重複內容嗎？</h3>
+        <p><strong>不會。</strong>不同語言的頁面本來就是不同內容，正確標示 hreflang 之後，搜尋引擎會知道它們是同一份內容的不同語言版本。</p>
+        <p>真正會出問題的情況有兩種：一種是日文版其實只是機器直翻、內容品質很低；另一種是同一種語言做了好幾個幾乎一樣的頁面（例如 <code>zh-tw</code> 和 <code>zh-hk</code> 內容完全相同）。這兩種都不是雙語本身的問題。</p>
+
+        <h2 id="s4">決定四：兩個語系的版型可以長得不一樣嗎？</h2>
+        <p><strong>可以，而且多數時候應該不一樣。</strong></p>
+        <p>日文對版面造成的實際影響，做過才會知道：</p>
+        <ul>
+          <li><strong>名詞會變長。</strong>「服務」變成「サービス」，「聯絡我們」變成「お問い合わせ」。導覽列、按鈕、標籤這些寬度固定的元件最容易爆版。</li>
+          <li><strong>沒有空格，斷行規則不同。</strong>日文靠標點與假名斷行，行尾禁則（小字、標點不能出現在行首）跟中文不完全一樣。預設的 CSS 設定通常是照英文邏輯來的。</li>
+          <li><strong>漢字與假名混排，視覺密度不同。</strong>同樣的字級與行高，日文看起來會比中文擠。行高通常要往上調。</li>
+          <li><strong>標題的斷行位置要人工看過。</strong>自動斷行常常把一個詞切成兩半，日本人看得出來，而且那很傷專業感。</li>
+        </ul>
+        <div class="callout">
+          <span class="tag">共用元件，不共用版面順序</span>
+          <p>顏色、字級級距、按鈕樣式、間距單位這些沿用同一套設計系統；區塊順序、內容深度、CTA 文案則各自決定。這是我做雙語網站的預設做法。</p>
+        </div>
+        <p>實務上這件事會直接影響平台選擇。如果你用的工具是「一套版面、切換語言只換字」，那日文版就注定要遷就中文版的排版。這一層的取捨我在<a class="link" href="/blog/wix-website-hidden-costs.html">〈還在用 Wix 做網站嗎？〉</a>裡有比較完整的說明。</p>
+        <p>日本市場在版面與資訊密度上的其他差異，可以接著看<a class="link" href="/blog/japan-website-design-7-things.html">〈日本市場網站設計和台灣有什麼不同？〉</a>。</p>
+
+        <h2 id="s5">決定五：語言切換按鈕放哪裡？</h2>
+        <p>四個原則，都是很小但很常出錯的細節：</p>
+        <ul>
+          <li><strong>放在頁首右上角。</strong>這是日本網站的慣例位置，訪客會直接往那邊找。</li>
+          <li><strong>用該語言自己的寫法。</strong>日文版寫「日本語」，中文版寫「繁體中文」，不要寫「JP」「TW」，更不要用國旗——語言和國家不是同一件事。</li>
+          <li><strong>切換之後要停在對應的那一頁。</strong>我看過太多網站是切了語言就跳回首頁，訪客要重新找一次。這件事在實作上要一頁一頁對，沒有捷徑。</li>
+          <li><strong>沒有對應頁面的時候要說清楚。</strong>用精選頁面策略的網站一定會遇到，最簡單的處理是切換到最接近的上層頁面，並且顯示一句說明。</li>
+        </ul>
+        <p>還有一個判斷是：要不要自動偵測瀏覽器語言然後跳轉？我的答案是不要自動跳。可以偵測之後給一個提示條讓對方自己選，強制跳轉會讓想看中文版的日本人找不到路。</p>
+
+        <h2 id="s6">決定六：日文內容誰寫、誰維護？</h2>
+        <p><strong>這是六個決定裡影響最長遠的一個，也是最多人在簽約時沒有討論的一個。</strong></p>
+        <p>日文內容的來源大致三種：</p>
+        <div class="a-table-wrap">
+          <table class="a-table">
+            <thead>
+              <tr><th scope="col">來源</th><th scope="col">成本</th><th scope="col">適合</th><th scope="col">要注意</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">翻譯社</th><td>中到高</td><td>規格書、技術文件、法務文字</td><td>譯者通常沒有版面資訊，行銷語氣需另外調整</td></tr>
+              <tr><th scope="row">AI 翻譯</th><td>低</td><td>初稿、內部溝通、資訊型內容</td><td>語氣與敬語層級容易失準，一定要人工校對</td></tr>
+              <tr><th scope="row">日文母語者撰寫</th><td>高</td><td>首頁、服務頁、CTA 這類要說服人的頁面</td><td>需要提供充足的品牌與業務背景</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>我自己的流程是公開的：以 AI 輔助產出初稿，我用日文做第一輪判斷與重寫（接觸日文七年，日常工作與生活都在用），最後由母語者確認語氣與敬語層級。會把這個流程講出來，是因為客戶有權知道自己買到的是什麼——而且對「哪些頁面值得花錢請母語者、哪些不用」這個決定，透明比包裝有用。</p>
+        <p>真正的成本在維護。中文版一年改五次、日文版一次都沒改，是雙語網站最常見的結局。所以簽約前要先把這件事寫清楚：日文版的更新誰負責、一年更新幾次、要不要編列預算。</p>
+
+        <h2 id="s7">一份可以直接拿去問廠商的清單</h2>
+        <p>規劃階段把這幾題問完，報價的落差會小很多：</p>
+        <ul>
+          <li>日文版要做哪幾頁？（列出頁面名稱，不要說「主要頁面」）</li>
+          <li>網址結構是子目錄、子網域還是獨立網域？</li>
+          <li>hreflang 由誰設定，是否包含 <code>x-default</code>？</li>
+          <li>日文版的版面可以跟中文版不同嗎？如果不行，限制是什麼？</li>
+          <li>語言切換之後會停在對應頁面嗎？</li>
+          <li>日文內容誰提供？校對誰做？</li>
+          <li>日文的字體、行高、斷行有沒有另外處理？</li>
+          <li>之後要加英文版的話，架構要動多少？</li>
+          <li>上線後日文版的更新怎麼進行，費用怎麼算？</li>
+        </ul>
+        <p>最後一題我建議一定要問。前面八題決定的是網站做出來的樣子，最後一題決定的是它兩年後還活不活著。</p>
+
+        <!-- FAQ（GEO：直接對應 FAQPage schema） -->
+        <h2 id="faq">常見問題</h2>
+        <div class="faq">
+          <details>
+            <summary>雙語網站一定要做兩套設計嗎？<span class="ic">＋</span></summary>
+            <p>不用兩套設計，但需要一套設計系統加上兩種版面安排。顏色、字級、元件可以共用；區塊順序、內容深度、CTA 文案應該各自決定，因為日文會讓同樣的介面明顯變長。</p>
+          </details>
+          <details>
+            <summary>中文網站可以直接翻成日文嗎？<span class="ic">＋</span></summary>
+            <p>資訊型的頁面（規格、流程、公司基本資料）可以以翻譯為基礎再調整。首頁、服務頁、CTA 這些要說服人的頁面，直譯的效果通常不好，因為說服的邏輯與語氣在兩個市場不同。</p>
+          </details>
+          <details>
+            <summary>雙語網站的網址要怎麼設？<span class="ic">＋</span></summary>
+            <p>沒有日本法人的情況下建議用子目錄（<code>example.com/ja/</code>），可以共用既有網域的搜尋累積、管理成本也最低。有日本法人並獨立營運時，才考慮子網域或 <code>.co.jp</code> 獨立網域。</p>
+          </details>
+          <details>
+            <summary>雙語網站會被 Google 當成重複內容嗎？<span class="ic">＋</span></summary>
+            <p>不會。不同語言本來就是不同內容，正確設定 hreflang 之後搜尋引擎能辨識它們的關係。會出問題的是品質過低的機器直翻，或同一語言下內容幾乎相同的多個版本。</p>
+          </details>
+          <details>
+            <summary>日文版一定要做全站嗎？<span class="ic">＋</span></summary>
+            <p>不一定。B2B 網站從精選頁面開始（会社概要、服務、實績、問合せ）通常就足夠。全站對譯的維護成本是雙倍，建議在日本市場已經有明確需求之後再擴充。</p>
+          </details>
+        </div>
+
+        <p>如果你正在考慮做中日雙語網站，可以預約一場 20 分鐘網站方向諮詢。我們先聊你的市場階段和日本客戶目前是怎麼認識你的，再決定日文版要做到什麼程度——很多時候答案會比你原本想的少一半。</p>
+
+        <!-- 作者盒（E-E-A-T） -->
+        <div class="author-box">
+          <div class="av">港</div>
+          <div class="info">
+            <div class="nm">momo｜小港製作所 Minato Studio<small>MULTILINGUAL WEB UX</small></div>
+            <p class="bio">我是小港製作所的設計師。專注多語系網站的 UX 與在地化。</p>
+            <p class="bio">我協助品牌處理日文版、英文版網站的版面適配、語感校對與資訊架構，從品牌定位到網站上線都由同一個人負責，讓每一次接觸，都成為建立信任的開始。</p>
+            <p class="bio">這六個決定的順序，是我在做自己網站日文版的時候一步一步撞出來的，撞到的每一項都寫進去了。</p>
+            <div class="cred">
+              <span class="chip">中日雙語網站規劃</span>
+              <span class="chip">hreflang 與網址結構</span>
+              <span class="chip">日文版面適配</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== related ===== -->
+  <section class="related">
+    <svg class="deco deco-rel" viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-20 95 Q70 80 160 95 T340 95 T520 95 T700 95 T880 95 T1060 95 T1240 95 T1460 95" opacity=".8"/>
+      <path d="M-20 120 Q80 106 180 120 T380 120 T580 120 T780 120 T980 120 T1180 120 T1460 120" opacity=".45"/>
+    </svg>
+    <div class="wrap">
+      <span class="sec-label">Read next</span>
+      <h2 class="reveal">接著看這幾篇</h2>
+      <div class="rel-grid">
+        <a class="rel-card reveal" href="/blog/japan-market-website-checklist.html">
+          <span class="rc-cat">Japan Market</span>
+          <h3>台灣企業進日本市場，網站需要準備什麼？上線前的九項清單</h3>
+          <p>問合せ送出之後誰用日文回、幾點回——這題沒答案，前面全部作廢。</p>
+          <span class="go">閱讀文章 →</span>
+        </a>
+        <a class="rel-card reveal" style="transition-delay:.08s" href="/blog/japan-localization-not-translation.html">
+          <span class="rc-cat">Localization</span>
+          <h3>為什麼做真正的多語系網站，不能只靠翻譯社、AI 翻譯？</h3>
+          <p>翻譯讓人看得懂，在地化讓人願意行動——那是設計工作。</p>
+          <span class="go">閱讀文章 →</span>
+        </a>
+        <a class="rel-card reveal" style="transition-delay:.16s" href="/blog/japan-website-design-7-things.html">
+          <span class="rc-cat">Japan Market UX</span>
+          <h3>日本市場網站設計和台灣有什麼不同？做日文網站前一定要知道的 7 件事</h3>
+          <p>難處不在翻譯，在資訊順序、UI 長度與信任訊號。</p>
+          <span class="go">閱讀文章 →</span>
+        </a>
+      </div>
+      <div class="rel-more reveal">
+        <a href="/blog/">瀏覽所有文章 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== end CTA ===== -->
+  <section class="end-cta">
+    <svg class="deco deco-endcta" viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-20 95 Q70 80 160 95 T340 95 T520 95 T700 95 T880 95 T1060 95 T1240 95 T1460 95" opacity=".8"/>
+      <path d="M-20 120 Q80 106 180 120 T380 120 T580 120 T780 120 T980 120 T1180 120 T1460 120" opacity=".45"/>
+      <g transform="translate(300,40)" class="amb" opacity=".9"><path d="M0 30 Q4 40 15 40 L48 40 Q58 40 62 30 Z"/><path d="M28 30 L28 4 M28 7 Q48 10 48 24 L28 26"/></g>
+    </svg>
+    <div class="wrap">
+      <div class="mini">聊聊<br>吧。</div>
+      <h2>日文版<span class="rd">要做到什麼程度</span>？</h2>
+      <p>先聊你的市場階段、日本客戶目前是怎麼認識你的，再決定範圍。很多時候，答案會比你原本想的少一半。</p>
+      <div class="cta-row"><a class="btn" href="/index.html#inquiry">預約 20 分鐘諮詢 <span class="ar">→</span></a><a class="btn btn-alt" href="https://line.me/R/ti/p/%40762mydmp" target="_blank" rel="noopener" data-ev="line_click">加入官方 LINE</a></div>
+    </div>
+  </section>
+
+</article>
+</main>
+
+<!-- 共用頁尾（footer 由 /js/include.js 從 /partials/footer.html 注入） -->
+<div id="site-footer"></div>
+
+<!-- ================= SEO / GEO：結構化資料（JSON-LD） ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "中日雙語網站怎麼規劃？從網址結構到內容取捨的六個決定",
+      "description": "做中日雙語網站前要先決定六件事：日文版的範圍、網址結構、hreflang、版型能不能不一樣、語言切換怎麼放、日文內容誰維護。",
+      "image": "https://minato.3udesign.website/src/OG-index.png",
+      "datePublished": "2026-08-31T09:00:00+08:00",
+      "dateModified": "2026-08-31T09:00:00+08:00",
+      "inLanguage": "zh-Hant",
+      "articleSection": "多語系與在地化",
+      "keywords": "中日雙語網站, 雙語網站製作, 多語系網站規劃, 日文網站架設, hreflang, 語言切換設計",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://minato.3udesign.website/blog/chinese-japanese-bilingual-website"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Momo",
+        "jobTitle": "多語系網站 UX 設計師",
+        "knowsLanguage": ["zh-Hant", "ja", "en"],
+        "worksFor": { "@type": "Organization", "name": "小港製作所 Minato Studio", "url": "https://minato.3udesign.website/" }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "小港製作所 Minato Studio",
+        "logo": { "@type": "ImageObject", "url": "https://minato.3udesign.website/src/logo500.png" }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://minato.3udesign.website/" },
+        { "@type": "ListItem", "position": 2, "name": "部落格", "item": "https://minato.3udesign.website/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "中日雙語網站怎麼規劃" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "雙語網站一定要做兩套設計嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不需要兩套設計，但需要一套設計系統搭配兩種版面安排。顏色、字級與元件可以共用；區塊順序、內容深度與 CTA 文案應各自決定，因為日文會使同樣的介面元件明顯變長。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "中文網站可以直接翻成日文嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "資訊型頁面如規格、流程與公司基本資料，可以先翻譯再調整。首頁、服務頁與 CTA 這類需要說服訪客的頁面，直譯效果通常不佳，因為說服邏輯與語氣在兩個市場並不相同。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "中日雙語網站的網址要怎麼設定？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "沒有日本法人時建議使用子目錄結構，例如 example.com/ja/，可共用既有網域的搜尋累積，管理成本也最低。已設立日本法人並獨立營運時，才考慮子網域或 .co.jp 獨立網域。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "雙語網站會被 Google 當成重複內容嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不會。不同語言版本本來就是不同內容，正確設定 hreflang 之後搜尋引擎能辨識彼此的對應關係。實際會出問題的是品質過低的機器直翻，或同一語言下內容幾乎相同的多個版本。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "日文版網站一定要做全站嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不一定。B2B 網站從精選頁面開始通常就足夠，例如公司概要、服務、實績與聯絡頁。全站對譯的長期維護成本是雙倍，建議在日本市場出現明確需求後再擴充。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="/js/include.js"></script>
+<script src="/js/article.js"></script>
+</body>
+</html>

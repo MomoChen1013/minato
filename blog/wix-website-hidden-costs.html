@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== Google Analytics 4（評估 ID 集中於 /js/ga.js 管理） ===== -->
+<script src="/js/ga.js"></script>
+
+<!-- ========================================================= -->
+<!-- ⬇⬇⬇ 每篇文章要替換的欄位，都集中在這裡 ⬇⬇⬇                 -->
+<!-- 原始 Markdown 稿：/blog/_source/wix-website-hidden-costs.md -->
+<!-- ========================================================= -->
+
+<title>還在用 Wix 做網站嗎？平台網站的五個隱藏成本｜小港製作所</title>
+<meta name="description" content="架站平台一個月幾百塊，看起來很划算。但真正的價格是網站活著的每一個月，加上功能分級、資產歸屬、搬家限制、多語系另計與 SEO 天花板。把兩年攤開來算一次再決定。">
+<meta name="keywords" content="Wix 做網站,架站平台,Wix 缺點,網站月費,網站搬家,網站資產歸屬,公司網站架設">
+<meta name="author" content="momo｜小港製作所 Minato Studio">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<!-- 正式網址（canonical）：這篇文章的最終網址 -->
+<link rel="canonical" href="https://minato.3udesign.website/blog/wix-website-hidden-costs">
+
+<!-- favicon（品牌港灣標誌，圖檔置於 /src） -->
+<link rel="icon" type="image/svg+xml" href="/src/favicon.svg">
+<link rel="apple-touch-icon" href="/src/logo500.png">
+
+<!-- Open Graph（Facebook / LINE / Threads 分享卡） -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="小港製作所 Minato Studio">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="還在用 Wix 做網站嗎？找平台做網站後，你不知道的隱藏成本">
+<meta property="og:description" content="平台的月費不是建置費，是租金。真正的成本在功能分級、資產歸屬、搬家限制與多語系。">
+<meta property="og:url" content="https://minato.3udesign.website/blog/wix-website-hidden-costs">
+<!-- 這篇尚未有專屬分享圖，先共用站台預設圖（見 src/README.md） -->
+<meta property="og:image" content="https://minato.3udesign.website/src/OG-index.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="小港製作所 Minato Design Studio">
+<meta property="article:published_time" content="2026-08-31T09:00:00+08:00">
+<meta property="article:modified_time" content="2026-08-31T09:00:00+08:00">
+<meta property="article:author" content="小港製作所 Minato Studio">
+<meta property="article:section" content="網站建置">
+
+<!-- Twitter / X 卡片 -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="還在用 Wix 做網站嗎？找平台做網站後，你不知道的隱藏成本">
+<meta name="twitter:description" content="平台的月費不是建置費，是租金。把兩年攤開來算一次再決定。">
+<meta name="twitter:image" content="https://minato.3udesign.website/src/OG-index.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Sora:wght@500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/article.css">
+</head>
+<body>
+
+<div class="progress" id="prog"></div>
+
+<!-- pencil wobble filter -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <filter id="pencil" x="-20%" y="-20%" width="140%" height="140%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="4.5"/>
+  </filter>
+</defs></svg>
+
+<!-- 共用頁首（header 由 /js/include.js 從 /partials/header.html 注入） -->
+<div id="site-header"></div>
+
+<!-- ================= ARTICLE ================= -->
+<main>
+<article>
+
+  <!-- ===== hero ===== -->
+  <section class="a-hero">
+    <svg class="deco deco-ahero" viewBox="0 0 180 110" aria-hidden="true">
+      <path d="M20 40 Q30 30 40 40 M40 40 Q50 30 60 40"/>
+      <path d="M96 24 Q104 16 112 24 M112 24 Q120 16 128 24" opacity=".7"/>
+      <circle cx="150" cy="66" r="3" class="amb"/>
+      <path d="M10 92 Q34 82 58 92 T106 92 T160 92" opacity=".5"/>
+    </svg>
+    <div class="wrap">
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="/index.html">首頁</a><span class="sep">/</span>
+        <a href="/blog/">部落格</a><span class="sep">/</span>
+        <span>平台網站的隱藏成本</span>
+      </nav>
+
+      <span class="a-cat">Hidden Cost</span>
+      <h1>還在用 Wix 做網站嗎？<br>找平台做網站後，你不知道的<span class="hl">隱藏成本</span></h1>
+
+      <div class="a-meta">
+        <span class="who"><span class="av">港</span>momo｜小港製作所 Minato Studio</span>
+        <span class="dot"></span>
+        <time datetime="2026-08-31">2026 年 8 月 31 日</time>
+        <span class="dot"></span>
+        <span>閱讀約 12 分鐘</span>
+        <span class="dot"></span>
+        <span>網站建置</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== body ===== -->
+  <div class="a-body-wrap">
+    <div class="wrap a-grid">
+
+      <!-- 目次側欄 -->
+      <aside class="toc" aria-label="目次">
+        <div class="tt">目次 Contents</div>
+        <ol>
+          <li><a href="#s1">平台的價格不是建置費，是租金</a></li>
+          <li><a href="#s2">網域、主機、CMS、前端分開看</a></li>
+          <li><a href="#s3">隱藏成本一：功能綁在方案階層裡</a></li>
+          <li><a href="#s4">隱藏成本二：帳號與資產在誰名下</a></li>
+          <li><a href="#s5">隱藏成本三：搬家只能帶走一部分</a></li>
+          <li><a href="#s6">隱藏成本四：多語系另外算</a></li>
+          <li><a href="#s7">隱藏成本五：效能與 SEO 的天花板</a></li>
+          <li><a href="#s8">那什麼時候用平台是對的？</a></li>
+          <li><a href="#s9">決定之前，把兩年攤開來算</a></li>
+          <li><a href="#faq">常見問題</a></li>
+        </ol>
+      </aside>
+
+      <!-- 內文 -->
+      <div class="article-body">
+
+        <div class="tldr">
+          <div class="tt">重點摘要</div>
+          <ul>
+            <li>架站平台的月費不是建置費，是<strong>租金</strong>——網站活著的每一個月都要付，停繳就下線。</li>
+            <li>五個隱藏成本：功能被綁在方案階層、資產歸屬不清、搬家只能帶走一部分、多語系另外算、效能與 SEO 有天花板。</li>
+            <li>搬家時帶得走的是網域、文字和圖片；帶不走的是版面、CMS 結構和網址結構——所以搬家的實際成本等於重做一次。</li>
+            <li><strong>兩年是分水嶺。</strong>比價的時候把時間拉到兩年，排名常常會翻過來。</li>
+            <li>但有三種情況用平台完全合理，文章後半有具體條件。</li>
+          </ul>
+        </div>
+
+        <p class="lead">「Wix 一個月幾百塊就有網站，為什麼你們的報價是幾萬？」</p>
+
+        <p>這句話我被問過很多次，而且問得很合理。攤在桌上的兩個數字差距確實很大。</p>
+
+        <p>我的回答通常不是講設計。我會請對方把時間軸拉到兩年，然後把幾個沒有寫在方案頁上的東西一項一項加回去。加完之後，那兩個數字有時候還是差很多，有時候會靠得很近——但至少那是同一種單位的比較。</p>
+
+        <p>這篇要講的就是那幾項沒有寫在方案頁上的東西。</p>
+
+        <h2 id="s1">平台的價格不是建置費，是租金</h2>
+        <p><strong>架站平台賣的不是一個網站，是一個網站的使用權。</strong></p>
+        <p>這件事影響的是計價的結構。傳統的做法是一次性付一筆建置費，網站是你的；平台的做法是每個月付一筆，網站在平台上。停止付費之後，網站會下線，內容也可能在一段時間後被清掉。</p>
+        <p>租跟買各有各的道理，但比價的時候不能用「一個月幾百塊」對上「一次幾萬塊」，那不是同一個單位。</p>
+        <p><strong>要換算的話，把時間拉到兩年。</strong>兩年是我建議的分水嶺，因為多數公司的網站至少會用這麼久，而且平台的隱藏成本通常在第二年才會浮出來——第一年還在優惠期、內容還不多、也還沒有人想搬家。</p>
+
+        <h2 id="s2">先把網域、主機、CMS、前端分開看</h2>
+        <p><strong>很多報價單看起來差很多，是因為上面的名詞不在同一層。</strong>先把層次拆開，後面的比較才有意義。</p>
+        <ul>
+          <li><strong>網域（Domain）</strong>：你的地址，像 <code>example.com</code>。向網域註冊商申請，一年幾百到一千多台幣。</li>
+          <li><strong>主機／Hosting</strong>：放網站檔案的地方。共享主機、雲端主機、平台自帶的空間都算。</li>
+          <li><strong>CMS（Content Management System，內容管理系統）</strong>：讓不會寫程式的人自己更新內容的後台。</li>
+          <li><strong>前端</strong>：使用者實際看到的畫面，由 HTML、CSS、JavaScript 組成。</li>
+          <li><strong>DNS</strong>：把網域指到主機的那張對照表，通常在註冊商的後台設定。</li>
+        </ul>
+        <p>架站平台的做法是把這四層包在一起賣，這就是它方便的地方——一個帳號解決全部。也是它綁得最緊的地方，因為要拆開的時候，四層是黏住的。</p>
+        <p>把層次拆開之後你會發現一件事：換做法很少是整個搬走。網域可以留著，文字內容可以留著，實際換掉的常常只有其中一到兩層。但這件事在平台上比較難成立，原因在下面第三項。</p>
+
+        <h2 id="s3">隱藏成本一：你要的功能綁在方案階層裡</h2>
+        <p><strong>平台的方案表是照功能切的，而不是照網站大小切的。</strong></p>
+        <p>常見會被切在較高方案的項目：</p>
+        <ul>
+          <li>移除平台自己的浮水印或網址標記</li>
+          <li>綁定自己的網域</li>
+          <li>表單、電子報、預約功能的進階設定</li>
+          <li>多語系</li>
+          <li>流量、儲存空間、CMS 項目數的上限</li>
+          <li>移除平台廣告</li>
+        </ul>
+        <p>問題不是這些要收錢，是<strong>你通常在做到一半的時候才發現要升級</strong>。第一版做完，發現想加的那個功能在上一階，於是升級；半年後想加多語系，發現又在更上一階。</p>
+
+        <div class="callout">
+          <span class="tag">開始之前先列五件事</span>
+          <p>在開始之前先列出「我一定要有的五件事」，然後拿著這五項去官網對照現在的方案表。方案內容與價格會調整，寫在文章裡的數字很快就過期，一定要自己去看當下的版本。</p>
+        </div>
+
+        <h2 id="s4">隱藏成本二：帳號與資產在誰名下</h2>
+        <p><strong>如果網站是別人幫你開的帳號，那個網站在合約上不一定是你的。</strong></p>
+        <p>這件事我每次都會問，而且會問得很直接：如果有一天我們不合作了，這個網站你拿不拿得走？</p>
+        <p>要確認的有三項：</p>
+        <ul>
+          <li><strong>網域註冊在誰名下。</strong>廠商代買很常見，但續約通知會寄到廠商的信箱，而不是你的。</li>
+          <li><strong>平台帳號是誰開的。</strong>網站建在廠商的 workspace 底下的話，你的存取權是被授權的，不是擁有的。</li>
+          <li><strong>付款方式綁在誰的卡上。</strong>這一項決定了斷線的時候誰能救。</li>
+        </ul>
+        <p>三項裡面，網域是最關鍵的。只要網域在你名下，其他部分再麻煩也重建得回來；網域拿不回來，你等於連地址都要換。</p>
+
+        <blockquote>我建議把這三項寫進合約，一開始就寫。事後要補的時候通常已經是在不愉快的情境下談了。</blockquote>
+
+        <p>如果你手上已經有一個網站，而這三項的答案你現在講不出來，那該處理的順序可能不是改版而是先把資產拿回來——這一段我寫在<a class="link" href="/blog/website-redesign-or-rebuild.html">〈官網該改版、重做，還是只調整？〉</a>。</p>
+
+        <h2 id="s5">隱藏成本三：搬家的時候，你只能帶走一部分</h2>
+        <p><strong>離開平台的實際成本，等於重做一次網站。</strong></p>
+        <p>帶得走的：</p>
+        <ul>
+          <li>網域（前提是註冊在你名下）</li>
+          <li>文字內容（複製貼上就好）</li>
+          <li>圖片素材（要自己一張一張下載）</li>
+        </ul>
+        <p>帶不走的：</p>
+        <ul>
+          <li>版面與設計（平台匯出的檔案通常不能直接在別的地方跑）</li>
+          <li>CMS 裡的資料結構（文章、產品、分類的欄位設計）</li>
+          <li>平台的內建功能（表單、預約、金流、會員）</li>
+          <li><strong>網址結構</strong></li>
+        </ul>
+        <p>最後一項是最貴的。平台會用自己的規則產生網址，換到別的地方之後網址對不起來，如果沒有做一對一的 301 轉址，原本累積的搜尋排名會斷掉。內容還在，但 Google 認不得那是同一頁。</p>
+        <p>所以「以後不滿意再換」這個想法要打個折。技術上換得掉，但你換掉的不只是平台，是三年份的累積。</p>
+
+        <h2 id="s6">隱藏成本四：多語系幾乎都是另外算的</h2>
+        <p><strong>平台的多語系功能，多半是「同一套版面換字」。</strong></p>
+        <p>對只做中英文、而且兩邊內容一樣的網站，這樣就夠了。但如果你要做的是日文版，這個限制會直接撞牆：</p>
+        <ul>
+          <li><strong>日文名詞比中文長。</strong>「聯絡我們」變成「お問い合わせ」，導覽列和按鈕的寬度會不夠。同一套版面的話，中文版排得剛剛好的地方，日文版就會擠出來。</li>
+          <li><strong>斷行與行高的預設值是英文邏輯。</strong>日文有行尾禁則，標點和小字不能出現在行首，這需要另外設定。</li>
+          <li><strong>區塊順序常常需要不一樣。</strong>日本 B2B 訪客習慣先看会社概要再看服務，中文版的順序照搬過去不見得合適。</li>
+          <li><strong>第二語言的頁面有沒有被正確索引</strong>，平台的可控程度有限。</li>
+        </ul>
+        <p>進日本市場的案子，多語系這一項的重要性通常會排到前三名。相關的規劃我寫在<a class="link" href="/blog/chinese-japanese-bilingual-website.html">〈中日雙語網站怎麼規劃？〉</a>和<a class="link" href="/blog/japan-market-website-checklist.html">〈台灣企業進日本市場，網站需要準備什麼？〉</a>。</p>
+
+        <h2 id="s7">隱藏成本五：效能與 SEO 的天花板</h2>
+        <p><strong>平台不會讓你的網站做不了 SEO，但它會限制你能調到多細。</strong></p>
+        <p>實務上常遇到的幾個限制：</p>
+        <ul>
+          <li>平台會載入自己的 script 與樣式表，你拿不掉，載入速度有一個下限</li>
+          <li>可以自訂的 <code>&lt;head&gt;</code> 內容有限，結構化資料（JSON-LD）能放到多完整要看方案</li>
+          <li>網址結構的自由度低，有些平台會強制在網址裡加固定的路徑片段</li>
+          <li>hreflang 的設定通常包在多語系功能裡，不能單獨處理</li>
+          <li>圖片壓縮、快取這些效能項目由平台決定</li>
+        </ul>
+        <p>這些對「有一個能被搜尋到的公司介紹」來說影響不大。但如果你的策略是靠內容和 SEO 帶來詢問，天花板會在第二年變成很實際的問題——你已經寫了三十篇文章，卻改不了它們的網址結構。</p>
+        <p>順帶提醒一件事：漂亮跟被找到是兩回事，被找到跟有人詢問又是另外一回事。這三件事會卡在不同的地方，換平台只能解決其中一件（有時候一件都解決不了）。這一層我寫在<a class="link" href="/blog/beautiful-website-no-inquiry.html">〈網站很漂亮，為什麼卻沒有人詢問？〉</a>。</p>
+
+        <h2 id="s8">那什麼時候用平台是對的？</h2>
+        <p><strong>三種情況我會直接建議用平台，不用找設計師。</strong></p>
+        <ul>
+          <li><strong>你在驗證一個還沒確定的生意。</strong>產品還沒定案、客戶輪廓還在調整，這個階段網站的任務是「先有」，不是「做對」。花三個月做一個精緻的網站，然後兩個月後方向轉了，那筆錢就沒了。</li>
+          <li><strong>單次活動或短期用途。</strong>展會頁、報名頁、活動 landing，用完就收。這種需求不需要考慮兩年後的事。</li>
+          <li><strong>內容天天改，而且沒有人可以幫你改。</strong>每天更新的營業資訊、菜單、庫存，找設計師每次都要來回，成本反而更高。</li>
+        </ul>
+        <p>還有一種混合的做法值得考慮：<strong>主網站自己掌握，短期活動頁用平台。</strong>兩邊的優勢都拿得到，只要網域和主要的搜尋累積留在你自己這邊。</p>
+
+        <h2 id="s9">決定之前，把兩年攤開來算一次</h2>
+        <p>把下面這幾項填一遍，答案通常就出來了：</p>
+        <div class="a-table-wrap">
+          <table class="a-table">
+            <thead>
+              <tr><th scope="col">項目</th><th scope="col">平台方案</th><th scope="col">客製做法</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">第一年總支出</th><td>月費 × 12 ＋ 升級費 ＋ 設定工時</td><td>建置費 ＋ 網域 ＋ 主機</td></tr>
+              <tr><th scope="row">第二年總支出</th><td>月費 × 12 ＋ 可能的方案調漲</td><td>網域 ＋ 主機 ＋ 維護</td></tr>
+              <tr><th scope="row">我一定要的五個功能在哪一階？</th><td></td><td></td></tr>
+              <tr><th scope="row">網域註冊在誰名下？</th><td></td><td></td></tr>
+              <tr><th scope="row">兩年後想搬家，帶得走什麼？</th><td></td><td></td></tr>
+              <tr><th scope="row">需要日文或英文版嗎？額外多少？</th><td></td><td></td></tr>
+              <tr><th scope="row">誰負責更新，一個月幾次？</th><td></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>最後一列其實是整張表最重要的一題。如果答案是「沒有人」，那你買的後台不會有人登入，每個月的方案費是在付一個用不到的能力。如果答案是「行銷每週都在調」，那平台的月費很划算，因為它省下來的是等工程師的時間。</p>
+        <p>如果你連要做哪幾頁都還沒定，那順序其實是先排頁面再選工具——這件事我整理在<a class="link" href="/blog/company-website-pages.html">〈公司網站要放哪些內容？〉</a>。</p>
+
+        <!-- FAQ（GEO：直接對應 FAQPage schema） -->
+        <h2 id="faq">常見問題</h2>
+        <div class="faq">
+          <details>
+            <summary>Wix 做的網站可以搬走嗎？<span class="ic">＋</span></summary>
+            <p>網域和文字內容可以帶走，版面、CMS 結構與平台內建功能通常帶不走。最大的風險是網址結構改變後原有的搜尋排名會斷掉，需要做一對一的 301 轉址。實務上「搬家」的成本接近重做一次。</p>
+          </details>
+          <details>
+            <summary>用架站平台做的網站對 SEO 不好嗎？<span class="ic">＋</span></summary>
+            <p>不會不能做，但可調整的範圍有限。平台自帶的 script 會影響載入速度，<code>&lt;head&gt;</code> 的自訂程度、網址結構與結構化資料的完整度通常受方案限制。基本的公司介紹網站影響不大，靠內容做 SEO 的策略會碰到天花板。</p>
+          </details>
+          <details>
+            <summary>公司網站可以自己做嗎？<span class="ic">＋</span></summary>
+            <p>可以。三到五頁的公司介紹用現成工具自己做完全合理。會需要找設計師，通常是因為需要的不只是頁面，而是決定要放什麼、順序怎麼排、要讓訪客做什麼動作。</p>
+          </details>
+          <details>
+            <summary>網域一定要自己買嗎？<span class="ic">＋</span></summary>
+            <p>建議自己買、註冊在公司名下。廠商代買很常見，但續約通知會寄到對方的信箱，合作結束時的交接也會多一道手續。網域是所有網站資產裡最關鍵的一項。</p>
+          </details>
+          <details>
+            <summary>多語系網站適合用平台做嗎？<span class="ic">＋</span></summary>
+            <p>內容一致、版面可以共用的話可以。如果各語系的區塊順序、內容深度或 CTA 需要不同（進日本市場的案子多半是這樣），平台的多語系功能通常不夠用，因為它的預設是同一套版面換字。</p>
+          </details>
+        </div>
+
+        <p>如果你正在報價階段，卡的不是設計而是「到底該走哪一條路」，可以預約一場 20 分鐘網站方向諮詢。帶三個答案來就好：<strong>這個網站誰負責更新、多久更新一次、需不需要日文或英文版</strong>。這三題通常就能把選項砍到剩一個——如果結論是「你用平台就好」，我也會直接說。</p>
+
+        <!-- 作者盒（E-E-A-T） -->
+        <div class="author-box">
+          <div class="av">港</div>
+          <div class="info">
+            <div class="nm">momo｜小港製作所 Minato Studio<small>MULTILINGUAL WEB UX</small></div>
+            <p class="bio">我是小港製作所的設計師。專注多語系網站的 UX 與在地化。</p>
+            <p class="bio">我協助品牌處理日文版、英文版網站的版面適配、語感校對與資訊架構，從品牌定位到網站上線都由同一個人負責，讓每一次接觸，都成為建立信任的開始。</p>
+            <p class="bio">這篇裡的每一項成本，都是我在幫客戶盤點現有網站、或協助他們離開平台的時候實際算過的帳。</p>
+            <div class="cred">
+              <span class="chip">網站架構選型</span>
+              <span class="chip">網站資產盤點</span>
+              <span class="chip">多語系資訊架構</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== related ===== -->
+  <section class="related">
+    <svg class="deco deco-rel" viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-20 95 Q70 80 160 95 T340 95 T520 95 T700 95 T880 95 T1060 95 T1240 95 T1460 95" opacity=".8"/>
+      <path d="M-20 120 Q80 106 180 120 T380 120 T580 120 T780 120 T980 120 T1180 120 T1460 120" opacity=".45"/>
+    </svg>
+    <div class="wrap">
+      <span class="sec-label">Read next</span>
+      <h2 class="reveal">接著看這幾篇</h2>
+      <div class="rel-grid">
+        <a class="rel-card reveal" href="/blog/company-website-pages.html">
+          <span class="rc-cat">Site Structure</span>
+          <h3>公司網站要放哪些內容？中小企業官網的最小可行頁面結構</h3>
+          <p>頁面不是照同業的選單抄，是照訪客會問的問題排。</p>
+          <span class="go">閱讀文章 →</span>
+        </a>
+        <a class="rel-card reveal" style="transition-delay:.08s" href="/blog/website-redesign-or-rebuild.html">
+          <span class="rc-cat">Redesign</span>
+          <h3>官網該改版、重做，還是只調整？三個判斷點</h3>
+          <p>決定的不是上線幾年，是資訊架構還撐不撐得住現在的業務。</p>
+          <span class="go">閱讀文章 →</span>
+        </a>
+        <a class="rel-card reveal" style="transition-delay:.16s" href="/blog/chinese-japanese-bilingual-website.html">
+          <span class="rc-cat">Bilingual Site</span>
+          <h3>中日雙語網站怎麼規劃？從網址結構到內容取捨的六個決定</h3>
+          <p>最貴的不是第二套設計，是第二套內容的長期維護。</p>
+          <span class="go">閱讀文章 →</span>
+        </a>
+      </div>
+      <div class="rel-more reveal">
+        <a href="/blog/">瀏覽所有文章 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== end CTA ===== -->
+  <section class="end-cta">
+    <svg class="deco deco-endcta" viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-20 95 Q70 80 160 95 T340 95 T520 95 T700 95 T880 95 T1060 95 T1240 95 T1460 95" opacity=".8"/>
+      <path d="M-20 120 Q80 106 180 120 T380 120 T580 120 T780 120 T980 120 T1180 120 T1460 120" opacity=".45"/>
+      <g transform="translate(300,40)" class="amb" opacity=".9"><path d="M0 30 Q4 40 15 40 L48 40 Q58 40 62 30 Z"/><path d="M28 30 L28 4 M28 7 Q48 10 48 24 L28 26"/></g>
+    </svg>
+    <div class="wrap">
+      <div class="mini">聊聊<br>吧。</div>
+      <h2>卡在<span class="rd">該走哪一條路</span>？</h2>
+      <p>帶三個答案來就好：誰負責更新、多久更新一次、需不需要日文或英文版。20 分鐘的網站方向諮詢只釐清方向，如果結論是「你用平台就好」，我也會直接說。</p>
+      <div class="cta-row"><a class="btn" href="/index.html#inquiry">預約 20 分鐘諮詢 <span class="ar">→</span></a><a class="btn btn-alt" href="https://line.me/R/ti/p/%40762mydmp" target="_blank" rel="noopener" data-ev="line_click">加入官方 LINE</a></div>
+    </div>
+  </section>
+
+</article>
+</main>
+
+<!-- 共用頁尾（footer 由 /js/include.js 從 /partials/footer.html 注入） -->
+<div id="site-footer"></div>
+
+<!-- ================= SEO / GEO：結構化資料（JSON-LD） ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "還在用 Wix 做網站嗎？找平台做網站後，你不知道的隱藏成本",
+      "description": "架站平台一個月幾百塊，看起來很划算。但真正的價格是網站活著的每一個月，加上功能分級、資產歸屬、搬家限制、多語系另計與 SEO 天花板。",
+      "image": "https://minato.3udesign.website/src/OG-index.png",
+      "datePublished": "2026-08-31T09:00:00+08:00",
+      "dateModified": "2026-08-31T09:00:00+08:00",
+      "inLanguage": "zh-Hant",
+      "articleSection": "網站建置",
+      "keywords": "Wix 做網站, 架站平台, Wix 缺點, 網站月費, 網站搬家, 網站資產歸屬, 公司網站架設",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://minato.3udesign.website/blog/wix-website-hidden-costs"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Momo",
+        "jobTitle": "多語系網站 UX 設計師",
+        "knowsLanguage": ["zh-Hant", "ja", "en"],
+        "worksFor": { "@type": "Organization", "name": "小港製作所 Minato Studio", "url": "https://minato.3udesign.website/" }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "小港製作所 Minato Studio",
+        "logo": { "@type": "ImageObject", "url": "https://minato.3udesign.website/src/logo500.png" }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://minato.3udesign.website/" },
+        { "@type": "ListItem", "position": 2, "name": "部落格", "item": "https://minato.3udesign.website/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "平台網站的隱藏成本" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wix 做的網站可以搬走嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "網域與文字內容可以帶走，版面、CMS 結構與平台內建功能通常無法一併轉移。最大的風險是網址結構改變後原有的搜尋排名會中斷，需要進行一對一的 301 轉址。實務上搬家的成本接近重做一次網站。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "用架站平台做的網站對 SEO 不好嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "並非不能做 SEO，但可調整的範圍有限。平台自帶的程式碼會影響載入速度，head 區塊的自訂程度、網址結構與結構化資料的完整度通常受方案限制。基本的公司介紹網站影響不大，以內容經營 SEO 的策略則會遇到上限。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "公司網站可以自己做嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。三到五頁的公司介紹使用現成工具自行製作是合理的選擇。需要找設計師通常是因為需求不只是頁面本身，而是要決定放什麼內容、順序如何安排，以及要引導訪客採取什麼行動。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "網域一定要自己買嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "建議自行購買並註冊在公司名下。由廠商代為購買雖然常見，但續約通知會寄送到對方信箱，合作結束時的交接也會增加手續。網域是所有網站資產中最關鍵的一項。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "多語系網站適合用架站平台做嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "若各語系內容一致且版面可以共用則適合。如果各語系的區塊順序、內容深度或行動呼籲需要不同，平台的多語系功能通常不敷使用，因為其預設模式是同一套版面替換文字。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="/js/include.js"></script>
+<script src="/js/article.js"></script>
+</body>
+</html>
