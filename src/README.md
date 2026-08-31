@@ -58,10 +58,51 @@
 `OG-blog.png` 之類命名放進本資料夾，再把該頁 `<head>` 裡的 `og:image` / `twitter:image` 改指向它——
 尺寸一律 1200 × 630，其餘 meta 不用動。
 
-兩篇文章內頁已各自有分享圖（`src/og/japan-localization.jpg`、`src/og/beautiful-website-no-inquiry.jpg`，皆為 1200 × 630），不共用 `OG-index.png`。
+## 文章封面圖（`src/og/`）
 
-> 文章內頁若要各自的分享圖，可另外放在 `src/og/` 下（例如 `src/og/japan-localization.jpg`），
-> 並於該文章的 `og:image` / `twitter:image` / JSON-LD `image` 指向它。
+**每篇文章一張封面圖，同一個檔案身兼兩用**：社群分享圖（OG／Twitter／JSON-LD）與
+部落格列表頁的卡片縮圖。目前 8 篇文章都有各自的封面，沒有任何一篇再共用 `OG-index.png`。
+
+- 位置：`src/og/`
+- 命名：**`<slug>.jpg`**，與文章的 slug 一致，全小寫、不要空白
+- 尺寸：目前這批是 **1600 × 900**（16:9）。比例不強制，但 `og:image:width` /
+  `og:image:height` 兩個 meta **必須與實際檔案一致**，否則社群平台的版位會算錯
+- 格式：`.jpg`
+
+| 封面檔 | 文章 |
+| --- | --- |
+| `chinese-japanese-bilingual-website.jpg` | 中日雙語網站怎麼規劃？ |
+| `japan-market-website-checklist.jpg` | 台灣企業進日本市場，網站需要準備什麼？ |
+| `wix-website-hidden-costs.jpg` | 還在用 Wix 做網站嗎？ |
+| `company-website-pages.jpg` | 公司網站要放哪些內容？ |
+| `website-redesign-or-rebuild.jpg` | 官網該改版、重做，還是只調整？ |
+| `japan-website-design-7-things.jpg` | 日本市場網站設計和台灣有什麼不同？ |
+| `japan-localization.jpg` | 為什麼做真正的多語系網站…（檔名為簡稱，非完整 slug） |
+| `beautiful-website-no-inquiry.jpg` | 網站很漂亮，為什麼卻沒有人詢問？ |
+
+### 換圖或新增一篇時要改的四個地方
+
+上傳檔案本身不會讓網站更新，還要把引用指過去。三處在文章檔、一處在列表頁：
+
+1. `blog/<slug>.html` 的 `og:image`（連同 `og:image:width` / `og:image:height` / `og:image:alt`）
+2. `blog/<slug>.html` 的 `twitter:image`
+3. `blog/<slug>.html` 頁尾 JSON-LD 的 `"image"`
+4. `blog/index.html` 該篇卡片的縮圖：
+
+```html
+<span class="thumb"><img class="thumb-img" src="/src/og/<slug>.jpg"
+     alt="" loading="lazy" width="1600" height="900"></span>
+```
+
+卡片版位是 16:10、用 `object-fit:contain` 完整顯示（不裁切），比例對不上時上下會留帶狀空白，
+該處已用品牌深色 `--dark` 當底色（見 `css/blog.css`），所以看起來是外框而不是破圖。
+封面圖本身已經有分類 kicker 與標題，卡片上就不再疊 `.rc-cat` 標籤。
+`alt` 留空是刻意的——卡片的 `<h2>` 已經把標題講過一次，重複朗讀反而吵。
+
+> **既有的兩個檔案有格式不符**：`japan-localization.jpg` 與
+> `beautiful-website-no-inquiry.jpg` 副檔名是 `.jpg`，實際內容卻是 PNG（1200 × 630）。
+> 瀏覽器會自行判讀所以顯示正常，但部分社群爬蟲對 MIME 與副檔名不一致較敏感。
+> 之後有空可以轉成真正的 JPEG 或改回 `.png` 副檔名（記得一併改引用）。
 
 ## 路徑寫法
 
