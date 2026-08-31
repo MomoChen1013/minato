@@ -70,7 +70,9 @@ a{color:inherit;}
 }
 .card.c2 .thumb{background:linear-gradient(120deg,var(--dark) 0%,var(--sea-blue) 130%);}
 .card.c3 .thumb{background:linear-gradient(120deg,var(--sea-blue-deep) 0%,var(--amb) 150%);}
-.card .thumb .thumb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;}
+/* 封面圖完整顯示（contain），比例對不上版位時上下會留帶狀空白；
+   給 img 自己一個深色底，讓那條帶子看起來是刻意的外框，而不是漏出下層漸層。 */
+.card .thumb .thumb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;background:var(--dark);}
 .card .thumb .rc-cat{
   position:absolute;left:16px;top:16px;z-index:1;
   background:rgba(255,255,255,.92);color:var(--sea-blue-deep);
