@@ -4,8 +4,12 @@
 
 | Markdown 稿 | 對應的文章頁 |
 | --- | --- |
-| `webflow-wordpress-static-comparison.md` | `/blog/webflow-wordpress-static-comparison.html` |
+| `wix-website-hidden-costs.md` | `/blog/wix-website-hidden-costs.html` |
 | `japan-website-design-7-things.md` | `/blog/japan-website-design-7-things.html` |
+| `company-website-pages.md` | `/blog/company-website-pages.html` |
+| `website-redesign-or-rebuild.md` | `/blog/website-redesign-or-rebuild.html` |
+| `chinese-japanese-bilingual-website.md` | `/blog/chinese-japanese-bilingual-website.html` |
+| `japan-market-website-checklist.md` | `/blog/japan-market-website-checklist.html` |
 
 ## 為什麼留著
 
@@ -31,3 +35,12 @@
 - 原稿的表格改用 `.a-table`、流程圖改用 `.a-flow`、程式碼改用 `.a-code`（樣式見 `/css/article.css`）。
 - 原稿「四、內部連結建議」列出的內部連結，已直接寫進 HTML 相對應的段落裡。
 - `japan-website-design-7-things` 第 ⑤ 節原稿誤植的「電話号码」，HTML 版已更正為「電話號碼」。
+- 原稿內部連結寫成 `/blog/slug`（無副檔名），HTML 版一律補上 `.html`，與站內其他連結一致。
+- `wix-website-hidden-costs.md` 文末的「五、改寫說明」是交稿備註，不會出現在文章頁上。
+
+## 舊網址：`webflow-wordpress-static-comparison`
+
+`wix-website-hidden-costs` 是由原本的〈企業官網要用 Webflow、WordPress，還是自己開發？〉
+改寫而來，slug 一併換掉。GitHub Pages 沒辦法回 301，所以舊路徑
+`/blog/webflow-wordpress-static-comparison.html` 留了一個轉址頁：canonical 指向新文章、
+`noindex, follow`、加上 meta refresh。等 Search Console 裡舊網址完全消失之後，那個檔案就可以刪掉。
