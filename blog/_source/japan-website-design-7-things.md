@@ -6,7 +6,7 @@ description: "做日文網站不是把中文版翻成日文就好。從会社情
 keywords: ["日文網站製作", "日文網站設計", "日本網站設計", "日本市場網站設計", "日文網站 UX", "台灣公司日本網站", "日文網站架設", "台灣企業進軍日本"]
 category: "多語系與在地化"
 date: 2026-08-26
-author: "momo｜小港製作所 Minato Studio"
+author: "mina｜小港製作所 Minato Studio"
 reading_time: "約 14 分鐘"
 cover_layout: "B"
 cover_title: "日本市場網站設計，和台灣差在哪？"
@@ -19,7 +19,7 @@ cover_kicker: "JAPAN MARKET UX"
 <title>日本市場網站設計和台灣差在哪？做日文網站前的 7 件事｜小港製作所</title>
 <meta name="description" content="做日文網站不是把中文版翻成日文就好。從会社情報的份量、日文讓 UI 變長的實際狀況、餘白與資訊密度，到日本企業官網的信任訊號，7 個進日本市場前要先決定的事。">
 <meta name="keywords" content="日文網站製作,日文網站設計,日本網站設計,日本市場網站設計,日文網站UX,台灣公司日本網站,台灣企業進軍日本">
-<meta name="author" content="momo｜小港製作所 Minato Studio">
+<meta name="author" content="mina｜小港製作所 Minato Studio">
 <meta name="robots" content="index, follow, max-image-preview:large">
 
 <link rel="canonical" href="https://minato.3udesign.website/blog/japan-website-design-7-things">
