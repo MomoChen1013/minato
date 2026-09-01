@@ -6,7 +6,7 @@ description: "公司網站不是頁面越多越好。從訪客真正會問的四
 keywords: ["公司網站要放哪些內容", "企業網站架構", "官方網站頁面", "公司網站頁面規劃", "中小企業網站", "網站資訊架構", "公司官網內容"]
 category: "網站建置"
 date: 2026-08-31
-author: "小港製作所 Minato Studio"
+author: "小港製作所 Minato Design Studio"
 reading_time: "約 13 分鐘"
 cover_layout: "A"
 cover_title: "公司網站要放哪些內容？"
@@ -19,13 +19,13 @@ cover_kicker: "SITE STRUCTURE"
 <title>公司網站要放哪些內容？五頁的最小可行結構｜小港製作所</title>
 <meta name="description" content="公司網站不是頁面越多越好。從訪客真正會問的四個問題出發，拆解中小企業官網的五頁最小可行結構、哪些頁面可以先不要做，以及什麼時候該從五頁長到八頁。">
 <meta name="keywords" content="公司網站要放哪些內容,企業網站架構,官方網站頁面,公司網站頁面規劃,中小企業網站,網站資訊架構">
-<meta name="author" content="小港製作所 Minato Studio">
+<meta name="author" content="小港製作所 Minato Design Studio">
 <meta name="robots" content="index, follow, max-image-preview:large">
 
 <link rel="canonical" href="https://minato.3udesign.website/blog/company-website-pages">
 
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="小港製作所 Minato Studio">
+<meta property="og:site_name" content="小港製作所 Minato Design Studio">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:title" content="公司網站要放哪些內容？五頁的最小可行結構">
 <meta property="og:description" content="頁面不是照同業的選單抄，是照訪客會問的問題排。五頁最小可行結構，加上哪幾頁可以先不要做。">

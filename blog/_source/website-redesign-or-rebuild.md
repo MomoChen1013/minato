@@ -6,7 +6,7 @@ description: "網站幾年該改一次是錯的問題。從資訊架構、內容
 keywords: ["官網改版", "網站改版", "公司網站改版", "網站改版時機", "網站重做", "網站改版 SEO"]
 category: "網站建置"
 date: 2026-08-31
-author: "小港製作所 Minato Studio"
+author: "小港製作所 Minato Design Studio"
 reading_time: "約 11 分鐘"
 cover_layout: "B"
 cover_title: "官網該改版、重做，還是只調整？"
@@ -19,13 +19,13 @@ cover_kicker: "REDESIGN"
 <title>官網改版還是重做？三個判斷點｜小港製作所</title>
 <meta name="description" content="網站幾年該改一次是錯的問題。從資訊架構、內容與可維護性三個判斷點，決定你該做局部調整、改版還是整站重做，附上改版前必做的三件事與 SEO 保留重點。">
 <meta name="keywords" content="官網改版,網站改版,公司網站改版,網站改版時機,網站重做,網站改版SEO">
-<meta name="author" content="小港製作所 Minato Studio">
+<meta name="author" content="小港製作所 Minato Design Studio">
 <meta name="robots" content="index, follow, max-image-preview:large">
 
 <link rel="canonical" href="https://minato.3udesign.website/blog/website-redesign-or-rebuild">
 
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="小港製作所 Minato Studio">
+<meta property="og:site_name" content="小港製作所 Minato Design Studio">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:title" content="官網該改版、重做，還是只調整？三個判斷點">
 <meta property="og:description" content="決定要不要重做的不是上線幾年，是資訊架構還撐不撐得住現在的業務。">

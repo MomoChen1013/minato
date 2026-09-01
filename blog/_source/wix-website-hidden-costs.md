@@ -6,7 +6,7 @@ description: "架站平台一個月幾百塊，看起來很划算。但真正的
 keywords: ["Wix 做網站", "架站平台", "Wix 缺點", "網站月費", "網站搬家", "網站資產歸屬", "公司網站架設", "Webflow 費用"]
 category: "網站建置"
 date: 2026-08-31
-author: "小港製作所 Minato Studio"
+author: "小港製作所 Minato Design Studio"
 reading_time: "約 12 分鐘"
 cover_layout: "A"
 cover_title: "找平台做網站，你不知道的隱藏成本"
@@ -19,13 +19,13 @@ cover_kicker: "HIDDEN COST"
 <title>還在用 Wix 做網站嗎？平台網站的五個隱藏成本｜小港製作所</title>
 <meta name="description" content="架站平台一個月幾百塊，看起來很划算。但真正的價格是網站活著的每一個月，加上功能分級、資產歸屬、搬家限制、多語系另計與 SEO 天花板。把兩年攤開來算一次再決定。">
 <meta name="keywords" content="Wix 做網站,架站平台,Wix 缺點,網站月費,網站搬家,網站資產歸屬,公司網站架設">
-<meta name="author" content="小港製作所 Minato Studio">
+<meta name="author" content="小港製作所 Minato Design Studio">
 <meta name="robots" content="index, follow, max-image-preview:large">
 
 <link rel="canonical" href="https://minato.3udesign.website/blog/wix-website-hidden-costs">
 
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="小港製作所 Minato Studio">
+<meta property="og:site_name" content="小港製作所 Minato Design Studio">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:title" content="還在用 Wix 做網站嗎？找平台做網站後，你不知道的隱藏成本">
 <meta property="og:description" content="平台的月費不是建置費，是租金。真正的成本在功能分級、資產歸屬、搬家限制與多語系。">

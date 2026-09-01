@@ -6,7 +6,7 @@ description: "進日本市場前，網站要準備的不只是日文。從会社
 keywords: ["日本市場網站規劃", "台灣企業進軍日本", "日文網站製作", "網站在地化", "日本市場網站", "日文網站架設"]
 category: "多語系與在地化"
 date: 2026-08-31
-author: "小港製作所 Minato Studio"
+author: "小港製作所 Minato Design Studio"
 reading_time: "約 14 分鐘"
 cover_layout: "B"
 cover_title: "進日本市場，網站要準備什麼？"
@@ -19,13 +19,13 @@ cover_kicker: "JAPAN MARKET"
 <title>台灣企業進日本市場，網站要準備什麼？九項清單｜小港製作所</title>
 <meta name="description" content="進日本市場前，網站要準備的不只是日文。從会社概要要揭露到什麼程度、問合せ由誰用日文回覆、網域該選 .jp 還是子目錄，九項上線前必須先有答案的準備清單。">
 <meta name="keywords" content="日本市場網站規劃,台灣企業進軍日本,日文網站製作,網站在地化,日本市場網站,日文網站架設">
-<meta name="author" content="小港製作所 Minato Studio">
+<meta name="author" content="小港製作所 Minato Design Studio">
 <meta name="robots" content="index, follow, max-image-preview:large">
 
 <link rel="canonical" href="https://minato.3udesign.website/blog/japan-market-website-checklist">
 
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="小港製作所 Minato Studio">
+<meta property="og:site_name" content="小港製作所 Minato Design Studio">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:title" content="台灣企業進日本市場，網站需要準備什麼？">
 <meta property="og:description" content="網站做得再好，問合せ送出之後三天沒人用日文回，前面全部作廢。上線前的九項準備清單。">

@@ -6,7 +6,7 @@ description: "做中日雙語網站前要先決定六件事：日文版的範圍
 keywords: ["中日雙語網站", "雙語網站製作", "多語系網站規劃", "日文網站架設", "hreflang", "語言切換設計", "雙語網站費用"]
 category: "多語系與在地化"
 date: 2026-08-31
-author: "小港製作所 Minato Studio"
+author: "小港製作所 Minato Design Studio"
 reading_time: "約 14 分鐘"
 cover_layout: "A"
 cover_title: "中日雙語網站怎麼規劃？"
@@ -19,13 +19,13 @@ cover_kicker: "BILINGUAL SITE"
 <title>中日雙語網站怎麼規劃？六個必須先決定的事｜小港製作所</title>
 <meta name="description" content="做中日雙語網站前要先決定六件事：日文版的範圍、網址結構、hreflang、版型能不能不一樣、語言切換怎麼放、日文內容誰維護。附上可以直接拿去問廠商的規劃清單。">
 <meta name="keywords" content="中日雙語網站,雙語網站製作,多語系網站規劃,日文網站架設,hreflang,語言切換設計">
-<meta name="author" content="小港製作所 Minato Studio">
+<meta name="author" content="小港製作所 Minato Design Studio">
 <meta name="robots" content="index, follow, max-image-preview:large">
 
 <link rel="canonical" href="https://minato.3udesign.website/blog/chinese-japanese-bilingual-website">
 
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="小港製作所 Minato Studio">
+<meta property="og:site_name" content="小港製作所 Minato Design Studio">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:title" content="中日雙語網站怎麼規劃？六個必須先決定的事">
 <meta property="og:description" content="雙語網站最貴的不是第二套設計，是第二套內容的長期維護。開始之前先做完這六個決定。">
