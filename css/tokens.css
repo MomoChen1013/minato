@@ -8,6 +8,13 @@
    ============================================================ */
 :root{
 
+  /* 品牌色票 */
+  --brand-warm-white:#F4F0E7;
+  --brand-beige:#D1C5B5;
+  --brand-coral:#F16C42;
+  --brand-sky:#8EB9EC;
+  --brand-ink:#20211E;
+
   /* ---------- 顏色：F・空 天空藍 × 琥珀 ---------- */
   --white:#FDFEFF;
   --paper:#F2F8FC;
